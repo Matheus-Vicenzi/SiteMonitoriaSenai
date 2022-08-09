@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="Fã clube da banda Ghost">
+<meta name="keywords" content="Ghost, Ghost BC, Banda, Metal, Rock">
+<meta name="author" content="Matheus Vicenzi">
+<meta name="viweport" content="width=device-width, inicial-scale=1.0">
+<title>Ghost</title>
+<link rel="stylesheet" type="text/css" href="css/site.css">
+<script
+ src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="js/site.js"></script>
+</head>
+<body>
+	<header>
+	</header>
+	<nav>
+	</nav>
+	<section>
+		<div id="topo">
+			<img src="imgs/namelessGhoulLeft.png" alt="nameless ghoul" class="ghoul esquerdo">
+			<div id="titulos">
+				<h2>Bem vindo ao fã clube<br>GHOST BR</h2>
+				<h3>O maior fã clube do Brasil</h3>
+			</div>
+			<img src="imgs/namelessGhoulRight.png" alt="nameless ghoul" class="ghoul direito">
+		</div>
+		<h3 class="subtitulo">Deseja fazer parte do maior Fã clube da melhor banda de todos os tempos?<br>
+		 Preencha o formulário abaixo e entre para a legião!!!</h3>
+		<form name="frmformulario" method="post" action="#" onsubmit="return validaFormulario()">
+			<fieldset class="formulario">
+				<label for="nome">Nome: </label> 
+				<input type="text" name="txtnome" id="nome" placeholder="Emeritus III">
+				<label for="sexo">Sexo: </label>  
+				<input class="sexo" id="masc" type="radio" name="txtsexo" value="M"/> M
+                <input class="sexo" id="fem" type="radio" name="txtsexo" value="F"/> F <br />      		
+         		<label for="data">Data de nascimento: </label>
+				<input type="date" id="data" name="txtdata">
+				<label for="email">E-mail</label>
+				<input type="text" id="email" name="txtemail" placeholder="emeritus.hell@ghost.com"><br>
+				<label for="telefone">Telefone: </label>
+				<input type="text" id="telefone" name="txttelefone" placeholder="(66)66666-6666">
+				<input type="checkbox" id="participar" class="sexo" name="txtparticipar">
+				<label for="participar">Deseja Participar do GHOST BR?</label>
+				<button type="submit">Submit</button><button type="reset">Limpar</button>
+			</fieldset>
+		</form>
+	</section>
+	<footer></footer>
+</body>
+</html>

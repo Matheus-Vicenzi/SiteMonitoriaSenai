@@ -1,0 +1,184 @@
+@charset "UTF-8";
+
+/* Configuração básicada página */
+
+body{
+	margin: 0 auto;
+	font-family: "Century Gothic", sans-serif;
+	background-color: #000000
+}
+/***********************************
+		Configurações Gerais
+***********************************/
+/* Cabeçalho */
+header{
+	height: 400px;
+	background-color:#000000
+}
+header img{
+	height: 80%;
+	width: 100%;
+	margin: 0;
+}
+header h1{
+	text-align: center;
+	color: #ffffff;
+}
+/* Menu */
+nav{
+	clear: both;
+	width: 100%;
+	margin: 0px auto;
+	height: 55px;
+	background-color: #000000;
+}
+nav a{
+	color: white;
+	text-decoration: none;
+	text-align: center;
+}
+nav .opcao{
+	float: left;
+	width: 31.3%;
+	background-color: #353535;
+	color: #ba945e;
+	padding: 5px 0;
+	margin: 0 1%;
+}
+nav .opcao:hover{
+	background-color: #795c31;
+}
+/* Área geral para conteúdos específicos de cada página */
+section{
+	clear:both;
+	min-height:391px;
+	width: 100%;
+	margin-top:0px;
+}
+/* Rodapé */
+footer{
+	background-color:#353535;
+	color: #ba945e;
+	text-align:center;
+	padding:10px;
+}
+/*******************************
+ Configuração da página inicial
+*******************************/
+section #topo{
+	width: 100%;
+	margin: 0px auto;
+	height: 10em;
+	background-color: #000000;
+}
+.ghoul{
+	height: 250px;
+	width: 125px;
+	margin: 0px;
+}
+.direito{
+	float: right;
+}
+.esquerdo{
+	float: left;
+}
+section #titulos{
+	float: left;
+	height: 10em;
+	width: 40em;
+	margin-left: 17%;
+}
+h2{
+	text-align: center;
+	margin-top: 0px;
+	margin-bottom: 10px;
+	font-size: 50px;
+	color: #fff;
+}
+h3{
+	text-align: center;
+	font-size: 20px;
+	color: #fff;
+}
+section p{
+	clear: both;
+	text-align: center;
+	margin: 10px 80px;
+	color: #fff;
+}
+/*********************************
+  Configuração Formulário
+ **********************************/
+ .formulario{
+ 	width: 300px;
+ 	margin: 0px auto;
+ 	font-weight: bold;
+ 	background-color: #000000;
+ 	color: #fff;
+ 	border: 1em solid #000000;
+ }
+ .formulario input{
+ 	margin: 5px auto;
+ 	width:100%;
+ 	padding: 5px 0;
+ }
+ .formulario .sexo{
+ 	margin: 5px auto;
+ 	width: 5px;
+ 	padding: 5px 0;
+ 	min-width: 10px;
+    min-height: 10px;
+ }
+ .formulario textarea{
+ 	height: 100px;
+ 	resize: none;
+ }
+ .formulario button{
+ 	width: 30%;
+ 	margin: 0 10%;
+ 	background-color: #ba945e;
+ 	font-weight: bold;
+ 	font-size: 16px;
+ }
+ .subtitulo{
+ 	color: #ba945e;
+ }
+ /*********************************
+  Configuração Sobre a banda
+ **********************************/
+.logoGhostPreto{
+	height: 25em;
+	width: 100%;
+}
+/*********************************
+  Configuração Albuns
+ **********************************/
+ .tabelaAlbum{
+ 	color: #fff;
+ 	text-align: center;
+ 	margin-left: 15em;
+ 	margin-bottom: 1em;
+ 	min-height: 20em;
+ 	min-width: 15em;
+ }
+ .tituloTabelaAlbum{
+ 	text-align: center;
+ 	font-size: 20px;
+ 	font-weight: bold;
+ 	color: #fff;
+ 	padding: 5px;
+ 	border: transparent;
+ }
+ .imagemAlbum{
+ 	float: right;
+ 	margin-right: 20em;
+ 	width: 18em;
+ 	min-height: 20em;
+ 	min-width: 15em;
+ }
+ .album{
+ 	min-height: 20%;
+ 	min-width: 20%;
+ 	padding: 5px;
+ }
+ 

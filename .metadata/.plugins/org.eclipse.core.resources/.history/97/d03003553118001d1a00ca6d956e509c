@@ -1,0 +1,26 @@
+<h2>Registro de produtos</h2>
+<form name="frmAddProduto" id="addProduto" class="frmInserir">
+	<fieldset>
+		<legend>Novo produto</legend>
+		<table>
+			<tr>
+				<th>Categoria</th>
+				<td>
+					<select name="categoria">
+						<option value="">Selecione</option>
+						<option value="1">Geladeira</option>
+						<option value="2">Freezer</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th>Marca</th>
+				<td>
+					<select name="marcaId" id="selMarca">
+						<option value="" class="buscando">Aguarde, buscando marcas...</option>						
+					</select>
+				</td>
+			</tr>
+		</table>
+	</fieldset>
+</form>
