@@ -1,0 +1,5 @@
+package br.com.coldigogeladeiras.jdbc.copy;
+
+public class JDBCMarcaDAO {
+
+}
