@@ -6,6 +6,7 @@ public class Conexao {
 
 	private Connection conexao;
 	
+	@SuppressWarnings("deprecation")
 	public Connection abrirConexao() {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
