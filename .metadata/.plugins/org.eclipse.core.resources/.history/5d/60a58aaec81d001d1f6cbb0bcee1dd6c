@@ -1,4 +1,4 @@
-<script scr="../../../js/product.js"></script>
+<script scr="../../js/product.js"></script>
 
 <h2>Registro de produtos</h2>
 <form name="frmAddProduto" id="addProduto" class="frmInserir">

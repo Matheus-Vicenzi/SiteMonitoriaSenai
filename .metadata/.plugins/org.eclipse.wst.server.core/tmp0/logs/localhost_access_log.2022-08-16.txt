@@ -39,3 +39,6 @@
 0:0:0:0:0:0:0:1 - - [16/Aug/2022:21:30:27 -0300] "GET /ProjetoTrilhaWeb/css/admin.css HTTP/1.1" 304 -
 0:0:0:0:0:0:0:1 - - [16/Aug/2022:21:30:27 -0300] "GET /ProjetoTrilhaWeb/js/admin.js HTTP/1.1" 304 -
 0:0:0:0:0:0:0:1 - - [16/Aug/2022:21:30:30 -0300] "GET /ProjetoTrilhaWeb/pages/admin/product/ HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [16/Aug/2022:22:02:30 -0300] "GET /ProjetoTrilhaWeb/pages/admin/index.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [16/Aug/2022:22:02:30 -0300] "GET /ProjetoTrilhaWeb/css/admin.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [16/Aug/2022:22:02:31 -0300] "GET /ProjetoTrilhaWeb/js/admin.js HTTP/1.1" 304 -
