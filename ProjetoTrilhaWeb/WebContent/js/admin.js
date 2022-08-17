@@ -13,13 +13,30 @@ $(document).ready(function() {
 		//Limpa a tag section
 		$("section").empty();
 		//Carrega a página solicitada dentro da tag section
-		$("section").load(pagename+"/",function(response,status,info){
+		$("section").load(pagename+"/",function(response, status, info){
 			if (status == "error"){
 				var msg = "houve um erro ao tentar encontrar a página: "+ info.status + " - " + info.statusText;
 				$("section").html(msg);
 			}
 		
 		});
+	}
+	
+	//Define as configurações base de uma modal de aviso
+	COLDIGO.exibirAviso = function(aviso){
+		var modal = {
+			title: "Mensagem",
+			height: 250,
+			width: 400,
+			modal: true,
+			buttons: {
+				"OK": function(){
+					$(this).dialog("close");
+				}
+			}
+		};
+		$("#modalAviso").html(aviso);
+		$("#modalAviso").dialog(modal);
 	}
 	
 });
