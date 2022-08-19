@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.io.Serializable"/>
     <fullyQualifiedTypeName name="java.sql.DriverManager"/>
-    <fullyQualifiedTypeName name="br.com.coldigogeladeiras.bd.Conexao"/>
-    <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="br.com.coldigogeladeiras.jdbc.JDBCMarcaDAO"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="br.com.coldigogeladeiras.modelo.Marca"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.sql.Statement"/>
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
-    <fullyQualifiedTypeName name="javax.ws.rs.core.Response"/>
     <fullyQualifiedTypeName name="javax.ws.rs.core.Response.ResponseBuilder"/>
     <fullyQualifiedTypeName name="javax.ws.rs.core.Response.StatusType"/>
+    <fullyQualifiedTypeName name="javax.ws.rs.Consumes"/>
+    <fullyQualifiedTypeName name="javax.ws.rs.core.Response"/>
+    <fullyQualifiedTypeName name="java.io.Serializable"/>
+    <fullyQualifiedTypeName name="com.google.gson.Gson"/>
+    <fullyQualifiedTypeName name="br.com.coldigogeladeiras.jdbcinterface.ProdutoDAO"/>
+    <fullyQualifiedTypeName name="br.com.coldigogeladeiras.modelo.Produto"/>
+    <fullyQualifiedTypeName name="br.com.coldigogeladeiras.bd.Conexao"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="br.com.coldigogeladeiras.jdbc.JDBCProdutoDAO"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="java.sql.SQLException"/>
 </qualifiedTypeNameHistroy>
