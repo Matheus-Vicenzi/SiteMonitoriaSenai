@@ -55,7 +55,7 @@ public class JDBCProdutoDAO implements ProdutoDAO{
 	public List<JsonObject> buscarPorNome(String nome){
 		
 		//Inicia criação do comando SQL de busca
-		String comando = "SELECT produtos.*, marcas.nome as marca FROM produtos"
+		String comando = "SELECT produtos.*, marcas.nome as marca FROM produtos "
 				+ "INNER JOIN marcas ON produtos.marcas_id = marcas.id ";
 		//Se o nome não estiver vazio...
 		if (!nome.equals("")) {
