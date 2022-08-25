@@ -110,5 +110,19 @@ public class JDBCProdutoDAO implements ProdutoDAO{
 		
 	}
 	
+	public boolean deletar(int id) {
+		String comando = "DELETE FROM produtos WHERE id = ?";
+		PreparedStatement p;
+		try {
+			p = this.conexao.prepareStatement(comando);
+			p.setInt(1, id);
+			p.execute();
+		}catch(SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+	}
+	
 	
 }
