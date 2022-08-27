@@ -1,5 +1,5 @@
 # ProjetoTrilhaWeb
-Projeto Trilha Web do curso de análise e desenvolvimento de sistemas SENAI Joinville
+Projeto Trilha Web do curso de análise e desenvolvimento de sistemas SENAI Joinville (ainda em desenvolvimento)
 
 # Definição
 O projeto tem por finalidade a criação do site "Coldigo Geladeiras", um site de venda de geladeiras e freezers.
@@ -10,7 +10,21 @@ Administrativa: A area administrativa é responsável pela manutenção do banco
 Cliente: A área do cliente possui uma tela inicial de boas vinda e apresentação da loja, uma tabela com os produtos disponíveis da loja, e uma área de contato com a loja (Fale conosco)
 
 # Tecnologias
-Nessa trilha de conhecimentos, são utilizadas as linguagens de programação Java, JavaScript, jQuery, CSS e HTML e TomCat. 
+<ul>
+  <li>
+    🌐 HTML, CSS e JavaScript para o front-end
+  </li>
+  <li>
+    ☕ Java e o framework Jersey para o Back end
+  </li>
+  <li>
+    🐬 MySQL para gerenciamento do banco de dados
+  </li>
+  <li>
+    🐱 Tomcat
+  </li>
+ </ul>
+<hr></hr>
 
 # Responsáveis
 Matheus Vicenzi
