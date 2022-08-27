@@ -12,7 +12,7 @@ Cliente: A área do cliente possui uma tela inicial de boas vinda e apresentaç�
 # Tecnologias
 <ul>
   <li>
-    🌐 HTML, CSS e JavaScript para o front-end
+    🌐 HTML, CSS, JavaScript e jQuery para o front-end
   </li>
   <li>
     ☕ Java e o framework Jersey para o Back end
