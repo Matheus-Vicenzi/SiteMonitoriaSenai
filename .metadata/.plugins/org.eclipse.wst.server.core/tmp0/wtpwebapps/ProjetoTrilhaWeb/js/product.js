@@ -133,7 +133,7 @@ $(document).ready(function() {
 					"<td>"+listaDeProdutos[i].capacidade+"</td>" +
 					"<td>R$ "+COLDIGO.formatarDinheiro(listaDeProdutos[i].valor)+"</td>" +
 					"<td>" +
-						"<a><img src='../../imgs/edit.png' alt='Editar Registro'></a> " +
+						"<a onclick=\"COLDIGO.produto.exibirEdicao('"+listaDeProdutos[i].id+"')\"><img src='../../imgs/edit.png' alt='Editar Registro'></a> " +
 						"<a onclick=\"COLDIGO.produto.excluir('"+listaDeProdutos[i].id+"')\"><img src='../../imgs/delete.png' alt='Excluir Registro'>"+
 					"</td>" +
 					"</tr>"
@@ -168,5 +168,21 @@ $(document).ready(function() {
 			}
 		});
 	};
+	
+	COLDIGO.produto.exibirEdicao = function(id){
+		$.ajax({
+			type:"GET",
+			url: COLDIGO.PATH + "produto/buscarPorId",
+			data: "id="+id,
+			success: function(produto){
+				
+				console.log(produto)
+				
+			},
+			error: function(info){
+				COLDIGO.exibirAviso("Erro ao buscar produto para edição "+ info.status + " - " + info.statusText);
+			}
+ 		});
+	}
 	
 });

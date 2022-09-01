@@ -111,4 +111,30 @@ import br.com.coldigogeladeiras.modelo.Produto;
 			}
 			
 		}
+		
+		@GET
+		@Path("/buscarPorId")
+		@Consumes("application/*")
+		@Produces(MediaType.APPLICATION_JSON)
+		public Response buscarPorId(@QueryParam("id") int id) {
+			
+			try {
+				Produto produto = new Produto();
+				Conexao conec = new Conexao();
+				Connection conexao = conec.abrirConexao();
+				JDBCProdutoDAO jdbcProduto = new JDBCProdutoDAO(conexao);
+				
+				produto = jdbcProduto.buscarPorId(id);
+				
+				conec.fecharConexao();
+				
+				return this.buildResponse(produto);
+				
+			}catch(Exception e){
+				e.printStackTrace();
+				return this.buildErrorResponse(e.getMessage());
+			}
+			
+			
+		}
 }
