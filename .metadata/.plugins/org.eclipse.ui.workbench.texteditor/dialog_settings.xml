@@ -6,8 +6,11 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value=""/>
+		<item key="selection" value="selCategoriaEdicao"/>
 		<list key="findhistory">
+			<item value="selCategoriaEdicao"/>
+			<item value="selCategoria"/>
+			<item value="frmEditaProduto"/>
 			<item value="product.js"/>
 		</list>
 		<list key="replacehistory">
