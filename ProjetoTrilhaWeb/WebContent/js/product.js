@@ -209,7 +209,7 @@ $(document).ready(function() {
 					modal: true,
 					buttons: {
 						"Salvar": function(){
-							
+							COLDIGO.produto.editar();
 						},
 						"Cancelar": function(){
 							$(this).dialog("close");
@@ -228,6 +228,31 @@ $(document).ready(function() {
 				COLDIGO.exibirAviso("Erro ao buscar produto para edição "+ info.status + " - " + info.statusText);
 			}
  		});
+	}
+	
+	//Realiza a edição dos dados no BD
+	COLDIGO.produto.editar = function(){
+		
+		var produto = new object();
+		produto.id = document.frmEditaProduto.idProduto.value;
+		produto.categoria = document.frmEditaProduto.categoria.value;
+		produto.marcaId = document.frmEditaProduto.marcaId.value;
+		produto.modelo = document.frmEditaProduto.modelo.value;
+		produto.capacidade = document.frmEditaProduto.capacidade.value;
+		produto.valor = document.frmEditaProduto.valor.value;
+		
+		$.ajax({
+			type: "PUT",
+			url: COLDIGO.PATH + "produto/alterar",
+			data: JSON.stringify(produto),
+			success: fuction(msg){
+				
+			},
+			error: function(info){
+				COLDIGO.exibirAviso("Erro ao editar produto: "+ info.status + " - " + info.statusText);
+			}
+		})
+		
 	}
 	
 });

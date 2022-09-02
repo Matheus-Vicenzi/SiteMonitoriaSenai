@@ -155,5 +155,28 @@ public class JDBCProdutoDAO implements ProdutoDAO{
 		
 	}
 	
+	public boolean alterar(Produto produto) {
+		
+		String comando = "UPDATE produtos "
+				+ "SET categoria=?, modelo=?, capacidade=?, valor=?, marcas_id=?"
+				+ " WHERE id=?";
+		PreparedStatement p;
+		
+		try {
+			p = this.conexao.prepareStatement(comando);
+			p.setString(1, produto.getCategoria());
+			p.setString(2, produto.getModelo());
+			p.setInt(3, produto.getCapacidade());
+			p.setFloat(4, produto.getValor());
+			p.setInt(5, produto.getMarcaId());
+			p.setInt(6, produto.getMarcaId());
+		}catch(Exception e){
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+		
+	}
+	
 	
 }
