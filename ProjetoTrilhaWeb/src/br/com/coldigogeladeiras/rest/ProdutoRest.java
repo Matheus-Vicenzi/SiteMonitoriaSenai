@@ -154,6 +154,13 @@ import br.com.coldigogeladeiras.modelo.Produto;
 				
 				String msg = "";
 				if (retorno) {
+					msg = "Produto alterado com sucesso!";
+				}else {
+					msg = "Erro ao alterar produto.";
+				}
+				
+				conec.fecharConexao();
+				return this.buildResponse(msg);
 				
 			}catch(Exception e) {
 				e.printStackTrace();

@@ -156,10 +156,11 @@ public class JDBCProdutoDAO implements ProdutoDAO{
 	}
 	
 	public boolean alterar(Produto produto) {
-		
+		System.out.println("AQUI");
 		String comando = "UPDATE produtos "
 				+ "SET categoria=?, modelo=?, capacidade=?, valor=?, marcas_id=?"
 				+ " WHERE id=?";
+		
 		PreparedStatement p;
 		
 		try {
@@ -169,8 +170,10 @@ public class JDBCProdutoDAO implements ProdutoDAO{
 			p.setInt(3, produto.getCapacidade());
 			p.setFloat(4, produto.getValor());
 			p.setInt(5, produto.getMarcaId());
-			p.setInt(6, produto.getMarcaId());
-		}catch(Exception e){
+			p.setInt(6, produto.getId());
+			p.executeUpdate();
+			
+		}catch(SQLException e){
 			e.printStackTrace();
 			return false;
 		}
