@@ -4,7 +4,7 @@ $(document).ready(function() {
 	
 	//Carrega as marcas registradas no BD no select do formulário de inserir
 	COLDIGO.produto.carregarMarcas = function(id){
-		if(id!=undefined){
+		if(id != undefined){
 			select = "#selMarcaEdicao";
 		}else{
 			select = "#selMarca";
@@ -63,7 +63,7 @@ $(document).ready(function() {
 			}
 		})
 		
-		
+		console.log("Carregou marcas")
 	}
 	
 	COLDIGO.produto.carregarMarcas();
@@ -73,7 +73,7 @@ $(document).ready(function() {
 		
 		var produto = new Object();
 		produto.categoria = document.frmAddProduto.categoria.value;
-		produto.marcaId = document.frmAddProduto.selMarca.value;
+		produto.marcaId = document.frmAddProduto.marcaId.value;
 		produto.modelo = document.frmAddProduto.modelo.value;
 		produto.capacidade = document.frmAddProduto.capacidade.value;
 		produto.valor = document.frmAddProduto.valor.value;
@@ -98,7 +98,7 @@ $(document).ready(function() {
 			});
 			
 		}
-		
+		console.log("Cadastrou produto")
 	}
 	
 	COLDIGO.produto.buscar = function(){
@@ -117,7 +117,6 @@ $(document).ready(function() {
 				
 			},
 			error: function(info){
-				console.log(info)
 				COLDIGO.exibirAviso("Erro ao consultar os produtos: "+ info.status + " - " + info.statusText);
 			}
 		});
@@ -161,6 +160,8 @@ $(document).ready(function() {
 			
 		}
 		
+		console.log("Buscou produto")
+		
 	};
 	
 	//Executa a função de buscar ao carregar a página
@@ -179,6 +180,7 @@ $(document).ready(function() {
 				COLDIGO.exibirAviso("Erro ao excluir produto: "+ info.status + " - "+ info.statusText);
 			}
 		});
+		console.log("Excluiu Produto")
 	};
 	
 	COLDIGO.produto.exibirEdicao = function(id){
@@ -231,15 +233,16 @@ $(document).ready(function() {
 				COLDIGO.exibirAviso("Erro ao buscar produto para edição "+ info.status + " - " + info.statusText);
 			}
  		});
+		console.log("Exibiu edição")
 	}
 	
 	//Realiza a edição dos dados no BD
 	COLDIGO.produto.editar = function(){
-		
+		console.log("ENTROU NO EDITAR")
 		var produto = new object();
 		produto.id = document.frmEditaProduto.idProduto.value;
 		produto.categoria = document.frmEditaProduto.categoria.value;
-		produto.marcaId = document.frmEditaProduto.selMarca.value;
+		produto.marcaId = document.frmEditaProduto.marcaId.value;
 		produto.modelo = document.frmEditaProduto.modelo.value;
 		produto.capacidade = document.frmEditaProduto.capacidade.value;
 		produto.valor = document.frmEditaProduto.valor.value;
@@ -259,7 +262,7 @@ $(document).ready(function() {
 				COLDIGO.exibirAviso("Erro ao editar produto: "+ info.status + " - " + info.statusText);
 			}
 		})
-		
+		console.log("Editou produto")
 	}
 	
 });

@@ -130,7 +130,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log." suffix=".txt"/>
 
-      <Context docBase="C:\Users\matheus_vicenzi\Desktop\workspace_BackEnd\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\Users\matheus_vicenzi\Desktop\workspace_BackEnd\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ProjetoTrilhaWeb" path="/ProjetoTrilhaWeb" reloadable="true" source="org.eclipse.jst.jee.server:ProjetoTrilhaWeb"/></Host>
+      <Context docBase="C:\Users\matheus_vicenzi\Desktop\workspace_BackEnd\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\Users\matheus_vicenzi\Desktop\workspace_BackEnd\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ProjetoTrilhaWeb" path="/ProjetoTrilhaWeb" reloadable="true" source="org.eclipse.jst.jee.server:ProjetoTrilhaWeb"/><Context docBase="C:\Users\matheus_vicenzi\Desktop\workspace_BackEnd\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ProjetoFaClube" path="/ProjetoFaClube" reloadable="true" source="org.eclipse.jst.jee.server:ProjetoFaClube"/></Host>
     </Engine>
   </Service>
 </Server>
