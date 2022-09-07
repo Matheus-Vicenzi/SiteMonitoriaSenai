@@ -1,5 +1,5 @@
 COLDIGO.marca = new Object();
-console.log("entrou no arquivo")
+
 $(document).ready(function() {
 	console.log("Entrou no document")
 	COLDIGO.marca.carregarMarcas = function(){
