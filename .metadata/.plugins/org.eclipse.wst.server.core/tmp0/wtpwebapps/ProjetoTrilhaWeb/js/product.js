@@ -63,7 +63,7 @@ $(document).ready(function() {
 			}
 		})
 		
-		console.log("Carregou marcas")
+		
 	}
 	
 	COLDIGO.produto.carregarMarcas();
@@ -98,7 +98,7 @@ $(document).ready(function() {
 			});
 			
 		}
-		console.log("Cadastrou produto")
+		
 	}
 	
 	COLDIGO.produto.buscar = function(){
@@ -160,8 +160,6 @@ $(document).ready(function() {
 			
 		}
 		
-		console.log("Buscou produto")
-		
 	};
 	
 	//Executa a função de buscar ao carregar a página
@@ -180,7 +178,7 @@ $(document).ready(function() {
 				COLDIGO.exibirAviso("Erro ao excluir produto: "+ info.status + " - "+ info.statusText);
 			}
 		});
-		console.log("Excluiu Produto")
+		
 	};
 	
 	COLDIGO.produto.exibirEdicao = function(id){
@@ -213,6 +211,8 @@ $(document).ready(function() {
 					modal: true,
 					buttons: {
 						"Salvar": function(){
+							
+							
 							COLDIGO.produto.editar();
 							
 						},
@@ -233,13 +233,13 @@ $(document).ready(function() {
 				COLDIGO.exibirAviso("Erro ao buscar produto para edição "+ info.status + " - " + info.statusText);
 			}
  		});
-		console.log("Exibiu edição")
+	
 	}
 	
 	//Realiza a edição dos dados no BD
 	COLDIGO.produto.editar = function(){
-		console.log("ENTROU NO EDITAR")
-		var produto = new object();
+		
+		var produto = new Object();
 		produto.id = document.frmEditaProduto.idProduto.value;
 		produto.categoria = document.frmEditaProduto.categoria.value;
 		produto.marcaId = document.frmEditaProduto.marcaId.value;
@@ -262,7 +262,7 @@ $(document).ready(function() {
 				COLDIGO.exibirAviso("Erro ao editar produto: "+ info.status + " - " + info.statusText);
 			}
 		})
-		console.log("Editou produto")
+		
 	}
 	
 });

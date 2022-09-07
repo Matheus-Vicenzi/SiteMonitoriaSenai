@@ -13,6 +13,9 @@ $(document).ready(function() {
 	//Função de carregamento de página de conteúdo que recebe como 
 	//parâmetro o nome da pasta com a página a ser carregada
 	COLDIGO.carregaPagina = function(pagename){
+		//Remove o conteúdo criado na abertura de uma janela modal pelo jQuery
+		if($(".ui-dialog"))
+			$(".ui-dialog").remove();
 		//Limpa a tag section
 		$("section").empty();
 		//Carrega a página solicitada dentro da tag section

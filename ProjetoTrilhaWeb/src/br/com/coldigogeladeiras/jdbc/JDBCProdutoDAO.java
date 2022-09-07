@@ -156,7 +156,7 @@ public class JDBCProdutoDAO implements ProdutoDAO{
 	}
 	
 	public boolean alterar(Produto produto) {
-		System.out.println("AQUI");
+		
 		String comando = "UPDATE produtos "
 				+ "SET categoria=?, modelo=?, capacidade=?, valor=?, marcas_id=?"
 				+ " WHERE id=?";
