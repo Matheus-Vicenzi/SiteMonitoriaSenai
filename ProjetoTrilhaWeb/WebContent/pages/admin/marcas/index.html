@@ -1,15 +1,31 @@
-<script src="../../js/product.js"></script>
+<script src="../../js/marcas.js"></script>
 <h2>Registro de marcas</h2>
-<form name="frmAddProduto" id="addProduto" class="frmInserir">
+<form name="frmAddMarca" id="addMarca" class="frmInserir">
 	<fieldset>
 		<legend>Cadastre uma marca</legend>
 		<table>
 			<tr>
 				<th>Nome da marca</th>
 				<td>
-					<input type="text" name="marca">
+					<input type="text" name="nome">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<button type="button" onclick="COLDIGO.marca.cadastrar()">Cadastrar</button>
+					<button type="reset">Limpar</button>
 				</td>
 			</tr>
 		</table>
 	</fieldset>
 </form>
+<h3>Marcas registradas</h3>
+<form id="filtraMarca" class="frmFiltrar">
+	<fieldset>
+		<legend>Filtrar</legend>
+		<input type="text" name="txtbusca" id="campoBuscaMarca" placeholder="Pesquise pela marca">
+		<button type="button" onclick="COLDIGO.marca.buscar()">Buscar</button>
+	</fieldset>
+</form>
+<div id="listaMarcas" class="listaRegistros">
+</div>

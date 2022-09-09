@@ -6,8 +6,13 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value=""/>
+		<item key="selection" value="produto.buscar"/>
 		<list key="findhistory">
+			<item value="produto.buscar"/>
+			<item value="produto.exibir"/>
+			<item value="carregarMarcas"/>
+			<item value="exibir"/>
+			<item value="buscar"/>
 			<item value="AQUI"/>
 			<item value="header"/>
 			<item value="marcaId"/>
@@ -18,11 +23,6 @@
 			<item value="Produto"/>
 			<item value="Edita"/>
 			<item value="edita"/>
-			<item value="frm"/>
-			<item value="selCategoriaEdicao"/>
-			<item value="selCategoria"/>
-			<item value="frmEditaProduto"/>
-			<item value="product.js"/>
 		</list>
 		<list key="replacehistory">
 			<item value="marcaId"/>

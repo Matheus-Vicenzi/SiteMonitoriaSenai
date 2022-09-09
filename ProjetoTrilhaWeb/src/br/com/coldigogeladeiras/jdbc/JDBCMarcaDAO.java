@@ -1,7 +1,9 @@
 package br.com.coldigogeladeiras.jdbc;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 import java.util.ArrayList;
@@ -62,6 +64,46 @@ public class JDBCMarcaDAO implements MarcaDAO{
 		//Retorna para quem chamou o método a lista criada
 		return listMarcas;
 		
+	}
+	
+	public boolean inserir(Marca marca) {
+		
+		String comando = "INSERT INTO marcas "
+				+ "(id, nome) "
+				+ "VALUES (?,?)";
+		PreparedStatement p;
+		
+		try {
+			//Prepara o comando para execução no bd em que nos conectamos
+			p = this.conexao.prepareStatement(comando);
+			
+			//Substitui no comando os "?" pelos valores da marca
+			p.setInt(1, marca.getId());
+			p.setString(2, marca.getNome());
+			
+			//executa o comando no bd
+			p.execute();
+						
+		}catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+		
+	}
+	
+	public boolean deletar(int id) {
+		String comando = "DELETE FROM marcas WHERE id = ?";
+		PreparedStatement p;
+		try {
+			p = this.conexao.prepareStatement(comando);
+			p.setInt(1, id);
+			p.execute();
+		}catch(SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+		return true;
 	}
 	
 }
