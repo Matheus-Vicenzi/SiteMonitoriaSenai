@@ -30,4 +30,4 @@ Cliente: A área do cliente possui uma tela inicial de boas vinda e apresentaç�
 Matheus Vicenzi
 
 # Agradecimentos
-Em especial a todos os doscentes do curso de análise e desenvolvimento de sistemas da faculdade SENAI norte de Joinville-SC/Brasil, idealizadores do projeto 
+Em especial a todos os docentes do curso de Análise e Desenvolvimento de Sistemas da faculdade SENAI norte de Joinville-SC/Brasil, idealizadores do projeto 
