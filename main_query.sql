@@ -25,3 +25,5 @@ INSERT INTO `marcas`VALUES
 	(null,'Brastempi'),
 	(null,'Continentau'),
 	(null,'Eletrolukz');
+    
+SELECT * FROM marcas;

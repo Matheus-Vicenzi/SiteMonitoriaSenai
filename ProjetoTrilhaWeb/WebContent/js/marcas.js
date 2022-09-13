@@ -3,8 +3,11 @@ COLDIGO.marca = new Object();
 $(document).ready(function() {
 	
 	COLDIGO.marca.carregarMarcas = function(id){
-		
-		select = "#selMarca";
+		if(id != undefined){
+			select = "#selMarcaEdicao";
+		}else{
+			select = "#selMarca";
+		}
 		
 		$.ajax({
 			type: "GET",
@@ -32,6 +35,16 @@ $(document).ready(function() {
 						$(select).append(option);
 						
 					}
+					
+				}else{
+					
+					$(select).html("");
+					
+					var option = document.createElement("option");
+					option.setAttribute("value", "");
+					option.innerHTML = ("Cadastre uma marca primeiro!");
+					$(select).append(option);
+					$(select).addClass("aviso");
 					
 				}
 				
@@ -74,6 +87,7 @@ $(document).ready(function() {
 				success: function (msg) {
 					COLDIGO.exibirAviso(msg);
 					$("#addMarca").trigger("reset");
+					COLDIGO.marca.buscar();
 				},
 				error: function (info){
 					COLDIGO.exibirAviso("Erro ao cadastrar uma nova marca: " + info.status + " - " + info.statusText);
@@ -87,7 +101,6 @@ $(document).ready(function() {
 	COLDIGO.marca.buscar = function(){
 		
 		var valorBusca = $("#campoBuscaMarca").val();		
-		
 		
 		$.ajax({
 				type: "GET",
@@ -156,5 +169,77 @@ $(document).ready(function() {
 		});
 		
 	};
+	
+	
+	COLDIGO.marca.exibirEdicao = function(id){
+		$.ajax({
+			type:"GET",
+			url: COLDIGO.PATH + "marca/buscarPorId",
+			data: "id="+id,
+			success: function(marca){
+				
+				document.frmEditaMarca.idMarca.value = marca.id;
+				document.frmEditaMarca.marcaNome.value = marca.nome;
+				
+				console.log(marca.id)
+				
+				//COLDIGO.produto.carregarMarcas(marca.id);
+				
+				var modalEditaMarca = {
+					title: "Editar Marca",
+					height: 400,
+					width: 550,
+					modal: true,
+					buttons: {
+						"Salvar": function(){
+							
+							
+							COLDIGO.marca.editar();
+							
+						},
+						"Cancelar": function(){
+							$(this).dialog("close");
+						}
+					},
+					close: function(){
+						//caso o usuário simplismente feche a caixa de edição
+						//não deve acontecer nada
+					}
+				};
+				
+				$("#modalEditaMarca").dialog(modalEditaMarca);
+				
+			},
+			error: function(info){
+				COLDIGO.exibirAviso("Erro ao buscar marca para edição "+ info.status + " - " + info.statusText);
+			}
+ 		});
+	
+	}
+	
+	//Realiza a edição dos dados no BD
+	COLDIGO.marca.editar = function(){
+		
+		var marca = new Object();
+		marca.id = document.frmEditaMarca.idMarca.value;
+		marca.nome = document.frmEditaMarca.marcaNome.value;
+		
+		$.ajax({
+			type: "PUT",
+			url: COLDIGO.PATH + "marca/alterar",
+			data: JSON.stringify(marca),
+			success: function(msg){
+				
+				COLDIGO.exibirAviso(msg);
+				COLDIGO.marca.buscar();
+				$("#modalEditaMarca").dialog("close");
+				
+			},
+			error: function(info){
+				COLDIGO.exibirAviso("Erro ao editar marca: "+ info.status + " - " + info.statusText);
+			}
+		})
+		
+	}
 	
 });

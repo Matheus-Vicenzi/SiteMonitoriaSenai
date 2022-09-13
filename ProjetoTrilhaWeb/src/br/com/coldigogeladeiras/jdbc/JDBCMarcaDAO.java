@@ -152,6 +152,55 @@ public class JDBCMarcaDAO implements MarcaDAO{
 		return listaMarcas;
 		
 	}
+	
+	public Marca buscarPorId(int id) {
+		String comando = "SELECT * FROM marcas WHERE marcas.id = ?";
+		Marca marca = new Marca();
+		
+		try {
+			PreparedStatement p = this.conexao.prepareStatement(comando);
+			p.setInt(1, id);
+			ResultSet rs = p.executeQuery();
+			while(rs.next()) {
+				
+				String nome = rs.getString("nome");
+				int marcaId = rs.getInt("id");
+				
+				marca.setId(marcaId);
+				marca.setNome(nome);
+				
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return marca;
+		
+	}
+	
+	
+
+public boolean alterar(Marca marca) {
+		
+		String comando = "UPDATE marcas "
+				+ "SET marcas.nome=?"
+				+ " WHERE id=?";
+		
+		PreparedStatement p;
+		
+		try {
+			p = this.conexao.prepareStatement(comando);
+			p.setString(1, marca.getNome());
+			p.setInt(2, marca.getId());
+			p.executeUpdate();
+			
+		}catch(SQLException e){
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+		
+	}
+	
 
 	/*public boolean verificaProdutosCadastrados(int id) {
 		String comando = "SELECT produtos.id FROM produtos "
