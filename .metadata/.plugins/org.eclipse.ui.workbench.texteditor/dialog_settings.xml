@@ -6,8 +6,9 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="modalEditaProduto"/>
+		<item key="selection" value="COLDIGO.marca.exibir"/>
 		<list key="findhistory">
+			<item value="COLDIGO.marca.exibir"/>
 			<item value="modalEditaProduto"/>
 			<item value="addMarca"/>
 			<item value="idProduto"/>
@@ -22,7 +23,6 @@
 			<item value="marcaId"/>
 			<item value="selMarca"/>
 			<item value="campo produto"/>
-			<item value="asdsad"/>
 		</list>
 		<list key="replacehistory">
 			<item value="marcaId"/>

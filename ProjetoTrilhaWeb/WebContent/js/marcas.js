@@ -2,73 +2,6 @@ COLDIGO.marca = new Object();
 
 $(document).ready(function() {
 	
-	COLDIGO.marca.carregarMarcas = function(id){
-		if(id != undefined){
-			select = "#selMarcaEdicao";
-		}else{
-			select = "#selMarca";
-		}
-		
-		$.ajax({
-			type: "GET",
-			url: COLDIGO.PATH + "marca/buscar",
-			success: function(marcas) {
-				
-				if (marcas!=""){
-					
-					$(select).html("");
-					var option = document.createElement("option");
-					option.setAttribute("value", "");
-					option.innerHTML = ("Escolha");
-					$(select).append(option);
-					
-					for (var i = 0; i < marcas.length; i++){
-						
-						var option = document.createElement("option");
-						option.setAttribute("value", marcas[i].id);
-						
-						if ((id!=undefined)&&(id==marcas[i].id))
-							option.setAttribute("selected", "selected");
-						
-						
-						option.innerHTML = (marcas[i].nome);
-						$(select).append(option);
-						
-					}
-					
-				}else{
-					
-					$(select).html("");
-					
-					var option = document.createElement("option");
-					option.setAttribute("value", "");
-					option.innerHTML = ("Cadastre uma marca primeiro!");
-					$(select).append(option);
-					$(select).addClass("aviso");
-					
-				}
-				
-
-			},
-			error: function(info){
-				
-				COLDIGO.exibirAviso("Erro ao buscar as marcas: "+ info.status + " - " + info.statusText);
-				
-				$(select).html("");
-				var option = document.createElement("option");
-				option.setAttribute("value", "");
-				option.innerHTML = ("Erro ao carregar as marcas!");
-				$(select).append(option);
-				$(select).addClass("aviso");
-
-			}
-		})
-		
-		
-	}
-	
-	COLDIGO.marca.carregarMarcas();
-	
 	//Cadastra no BD o produto informado
 	COLDIGO.marca.cadastrar = function(){
 		
@@ -107,7 +40,7 @@ $(document).ready(function() {
 				url: COLDIGO.PATH + "marca/buscarPorNome",
 				data: "valorBusca=" + valorBusca,
 				success: function(dados){
-					console.log(dados)
+					
 					$("#listaMarcas").html(COLDIGO.marca.exibir(dados));
 					
 				},
@@ -181,7 +114,6 @@ $(document).ready(function() {
 				document.frmEditaMarca.idMarca.value = marca.id;
 				document.frmEditaMarca.marcaNome.value = marca.nome;
 				
-				console.log(marca.id)
 				
 				//COLDIGO.produto.carregarMarcas(marca.id);
 				
