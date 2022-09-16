@@ -93,7 +93,7 @@ $(document).ready(function() {
 					COLDIGO.produto.buscar();
 				},
 				error: function (info){
-					COLDIGO.exibirAviso("Erro ao cadastrar um novo produto: " + info.status + " - " + info.statusText);
+					COLDIGO.exibirAviso("Erro ao cadastrar um novo produto: " + info.status + " - " + info.responseText);
 				}
 			});
 			

@@ -21,7 +21,7 @@ public class JDBCProdutoDAO implements ProdutoDAO{
 		this.conexao = conexao;
 	}
 	
-	public boolean inserir(Produto produto) {
+	public boolean inserir(Produto produto) throws Exception {
 		
 		String comando = "INSERT INTO produtos "
 				+ "(id, categoria, modelo, capacidade, valor, marcas_id) "
@@ -43,13 +43,12 @@ public class JDBCProdutoDAO implements ProdutoDAO{
 			
 			//executa o comando no bd
 			p.execute();
+			return true;
 						
-		}catch (SQLException e) {
+		}catch (Exception e) {
 			e.printStackTrace();
-			return false;
+			throw new Exception("Erro ao inserir o produto!");
 		}
-		return true;
-		
 	}
 	
 	public List<JsonObject> buscarPorNome(String nome){
@@ -180,6 +179,24 @@ public class JDBCProdutoDAO implements ProdutoDAO{
 		return true;
 		
 	}
-	
+
+	public boolean verificaMarca(int marcaId) throws Exception {
+		
+		String comando = "SELECT marcas.id FROM marcas WHERE marcas.id = ?";
+		
+		try {
+			PreparedStatement p = this.conexao.prepareStatement(comando);
+			p.setInt(1, marcaId);
+			ResultSet rs = p.executeQuery();
+			if(rs.next()) {
+				return true;
+			}
+			return false;
+				
+		}catch(Exception e) {
+			e.printStackTrace();
+			throw new Exception ("Erro ao buscar o produto");
+		}
+	}
 	
 }

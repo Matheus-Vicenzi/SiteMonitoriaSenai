@@ -202,12 +202,24 @@ public boolean alterar(Marca marca) {
 	}
 	
 
-	/*public boolean verificaProdutosCadastrados(int id) {
+	public boolean verificaProdutosCadastrados(int marcaId) throws Exception {
 		String comando = "SELECT produtos.id FROM produtos "
-				+ "INNER JOIN marcas ON produtos.marcas_id = marcas.id ";
+				+ "INNER JOIN marcas ON produtos.marcas_id = marcas.id "
+				+ "WHERE marcas.id=?";
 		PreparedStatement p;
-		
-		return false;
-	}*/
+		try {
+			p = this.conexao.prepareStatement(comando);
+			p.setInt(1, marcaId);
+			ResultSet rs = p.executeQuery();
+			
+			if (rs.next()) {
+				return false;
+			}
+			return true;
+		}catch(Exception e) {
+			e.printStackTrace();
+			throw new Exception ("Erro ao buscar o produto");
+		}
+	}
 	
 }

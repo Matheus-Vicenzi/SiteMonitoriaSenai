@@ -116,20 +116,25 @@ public class MarcaRest extends UtilRest {
 			Connection conexao = conec.abrirConexao();
 			JDBCMarcaDAO jdbcMarca = new JDBCMarcaDAO(conexao);
 			
-			//boolean semProdutosCadastrados = jdbcMarca.verificaProdutosCadastrados(int id);
+			boolean semProdutosCadastrados = jdbcMarca.verificaProdutosCadastrados(id);
 			
-			boolean retorno = jdbcMarca.deletar(id);
-			
-			
-			if(retorno) {
-				msg = "Marca excluída com sucesso!";
+			if (semProdutosCadastrados) {
+				boolean retorno = jdbcMarca.deletar(id);
+				
+				if(retorno) {
+					msg = "Marca excluída com sucesso!";
+				}else {
+					msg = "Erro ao excluir marca";
+				}
+				
 			}else {
-				msg = "Erro ao excluir marca";
+				throw new Exception("Não é possivel excluir uma marca com produtos vinculados");
 			}
 			
 			conec.fecharConexao();
 			
 			return this.buildResponse(msg);
+			
 			
 		}catch(Exception e){
 			e.printStackTrace();

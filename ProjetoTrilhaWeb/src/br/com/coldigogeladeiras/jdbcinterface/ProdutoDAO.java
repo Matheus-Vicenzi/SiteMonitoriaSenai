@@ -8,7 +8,7 @@ import br.com.coldigogeladeiras.modelo.Produto;
 
 public interface ProdutoDAO {
 
-	public boolean inserir(Produto produto);
+	public boolean inserir(Produto produto) throws Exception;
 	public List<JsonObject> buscarPorNome(String nome);
 	public boolean deletar(int id);
 	public Produto buscarPorId(int id);

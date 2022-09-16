@@ -37,18 +37,23 @@ import br.com.coldigogeladeiras.modelo.Produto;
 				Connection conexao = conec.abrirConexao();
 				
 				JDBCProdutoDAO jdbcProduto = new JDBCProdutoDAO(conexao);
-				boolean retorno = jdbcProduto.inserir(produto);
-				String msg = "";
 				
-				if(retorno == true) {
-					msg = "Produto cadastrado com sucesso!";
+				boolean existeMarca = jdbcProduto.verificaMarca(produto.getMarcaId());
+				
+				if (existeMarca) {
+					boolean retorno = jdbcProduto.inserir(produto);
+					String msg = "";
+					
+					if(retorno) {
+						msg = "Produto cadastrado com sucesso!";
+					}
+					
+					conec.fecharConexao();
+					return this.buildResponse(msg);
 				}else {
-					msg = "Erro ao cadastrar produto.";
+					throw new Exception("Marca inserida não existe, atualize a página para atualizar os dados!");
 				}
 				
-				conec.fecharConexao();
-				
-				return this.buildResponse(msg);
 				
 			}catch(Exception e){
 				e.printStackTrace();

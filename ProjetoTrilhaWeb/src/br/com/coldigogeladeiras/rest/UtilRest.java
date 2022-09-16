@@ -47,6 +47,8 @@ public class UtilRest {
 		//Define a entidade (objeto), que nesse caso é uma mensagem que será retornada para o cliente.
 		rb = rb.type("text/plain");
 		
+		rb = rb.entity(str);
+		
 		//Retorna o objeto de resposta com status 500 (erro), junto com a string contendo a mensagem de erro
 		return rb.build();
 		

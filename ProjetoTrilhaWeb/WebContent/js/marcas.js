@@ -97,7 +97,8 @@ $(document).ready(function() {
 				COLDIGO.marca.buscar();
 			},
 			error: function(info){
-				COLDIGO.exibirAviso("Erro ao excluir marca: "+ info.status + " - "+ info.statusText);
+				console.log(info);
+				COLDIGO.exibirAviso("Erro ao excluir marca: "+ info.status + " - "+ info.responseText);
 			}
 		});
 		
