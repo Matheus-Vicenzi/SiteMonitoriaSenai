@@ -39,6 +39,7 @@ public class MarcaRest extends UtilRest {
 			JDBCMarcaDAO jdbcMarca = new JDBCMarcaDAO(conexao);
 			listaMarcas = jdbcMarca.buscar();
 			conec.fecharConexao();
+			
 			return this.buildResponse(listaMarcas);
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -70,8 +71,6 @@ public class MarcaRest extends UtilRest {
 		}
 		
 	}
-	
-	
 	
 	@POST
 	@Path("/inserir")
@@ -198,5 +197,34 @@ public class MarcaRest extends UtilRest {
 		}
 		
 	}
+	
+	@PUT
+	@Path("/alteraStatus/{id}")
+	@Consumes("application/*")
+	public Response alteraStatus(@PathParam("id") int id) {
+			
+		try {
+			String msg = "";
+			int status;
+			
+			Conexao conec = new Conexao();
+			Connection conexao = conec.abrirConexao();
+			JDBCMarcaDAO jdbcMarca = new JDBCMarcaDAO(conexao);
+			
+			status = jdbcMarca.verificaStatus(id);
+			
+			jdbcMarca.alterarStatus(id, status);
+			
+			conec.fecharConexao();
+			
+			msg = "Status da marca alterada com sucesso";
+			
+			return this.buildResponse(msg);
+		}catch(Exception e) {
+			e.printStackTrace();
+			return this.buildErrorResponse(e.getMessage());
+		}
+	}
+	
 	
 }

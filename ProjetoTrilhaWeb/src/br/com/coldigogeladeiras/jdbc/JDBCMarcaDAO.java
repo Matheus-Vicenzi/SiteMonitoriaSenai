@@ -49,10 +49,12 @@ public class JDBCMarcaDAO implements MarcaDAO{
 				//Recebimento dos 2 dados retornados do BD para cada linha encontrada
 				int id = rs.getInt("id");
 				String nome = rs.getString("nome");
+				int status = rs.getInt("status");
 				
 				//Setando os objeto marca os valores encontrados
 				marca.setId(id);
 				marca.setNome(nome);
+				marca.setStatus(status);
 				
 				//Adição da instância contida no objeto Marca na lista de marcas
 				listMarcas.add(marca);
@@ -135,11 +137,12 @@ public class JDBCMarcaDAO implements MarcaDAO{
 				
 				int id = rs.getInt("id");
 				String nome = rs.getString("nome");
+				int status = rs.getInt("status");
 				
 				marca = new JsonObject();
 				marca.addProperty("id", id);
 				marca.addProperty("nome", nome);
-				
+				marca.addProperty("status", status);
 				
 				listaMarcas.add(marca);
 				
@@ -219,6 +222,48 @@ public boolean alterar(Marca marca) {
 		}catch(Exception e) {
 			e.printStackTrace();
 			throw new Exception ("Erro ao buscar o produto");
+		}
+	}
+
+	public int verificaStatus(int id) throws Exception {
+		String comando = "SELECT status FROM marcas "
+				+ "WHERE id=?";
+		int status = 0;
+		try {
+			Statement stmt = conexao.createStatement();
+			ResultSet rs = stmt.executeQuery(comando);
+			
+			rs.next();	
+			status = rs.getInt("status");
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+			throw new Exception("Erro ao buscar marca");
+		}
+		return status;
+	}
+
+	public void alterarStatus(int id, int status) throws Exception{
+		if (status==0) {
+			status=1;
+		}else {
+			status=0;
+		}
+		
+		String comando = "UPDATE marcas SET status = ? WHERE (id = ?)";
+		
+		PreparedStatement p;
+		
+		try {
+			p = this.conexao.prepareStatement(comando);
+			p.setInt(1, id);
+			p.setInt(2, status);
+			p.executeUpdate();
+			
+		}catch(Exception e){
+			e.printStackTrace();
+			throw new Exception("Erro alterar status");
+			
 		}
 	}
 	

@@ -6,8 +6,9 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="COLDIGO.marca.exibir"/>
+		<item key="selection" value="exibir"/>
 		<list key="findhistory">
+			<item value="exibir"/>
 			<item value="COLDIGO.marca.exibir"/>
 			<item value="modalEditaProduto"/>
 			<item value="addMarca"/>
@@ -16,7 +17,6 @@
 			<item value="COLDIGO.produto.exibir"/>
 			<item value="produto.buscar"/>
 			<item value="produto.exibir"/>
-			<item value="exibir"/>
 			<item value="buscar"/>
 			<item value="AQUI"/>
 			<item value="header"/>

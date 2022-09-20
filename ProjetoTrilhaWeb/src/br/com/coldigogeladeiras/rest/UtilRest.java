@@ -22,6 +22,7 @@ public class UtilRest {
 			 */
 			
 			String valorResposta = new Gson().toJson(result);
+			
 			return Response.ok(valorResposta).build();
 		}catch(Exception ex) {
 			ex.printStackTrace();

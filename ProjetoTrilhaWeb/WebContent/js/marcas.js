@@ -54,21 +54,32 @@ $(document).ready(function() {
 		//Transforma os dados dos produtos recebidos do servidor em uma tabela HTML
 	COLDIGO.marca.exibir = function(listaDeMarcas){
 		
+		var checked = "";
+		
 		var tabela = "<table>" +
 		"<tr>" +
 		"<th>Marca</th>" +
 		"<th class='acoes'>Ações</th>" +
+		"<th>Habilitada"+
 		"</tr>";
 		
 		if(listaDeMarcas != undefined && listaDeMarcas.length > 0){
 			
 			for (var i=0; i<listaDeMarcas.length; i++){
+				console.log(listaDeMarcas[i].status)
+				if (listaDeMarcas[i].status == 1){
+					checked = "checked";
+				}
+				
 				tabela += "<tr>" +
 				"<td>"+listaDeMarcas[i].nome+"</td>" +
 				"<td>" +
 					"<a onclick=\"COLDIGO.marca.exibirEdicao('"+listaDeMarcas[i].id+"')\"><img src='../../imgs/edit.png' alt='Editar Registro'></a> " +
-					"<a onclick=\"COLDIGO.marca.excluir('"+listaDeMarcas[i].id+"')\"><img src='../../imgs/delete.png' alt='Excluir Registro'>"+
+					"<a onclick=\"COLDIGO.marca.excluir('"+listaDeMarcas[i].id+"')\"><img src='../../imgs/delete.png' alt='Excluir Registro'>" +
 				"</td>" +
+				"<td>"+
+					"<a onclick=\"COLDIGO.marca.alteraStatus('"+listaDeMarcas[i].id+"')\"><label class='switch'><input type='checkbox' "+ checked +"><span class='slider'></span></label>" +
+				"</td>"+
 				"</tr>"
 			}
 			
@@ -97,7 +108,7 @@ $(document).ready(function() {
 				COLDIGO.marca.buscar();
 			},
 			error: function(info){
-				console.log(info);
+				
 				COLDIGO.exibirAviso("Erro ao excluir marca: "+ info.status + " - "+ info.responseText);
 			}
 		});
@@ -171,8 +182,24 @@ $(document).ready(function() {
 			error: function(info){
 				COLDIGO.exibirAviso("Erro ao editar marca: "+ info.status + " - " + info.statusText);
 			}
-		})
+		});
 		
+	}
+	
+	COLDIGO.marca.alteraStatus = function(id){
+		id = parseInt(id);
+		$.ajax({
+			type: "PUT",
+			url: COLDIGO.PATH + "marca/alteraStatus/"+id,
+			data: "id="+id,
+			success: function(msg){
+				COLDIGO.exibirAviso(msg);
+				COLDIGO.marca.buscar();
+			},
+			error: function(info){
+				COLDIGO.exibirAviso("Erro ao alterar status: "+ info.status + " - " + info.statusText);
+			}
+		})
 	}
 	
 });
