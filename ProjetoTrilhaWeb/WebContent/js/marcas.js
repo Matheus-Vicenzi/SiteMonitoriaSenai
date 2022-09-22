@@ -66,7 +66,8 @@ $(document).ready(function() {
 		if(listaDeMarcas != undefined && listaDeMarcas.length > 0){
 			
 			for (var i=0; i<listaDeMarcas.length; i++){
-				console.log(listaDeMarcas[i].status)
+				checked = "";
+				
 				if (listaDeMarcas[i].status == 1){
 					checked = "checked";
 				}
@@ -80,8 +81,10 @@ $(document).ready(function() {
 				"<td>"+
 					"<a onclick=\"COLDIGO.marca.alteraStatus('"+listaDeMarcas[i].id+"')\"><label class='switch'><input type='checkbox' "+ checked +"><span class='slider'></span></label>" +
 				"</td>"+
-				"</tr>"
+				"</tr>";
+				
 			}
+			
 			
 		}else if(listaDeMarcas == ""){
 			tabela += "<tr><td colspan='6'>Nenhum registro encontrado</td></tr>";
@@ -111,6 +114,7 @@ $(document).ready(function() {
 				
 				COLDIGO.exibirAviso("Erro ao excluir marca: "+ info.status + " - "+ info.responseText);
 			}
+			
 		});
 		
 	};
@@ -187,19 +191,21 @@ $(document).ready(function() {
 	}
 	
 	COLDIGO.marca.alteraStatus = function(id){
-		id = parseInt(id);
+		
 		$.ajax({
 			type: "PUT",
 			url: COLDIGO.PATH + "marca/alteraStatus/"+id,
 			data: "id="+id,
 			success: function(msg){
 				COLDIGO.exibirAviso(msg);
-				COLDIGO.marca.buscar();
+				console.log("alterou status");
 			},
 			error: function(info){
 				COLDIGO.exibirAviso("Erro ao alterar status: "+ info.status + " - " + info.statusText);
 			}
+			
 		})
+		
 	}
 	
 });

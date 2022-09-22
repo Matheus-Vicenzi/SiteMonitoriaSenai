@@ -228,14 +228,20 @@ public boolean alterar(Marca marca) {
 	public int verificaStatus(int id) throws Exception {
 		String comando = "SELECT status FROM marcas "
 				+ "WHERE id=?";
+		
+		PreparedStatement p;
+		
 		int status = 0;
+		
 		try {
-			Statement stmt = conexao.createStatement();
-			ResultSet rs = stmt.executeQuery(comando);
+			p = this.conexao.prepareStatement(comando);
+			p.setInt(1, id);
+			ResultSet rs = p.executeQuery();
 			
-			rs.next();	
+			rs.next(); 
 			status = rs.getInt("status");
 			
+		
 		}catch(Exception e) {
 			e.printStackTrace();
 			throw new Exception("Erro ao buscar marca");
@@ -246,7 +252,7 @@ public boolean alterar(Marca marca) {
 	public void alterarStatus(int id, int status) throws Exception{
 		if (status==0) {
 			status=1;
-		}else {
+		}else if(status==1){
 			status=0;
 		}
 		
@@ -256,10 +262,10 @@ public boolean alterar(Marca marca) {
 		
 		try {
 			p = this.conexao.prepareStatement(comando);
-			p.setInt(1, id);
-			p.setInt(2, status);
+			p.setInt(1, status);
+			p.setInt(2, id);
 			p.executeUpdate();
-			
+			System.out.println("executou");
 		}catch(Exception e){
 			e.printStackTrace();
 			throw new Exception("Erro alterar status");

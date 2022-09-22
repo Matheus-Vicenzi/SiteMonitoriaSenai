@@ -218,7 +218,7 @@ public class MarcaRest extends UtilRest {
 			conec.fecharConexao();
 			
 			msg = "Status da marca alterada com sucesso";
-			
+			System.out.println("alterou");
 			return this.buildResponse(msg);
 		}catch(Exception e) {
 			e.printStackTrace();
