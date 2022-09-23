@@ -76,10 +76,10 @@ $(document).ready(function() {
 				"<td>"+listaDeMarcas[i].nome+"</td>" +
 				"<td>" +
 					"<a onclick=\"COLDIGO.marca.exibirEdicao('"+listaDeMarcas[i].id+"')\"><img src='../../imgs/edit.png' alt='Editar Registro'></a> " +
-					"<a onclick=\"COLDIGO.marca.excluir('"+listaDeMarcas[i].id+"')\"><img src='../../imgs/delete.png' alt='Excluir Registro'>" +
+					"<a onclick=\"COLDIGO.marca.excluir('"+listaDeMarcas[i].id+"')\"><img src='../../imgs/delete.png' alt='Excluir Registro'></a>" +
 				"</td>" +
 				"<td>"+
-					"<a onclick=\"COLDIGO.marca.alteraStatus('"+listaDeMarcas[i].id+"')\"><label class='switch'><input type='checkbox' "+ checked +"><span class='slider'></span></label>" +
+					"<label class='switch'><input type='checkbox' "+ checked +" onclick=\"COLDIGO.marca.alteraStatus('"+listaDeMarcas[i].id+"')\"><span class='slider'></span></label>" +
 				"</td>"+
 				"</tr>";
 				

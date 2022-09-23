@@ -25,7 +25,7 @@ public class JDBCMarcaDAO implements MarcaDAO{
 	public List<Marca> buscar(){
 		
 		//Criação de instrução SQL para buscar de todas as marcas
-		String comando = "SELECT * FROM marcas";
+		String comando = "SELECT * FROM marcas WHERE status=1";
 		
 		//Criação de uma lista para armazenar cada marca encontrada
 		List<Marca> listMarcas = new ArrayList<Marca>();
