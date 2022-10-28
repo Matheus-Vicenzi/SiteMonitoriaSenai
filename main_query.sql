@@ -1,29 +1,31 @@
-CREATE DATABASE IF NOT EXISTS bdcoldigo DEFAULT CHARACTER SET utf8 ;
+CREATE DATABASE IF NOT EXISTS desafiomonitoria DEFAULT CHARACTER SET utf8;
 
-use bdcoldigo;
-CREATE TABLE IF NOT EXISTS marcas (
-	id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    nome VARCHAR(45) NOT NULL,
-    PRIMARY KEY (id)
-    );
-    
-CREATE TABLE IF NOT EXISTS produtos(
-	id INT(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT,
-    categoria TINYINT(1) UNSIGNED NOT NULL,
-    modelo VARCHAR(45) NOT NULL,
-    capacidade INT(4) UNSIGNED NOT NULL,
-    valor DECIMAL(7,2) UNSIGNED NOT NULL,
-    marcas_id INT UNSIGNED NOT NULL,
-    PRIMARY KEY(id),
-    INDEX fk_produtos_marcas_idx (marcas_id ASC),
-    CONSTRAINT fk_produtos_marcas
-		FOREIGN KEY (marcas_id)
-        REFERENCES marcas (id)
+use desafiomonitoria;
+
+CREATE TABLE IF NOT EXISTS monitorias (
+	id INT(5) UNSIGNED NOT NULL AUTO_INCREMENT,
+    turma TINYINT(1) UNSIGNED NOT NULL,
+    monitor VARCHAR(45) NOT NULL,
+    aluno VARCHAR(45) NOT NULL,
+    trilha VARCHAR(45) NOT NULL,
+    ot INT(2) UNSIGNED NOT NULL,
+    datamonitoria DATE NOT NULL,
+    concluida TINYINT(1) UNSIGNED,
+    PRIMARY KEY(id)
 );
 
-INSERT INTO `marcas`VALUES
-	(null,'Brastempi'),
-	(null,'Continentau'),
-	(null,'Eletrolukz');
-    
-SELECT * FROM marcas;
+INSERT INTO `monitorias` VALUES (
+	1,
+    1,
+    'Matheus Vicenzi',
+    'Fulano',
+    'POO',
+    10,
+    '2022-10-21',
+    1
+);
+
+SELECT * FROM `monitorias`;
+
+ALTER TABLE monitorias
+CHANGE `concluida` `status` INT;
