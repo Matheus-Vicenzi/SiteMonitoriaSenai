@@ -1,0 +1,219 @@
+@charset "UTF-8";
+
+:root{
+    --azul-escuro: #0D6EFD;
+    --azul-claro: #3b9df3;
+}
+
+*{
+    padding: 0%;
+    margin: 0%;
+    flex: none;
+    box-sizing: border-box;     
+}
+
+h1{
+    color: #fff;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* Header */
+header{
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.btn{
+    width: 100%;
+    margin-bottom: 1%;
+    border: 1px solid var(--azul-escuro);
+    cursor: pointer;
+}
+
+.btn:hover{
+    border: 1px solid var(--azul-escuro);
+    background: #ffffff;
+    color: var(--azul-escuro);
+}
+
+#header-button-box{
+    display: flex;
+    justify-content: center;
+}
+
+.sep-btn-header{
+    width: 2rem;
+}
+
+.navbar-txt-box{
+    width: 56%;
+}
+
+.btn-header{
+    background-color: var(--azul-claro);
+    width: 30%;
+}
+
+#header-button-box{
+    display: flex;
+    width: 100%;
+}
+
+.header-button{
+    text-decoration: none;
+    color: #fff;
+    padding: 5px;
+    background-color: var(--azul-claro);
+    border-radius: 4px;
+    margin-left: 1.5rem;
+}
+
+
+
+
+
+/****** Body *******/
+
+/*FORM*/
+
+body{
+    background-color:#fff;
+}
+
+.consult-form{
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.cadastro-form-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.cad-form{
+    width: 30%;
+}
+
+.form-label{
+    background-color: var(--azul-claro);
+    color: #fff;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.form-consult {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form-label {
+    margin-bottom: 0rem;
+}
+
+#flexSwitchCheckChecked{
+    margin: 10px 0 0 ;
+}
+
+.form-input{
+    width: 30%;
+    margin-top: 1%;
+}
+
+.radio-text{
+    margin: 5px auto;
+ 	width: 5px;
+ 	padding: 5px 0;
+ 	min-width: 10px;
+    min-height: 10px;
+}
+
+#data{
+	width: 100%;
+}
+
+/**** Tabela de Consulta ****/
+
+.consulta-table{
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+}
+
+.table-responsive{
+    width: 95%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+th, td{
+    padding: 3px;
+}
+
+/******* Footer *******/
+
+footer{
+    background-color: #005CAA;
+    width: 100%;
+    height: 8%;
+    border: none;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+.social-box{
+    display: flex;
+    justify-items: center;
+    margin: 0 auto;
+    width: 30%;
+    padding: 0.5%;
+    justify-content: space-around;
+}
+
+.logo-senai-footer{
+    width: 15%;
+    padding: 0.5%;   
+}
+
+
+.footer-img{
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 768px){
+    footer{
+        position: relative;   
+    }
+    .form-input {
+        width: 100%;
+    }
+    .social-box{
+    	width: 80%;
+    	padding: 2%;
+    }
+    .logo-senai-footer{
+    	width: 40%;
+    	padding: 2%;
+	}
+}

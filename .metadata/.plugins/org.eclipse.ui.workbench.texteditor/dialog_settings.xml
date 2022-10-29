@@ -6,8 +6,10 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="idProduto"/>
+		<item key="selection" value="datamoni"/>
 		<list key="findhistory">
+			<item value="datamoni"/>
+			<item value="data"/>
 			<item value="idProduto"/>
 			<item value="slider"/>
 			<item value="COLDIGO.carregaPagina(&apos;marcas&apos;)"/>
@@ -21,8 +23,6 @@
 			<item value="COLDIGO.produto.exibir"/>
 			<item value="produto.buscar"/>
 			<item value="produto.exibir"/>
-			<item value="buscar"/>
-			<item value="AQUI"/>
 		</list>
 		<list key="replacehistory">
 			<item value="marcaId"/>

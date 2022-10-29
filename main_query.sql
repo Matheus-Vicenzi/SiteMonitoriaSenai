@@ -27,5 +27,4 @@ INSERT INTO `monitorias` VALUES (
 
 SELECT * FROM `monitorias`;
 
-ALTER TABLE monitorias
-CHANGE `concluida` `status` INT;
+ALTER TABLE `monitorias` MODIFY `datamonitoria` DATE NULL;
