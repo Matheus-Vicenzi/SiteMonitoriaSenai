@@ -18,7 +18,7 @@
 	<header>
 	</header>
 	
-	<form name="frmcadastro" id="form-cadastro" class="consult-form" method="POST" onsubmit="return cadastraMonitoria(event)">
+	<form name="frmcadastro" id="form-cadastro" class="consult-form" method="POST">
 		<div class="form-consult">
 			<div class="form-input">
 				<label for="turma" class="form-label">Turma</label>
@@ -64,7 +64,7 @@
 				<label class="form-check-label" for="status">Concluída</label>
 			</div>
 			<div class="form-buttons form-input">
-				<button class="btn btn-primary" type="submit">Cadastrar</button>
+				<button class="btn btn-primary" type="button" onclick="cadastraMonitoria()">Cadastrar</button>
 				<button class="btn btn-primary" type="reset">Limpar</button>
 			</div>
 		</div>

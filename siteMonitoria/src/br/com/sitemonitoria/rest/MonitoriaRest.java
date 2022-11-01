@@ -32,7 +32,7 @@ public class MonitoriaRest extends UtilRest {
 		
 		try {
 			Monitoria monitoria = new Gson().fromJson(dadosMonitoria, Monitoria.class);
-			System.out.println(monitoria.getDataMonitoria());
+			
 			Conexao conec = new Conexao();
 			Connection conexao = conec.abrirConexao();
 			JDBCMonitoriaDAO jdbcMonitoria = new JDBCMonitoriaDAO(conexao);

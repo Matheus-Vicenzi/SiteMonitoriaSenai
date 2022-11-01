@@ -2,8 +2,7 @@ function carregaNome(){
 	$("#page-title").text("Cadastro");
 }
 
-function cadastraMonitoria(e){
-	e.preventDefault();
+function cadastraMonitoria(){
 	
 	var monitoria = new Object();
 	
@@ -18,7 +17,7 @@ function cadastraMonitoria(e){
 	monitoria.monitor = document.frmcadastro.txtmonitor.value;
 	monitoria.trilha = document.frmcadastro.txttrilha.value;
 	monitoria.ot = document.frmcadastro.txtot.value;
-	monitoria.datamonitoria = document.frmcadastro.txtdata.value;
+	monitoria.dataMonitoria = document.frmcadastro.txtdata.value;
 	
 	if(monitoria.turma == ""){
 		alert("Campo 'Turma' não preenchido");
@@ -45,13 +44,12 @@ function cadastraMonitoria(e){
 		ot.focus();
 		return false;
 	}
-	if(monitoria.datamonitoria == ""){
+	if(monitoria.dataMonitoria == ""){
 		alert("Campo 'Data' não preenchido");
 		document.frmcadastro.txtot.focus();
 		return false;
 		
 	}else{
-		console.log(monitoria);
 		$.ajax({
 			type:"POST",
 			url: SITE.PATH + "monitoria/cadastrar",
@@ -65,13 +63,14 @@ function cadastraMonitoria(e){
 				
 			},
 			error: function(info){
+				console.log(monitoria.datamonitoria);
 				alert("Erro ao cadastrar monitoria - " + info.status + " - " + info.responseText);
-				console.log("Erro ao cadastrar monitoria - " + info.status + " - " + info.responseText)
-				return false;
 			}
 		})	
 	}
 	
-	return true;
+}
+
+function carregaMonitorias(){
 	
 }

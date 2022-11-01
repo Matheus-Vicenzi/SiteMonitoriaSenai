@@ -1,5 +1,8 @@
 package br.com.sitemonitoria.modelo;
 
+import java.util.Date;
+import java.text.SimpleDateFormat;
+
 public class Monitoria {
 
 	private int id;

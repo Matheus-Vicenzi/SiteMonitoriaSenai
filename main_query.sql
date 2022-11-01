@@ -27,4 +27,6 @@ INSERT INTO `monitorias` VALUES (
 
 SELECT * FROM `monitorias`;
 
-ALTER TABLE `monitorias` MODIFY `datamonitoria` DATE NULL;
+DELETE FROM monitorias WHERE monitorias.id > 1;
+
+ALTER TABLE `monitorias` MODIFY `datamonitoria` DATE NOT NULL;
