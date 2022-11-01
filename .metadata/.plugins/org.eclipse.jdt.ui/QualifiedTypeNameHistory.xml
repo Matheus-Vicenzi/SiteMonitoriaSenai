@@ -30,4 +30,5 @@
     <fullyQualifiedTypeName name="javax.ws.rs.Path"/>
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="java.util.SimpleTimeZone"/>
 </qualifiedTypeNameHistroy>

@@ -2,6 +2,30 @@ function carregaNome(){
 	$("#page-title").text("Cadastro");
 }
 
+
+
+function buscarMonitorias(){
+	
+	$.ajax({
+		type: "GET",
+		utl: SITE.PATH + "monitoria/buscar",
+		success: function(monitorias){
+			
+			if (monitorias!=""){
+				
+				
+				
+			}
+			
+		}
+	})
+	
+}
+
+
+
+
+
 function cadastraMonitoria(){
 	
 	var monitoria = new Object();

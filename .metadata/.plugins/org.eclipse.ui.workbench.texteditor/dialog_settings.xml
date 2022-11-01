@@ -6,8 +6,11 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="datamoni"/>
+		<item key="selection" value=""/>
 		<list key="findhistory">
+			<item value="selMarca"/>
+			<item value="selMarcaEdicao"/>
+			<item value="console"/>
 			<item value="datamoni"/>
 			<item value="data"/>
 			<item value="idProduto"/>
@@ -20,9 +23,6 @@
 			<item value="modalEditaProduto"/>
 			<item value="addMarca"/>
 			<item value="carregarMarcas"/>
-			<item value="COLDIGO.produto.exibir"/>
-			<item value="produto.buscar"/>
-			<item value="produto.exibir"/>
 		</list>
 		<list key="replacehistory">
 			<item value="marcaId"/>
