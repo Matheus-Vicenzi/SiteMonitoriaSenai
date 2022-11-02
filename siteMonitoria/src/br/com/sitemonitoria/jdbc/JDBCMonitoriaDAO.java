@@ -1,6 +1,7 @@
 package br.com.sitemonitoria.jdbc;
 
 import br.com.sitemonitoria.jdbcinterface.MonitoriaDAO;
+import br.com.sitemonitoria.modelo.FiltroMonitoria;
 import br.com.sitemonitoria.modelo.Monitoria;
 
 import java.sql.Connection;
@@ -26,9 +27,10 @@ public class JDBCMonitoriaDAO implements MonitoriaDAO {
 	
 	public void cadastrar(Monitoria monitoria) throws Exception {
 		
+		
 		String comando = "INSERT INTO monitorias "
-				+ "(id, turma, monitor, aluno, trilha, ot, datamonitoria, status) "
-				+ "VALUES (?,?,?,?,?,?,?,?)";
+				+ "(id, turma, monitor, aluno, datamonitoria, status, obs) "
+				+ "VALUES (?,?,?,?,?,?,?)";
 		
 		PreparedStatement p;
 		
@@ -39,10 +41,9 @@ public class JDBCMonitoriaDAO implements MonitoriaDAO {
 			p.setInt(2, monitoria.getTurma());
 			p.setString(3, monitoria.getMonitor());
 			p.setString(4, monitoria.getAluno());
-			p.setString(5, monitoria.getTrilha());
-			p.setInt(6, monitoria.getOt());
-			p.setString(7, monitoria.getDataMonitoria());
-			p.setInt(8, monitoria.getStatus());
+			p.setString(5, monitoria.getDataMonitoria());
+			p.setInt(6, monitoria.getStatus());
+			p.setString(7, monitoria.getObs());
 			
 			p.execute();
 		}catch(Exception e) {
@@ -51,5 +52,23 @@ public class JDBCMonitoriaDAO implements MonitoriaDAO {
 		}
 		
 	}
+
+	
+	public List<JsonObject> consultar(FiltroMonitoria monitoria) {
+		
+		String comando = "SELECT * FROM monitorias ";
+		
+		if((monitoria.getId()==0)) {
+			
+			//TODO
+			
+		}
+		return null;
+		
+		
+	}
+
+
+	
 	
 }

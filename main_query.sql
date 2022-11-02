@@ -7,22 +7,20 @@ CREATE TABLE IF NOT EXISTS monitorias (
     turma TINYINT(1) UNSIGNED NOT NULL,
     monitor VARCHAR(45) NOT NULL,
     aluno VARCHAR(45) NOT NULL,
-    trilha VARCHAR(45) NOT NULL,
-    ot INT(2) UNSIGNED NOT NULL,
+    obs VARCHAR(255) NOT NULL,
     datamonitoria DATE NOT NULL,
     concluida TINYINT(1) UNSIGNED,
     PRIMARY KEY(id)
 );
 
 INSERT INTO `monitorias` VALUES (
-	1,
-    1,
+	NULL,
+    2,
     'Matheus Vicenzi',
-    'Fulano',
-    'POO',
-    10,
-    '2022-10-21',
-    1
+    'Ful',
+    '2022-10-22',
+    1,
+    'Teste'
 );
 
 SELECT * FROM `monitorias`;
@@ -30,3 +28,8 @@ SELECT * FROM `monitorias`;
 DELETE FROM monitorias WHERE monitorias.id > 1;
 
 ALTER TABLE `monitorias` MODIFY `datamonitoria` DATE NOT NULL;
+
+ALTER TABLE `monitorias` DROP COLUMN `ot`;
+
+ALTER TABLE `monitorias`
+ADD COLUMN `obs` VARCHAR(255) NOT NULL; 

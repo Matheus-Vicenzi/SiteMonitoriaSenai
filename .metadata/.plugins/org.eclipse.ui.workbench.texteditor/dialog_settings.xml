@@ -6,8 +6,10 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value=""/>
+		<item key="selection" value="AQUI"/>
 		<list key="findhistory">
+			<item value="AQUI"/>
+			<item value="form-input"/>
 			<item value="selMarca"/>
 			<item value="selMarcaEdicao"/>
 			<item value="console"/>
@@ -21,8 +23,6 @@
 			<item value="COLDIGO.marca.alteraStatus"/>
 			<item value="exibir"/>
 			<item value="modalEditaProduto"/>
-			<item value="addMarca"/>
-			<item value="carregarMarcas"/>
 		</list>
 		<list key="replacehistory">
 			<item value="marcaId"/>

@@ -134,6 +134,10 @@ body{
     margin-top: 1%;
 }
 
+.form-control{
+	margin-top: 1%;
+}
+
 .radio-text{
     margin: 5px auto;
  	width: 5px;
@@ -142,9 +146,6 @@ body{
     min-height: 10px;
 }
 
-#data{
-	width: 100%;
-}
 
 /**** Tabela de Consulta ****/
 

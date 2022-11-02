@@ -21,6 +21,10 @@
 	<form name="frmcadastro" id="form-cadastro" class="consult-form" method="POST">
 		<div class="form-consult">
 			<div class="form-input">
+				<label for="aluno" class="form-label">Aluno</label>
+				<input class="form-control" type="text" name="txtaluno" id="aluno">
+			</div>
+			<div class="form-input">
 				<label for="turma" class="form-label">Turma</label>
 				<select class="form-control form-select" name="txtturma" id="turma">
 					<option value="">Selecione</option>
@@ -30,34 +34,16 @@
 				</select>
 			</div>
 			<div class="form-input">
-				<label for="aluno" class="form-label">Aluno</label>
-				<input class="form-control" type="text" name="txtaluno" id="aluno">
-			</div>
-			<div class="form-input">
 				<label for="monitor" class="form-label">Monitor</label>
 				<input class="form-control" type="text" name="txtmonitor" id="monitor">
 			</div>
 			<div class="form-input">
-				<label for="trilha" class="form-label">Trilha</label>
-				<select class="form-control form-select" name="txttrilha" id="trilha">
-					<option value="">Selecione</option>
-					<option value="1">Lógica de Programação</option>
-					<option value="2">Programação Orientada a Objetos</option>
-					<option value="3">Front-end</option>
-					<option value="4">Back-end</option>
-					<option value="5">Projeto Individual</option>
-					<option value="6">Git/GitHub</option>
-					<option value="7">Banco de Dados</option>
-					<option value="8">Segurança (Autenticação)</option>
-				</select>
-			</div>
-			<div class="form-input">
-				<label for="ot" class="form-label">OT</label>
-				<input class="form-control" type="text" name="txtot" id="ot">
-			</div>
-			<div class="form-input">
 				<label for="data" class="form-label">Data Monitoria</label>
-				<input class="form-control form-input" type="date" name="txtdata" id="data">
+				<input class="form-control" type="date" name="txtdata" id="data">
+			</div>
+			<div class="form-input">
+				<label for="obs" class="form-label">Observações</label>
+  				<textarea name="txtobs" class="form-control" placeholder="Deixe aqui suas observações" id="obs" maxlength="255"></textarea>
 			</div>
 			<div class="form-input form-check form-switch">
 				<input class="form-check-input" type="checkbox" role="switch" name="txtstatus" id="status">

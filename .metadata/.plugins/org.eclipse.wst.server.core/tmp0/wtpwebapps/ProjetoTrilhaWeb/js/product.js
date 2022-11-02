@@ -82,7 +82,6 @@ $(document).ready(function() {
 			COLDIGO.exibirAviso("Preencha todos os campos!");
 			
 		} else {
-			var formato = { minimumFractionDigits: 2 , style: 'currency', currency: 'BRL' }
 			$.ajax({
 				type: "POST",
 				url: COLDIGO.PATH + "produto/inserir",

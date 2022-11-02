@@ -2,6 +2,8 @@ package br.com.sitemonitoria.rest;
 
 
 import java.sql.Connection;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -16,9 +18,11 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 
 import br.com.sitemonitoria.bd.Conexao;
 import br.com.sitemonitoria.jdbc.JDBCMonitoriaDAO;
+import br.com.sitemonitoria.modelo.FiltroMonitoria;
 import br.com.sitemonitoria.modelo.Monitoria;
 
 
@@ -43,6 +47,37 @@ public class MonitoriaRest extends UtilRest {
 			
 			return this.buildResponse("Monitoria cadastrada com sucesso!");
 			
+		}catch(Exception e) {
+			e.printStackTrace();
+			return this.buildErrorResponse(e.getMessage());
+		}
+		
+	}
+	
+	@GET
+	@Path("/buscar")
+	@Consumes("application/*")
+	public Response buscar(String dadosMonitoria) {
+			
+		try {
+			
+			List<JsonObject> listaMonitorias = new ArrayList<JsonObject>();
+			
+			FiltroMonitoria monitoria = new Gson().fromJson(dadosMonitoria, FiltroMonitoria.class);
+			
+			Conexao conec = new Conexao();
+			Connection conexao = conec.abrirConexao();
+			JDBCMonitoriaDAO jdbcMonitoria = new JDBCMonitoriaDAO(conexao);
+			
+			
+			
+			listaMonitorias = jdbcMonitoria.consultar(monitoria);
+			
+			
+			String json = new Gson().toJson(listaMonitorias);
+			return this.buildResponse(json);
+			
+		
 		}catch(Exception e) {
 			e.printStackTrace();
 			return this.buildErrorResponse(e.getMessage());

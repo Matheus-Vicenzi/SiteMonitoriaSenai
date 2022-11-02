@@ -3,29 +3,6 @@ function carregaNome(){
 }
 
 
-
-function buscarMonitorias(){
-	
-	$.ajax({
-		type: "GET",
-		utl: SITE.PATH + "monitoria/buscar",
-		success: function(monitorias){
-			
-			if (monitorias!=""){
-				
-				
-				
-			}
-			
-		}
-	})
-	
-}
-
-
-
-
-
 function cadastraMonitoria(){
 	
 	var monitoria = new Object();
@@ -36,12 +13,11 @@ function cadastraMonitoria(){
 		monitoria.status = 1;
 	}
 	
-	monitoria.turma = document.frmcadastro.txtturma.value;
 	monitoria.aluno = document.frmcadastro.txtaluno.value;
+	monitoria.turma = document.frmcadastro.txtturma.value;
 	monitoria.monitor = document.frmcadastro.txtmonitor.value;
-	monitoria.trilha = document.frmcadastro.txttrilha.value;
-	monitoria.ot = document.frmcadastro.txtot.value;
 	monitoria.dataMonitoria = document.frmcadastro.txtdata.value;
+	monitoria.obs = document.frmcadastro.txtobs.value;
 	
 	if(monitoria.turma == ""){
 		alert("Campo 'Turma' não preenchido");
@@ -58,21 +34,10 @@ function cadastraMonitoria(){
 		document.frmcadastro.txtmonitor.focus();
 		return false;
 	}
-	if(monitoria.trilha == ""){
-		alert("Campo 'Trilha' não preenchido");
-		document.frmcadastro.txttrilha.focus();
+	if(monitoria.obs == ""){
+		alert("Campo 'Observações' não preenchido");
+		obs.focus();
 		return false;
-	}
-	if(monitoria.ot == ""){
-		alert("Campo 'OT' não preenchido");
-		ot.focus();
-		return false;
-	}
-	if(monitoria.dataMonitoria == ""){
-		alert("Campo 'Data' não preenchido");
-		document.frmcadastro.txtot.focus();
-		return false;
-		
 	}else{
 		$.ajax({
 			type:"POST",

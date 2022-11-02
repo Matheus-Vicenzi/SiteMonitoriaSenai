@@ -19,8 +19,8 @@
 	<form class="consult-form" name="frmconsulta" method="POST" onsubmit="return validaConsulta()">
 		<div class="form-consult">
 			<div class="form-input">
-				<label for="id-monitoria" class="form-label">ID Monitoria</label>
-				<input class="form-control" type="text" name="txtid" id="id-monitoria">
+				<label for="aluno" class="form-label">Aluno</label>
+				<input class="form-control" type="text" name="txtaluno" id="aluno">
 			</div>
 			<div class="form-input">
 				<label for="turma" class="form-label">Turma</label>
@@ -35,35 +35,24 @@
 				<input class="form-control" type="text" name="txtmonitor" id="monitor">
 			</div>
 			<div class="form-input">
-				<label for="aluno" class="form-label">Aluno</label>
-				<input class="form-control" type="text" name="txtaluno" id="aluno">
+				<label for="data" class="form-label">Data Início</label>
+				<input class="form-control" type="date" name="txtdatainicio" id="dataInicio">
 			</div>
 			<div class="form-input">
-				<label for="trilha" class="form-label">Trilha</label>
-				<select class="form-control form-select" name="txttrilha" id="trilha">
+				<label for="data" class="form-label">Data Fim</label>
+				<input class="form-control" type="date" name="txtdatafim" id="dataFim">
+			</div>
+			<div class="form-input">
+				<label for="obs" class="form-label">Observações</label>
+  				<textarea class="form-control" placeholder="Deixe aqui suas observações" id="obs"></textarea>
+			</div>
+			<div class="form-input">
+				<label for="status" class="form-label">Turma</label>
+				<select class="form-control form-select" name="txtstatus" id="status">
 					<option value="">Selecione</option>
-					<option value="logica">Lógica de Programação</option>
-					<option value="po">Programação Orientada a Objetos</option>
-					<option value="front">Front-end</option>
-					<option value="back">Back-end</option>
-					<option value="git">Git/GitHub</option>
-					<option value="banco">Banco de Dados</option>
-					<option value="seguranca">Segurança (Autenticação)</option>
-					<option value="individual">Projeto Individual</option>
-					<option value="consolidado">Projeto Consolidado</option>
+					<option value="1">Concluída</option>
+					<option value="-1">Não Concluída</option>
 				</select>
-			</div>
-			<div class="form-input">
-				<label for="ot" class="form-label">OT</label>
-				<input class="form-control" type="text" name="txtot" id="ot">
-			</div>
-			<div class="form-input">
-				<label for="data" class="form-label">Data Monitoria</label>
-				<input class="form-control form-input" type="date" name="txtdata" id="data">
-			</div>
-			<div class="form-input form-check form-switch">
-				<input class="form-check-input" type="checkbox" role="switch" id="status" name="txtstatus">
-				<label class="form-check-label" for="status">Concluída</label>
 			</div>
 			<div class="form-buttons form-input">
 				<button class="btn btn-primary" type="submit">Consultar</button>
@@ -75,24 +64,23 @@
 		<table style="border: 1px solid black;" class="table">
 			<thead>
 				<tr style="border: 1px solid black;">
-					<th>ID</th>
+					<th>*</th>
 					<th>Aluno</th>
 					<th>Turma</th>
 					<th>Monitor</th>
 					<th>Data</th>
-					<th>OT</th>
 					<th>Status</th>
-					<th>Conteúdo</th>
+					<th>Observações</th>
 				</tr>
 			</thead>
 			<tbody class="table-group-divider">
-				<tr style="border: 1px solid black;">
+				<tr style="border: 1px solid black;" id="consult-head">
 				<th scope="row">1</th>
-					<td>Matheus Vicenzi</td>
 					<td>1</td>
-					<td>Vicenzi Matheus</td>
+					<td>Fulano</td>
+					<td>1</td>
+					<td>Ciclano</td>
 					<td>21/11/2022</td>
-					<td>1</td>
 					<td>Concluida</td>
 					<td>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</td>
 				</tr>

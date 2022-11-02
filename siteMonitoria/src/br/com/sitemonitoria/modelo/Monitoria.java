@@ -1,19 +1,14 @@
 package br.com.sitemonitoria.modelo;
 
-import java.util.Date;
-import java.text.SimpleDateFormat;
-
 public class Monitoria {
 
 	private int id;
 	private int turma;
 	private String monitor;
 	private String aluno;
-	private String trilha;
-	private int ot;
 	private String dataMonitoria;
 	private int status;
-	
+	private String obs;
 	
 	
 	public int getId() {
@@ -40,17 +35,11 @@ public class Monitoria {
 	public void setAluno(String aluno) {
 		this.aluno = aluno;
 	}
-	public String getTrilha() {
-		return trilha;
+	public String getObs() {
+		return obs;
 	}
-	public void setTrilha(String trilha) {
-		this.trilha = trilha;
-	}
-	public int getOt() {
-		return ot;
-	}
-	public void setOt(int ot) {
-		this.ot = ot;
+	public void setObs(String obs) {
+		this.obs = obs;
 	}
 	public String getDataMonitoria() {
 		return dataMonitoria;
