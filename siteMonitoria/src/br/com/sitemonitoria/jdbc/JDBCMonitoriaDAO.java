@@ -54,15 +54,34 @@ public class JDBCMonitoriaDAO implements MonitoriaDAO {
 	}
 
 	
-	public List<JsonObject> consultar(FiltroMonitoria monitoria) {
+	public List<JsonObject> consultar(FiltroMonitoria monitoria) throws Exception {
 		
 		String comando = "SELECT * FROM monitorias ";
 		
-		if((monitoria.getId()==0)) {
+		
+		List<JsonObject> listaMonitorias = new ArrayList<JsonObject>();
+		JsonObject monitoriaJson = null;
+		
+		try {
 			
-			//TODO
+			Statement stmt = conexao.createStatement();
+			ResultSet rs = stmt.executeQuery(comando);
 			
+			while(rs.next()) {
+				
+				//TODO Utilizar o ResultSet para receber os dados do banco e armazenar no objeto monitoriaJson
+				
+				
+				monitoriaJson = new JsonObject();
+				listaMonitorias.add(monitoriaJson);
+				
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+			throw new Exception("Erro ao retornar Monitorias");
 		}
+		
 		return null;
 		
 		

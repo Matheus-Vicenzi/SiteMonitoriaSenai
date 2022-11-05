@@ -29,25 +29,15 @@ function buscarMonitorias(){
 	
 	var monitoria = new Object(); 
 	
-	if(document.frmconsulta.txtid.value != ""){
-		monitoria.id = document.frmconsulta.txtid.value;
-	}
-	if(document.frmconsulta.txtaluno.value != ""){
-		monitoria.aluno = document.frmconsulta.txtaluno.value;
-	}
-	if(document.frmconsulta.txtmonitor.value != ""){
-		monitoria.monitor = document.frmconsulta.txtmonitor.value;
-	}
-	if(document.frmconsulta.txttrilha.value != ""){
-		monitoria.trilha = document.frmconsulta.txttrilha.value;
-	}
-	if(document.frmconsulta.txtot.value != ""){
-		monitoria.ot = document.frmconsulta.txtot.value;
-	}
-	if(document.frmconsulta.txtdata.value != ""){
-		monitoria.dataMonitoria = document.frmconsulta.txtdata.value;
-	}
+	var itens = document.getElementById("consult-head");
 	
+	monitoria.aluno = document.frmconsulta.txtaluno.value;
+	monitoria.turma = document.frmconsulta.txtturma.value
+	monitoria.monitor = document.frmconsulta.txtmonitor.value;
+	monitoria.dataMonitoria = document.frmconsulta.txtdatainicio.value;
+	monitoria.dataFim = document.frmconsulta.txtdatafim.value;
+	monitoria.obs = document.frmconsulta.txtobs.value;
+	monitoria.status = document.frmconsulta.txtstatus.value;
 	
 	$.ajax({
 		type: "GET",
@@ -57,8 +47,14 @@ function buscarMonitorias(){
 			
 			if (monitorias!=""){
 				
-				$("#consult-head").html("");
 				
+			}else{
+				$(itens).html("");
+				
+				var td = document.createElement("td");
+				td.setAttribute("colspan", "7")
+				td.innerHTML = "Nenhuma monitoria cadastrada";
+				itens.append(td);
 			}
 			
 		}

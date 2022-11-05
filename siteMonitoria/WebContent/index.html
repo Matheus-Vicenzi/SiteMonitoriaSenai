@@ -16,78 +16,79 @@
 <body>
 	<header>
 	</header>
-	<form class="consult-form" name="frmconsulta" method="POST" onsubmit="return validaConsulta()">
-		<div class="form-consult">
-			<div class="form-input">
-				<label for="aluno" class="form-label">Aluno</label>
-				<input class="form-control" type="text" name="txtaluno" id="aluno">
+	<section>
+		<form class="consult-form" name="frmconsulta" method="POST" onsubmit="return validaConsulta()">
+			<div class="form-consult">
+				<div class="form-input">
+					<label for="aluno" class="form-label">Aluno</label>
+					<input class="form-control" type="text" name="txtaluno" id="aluno">
+				</div>
+				<div class="form-input">
+					<label for="turma" class="form-label">Turma</label>
+					<select class="form-control form-select" name="txtturma" id="turma">
+						<option value="">Selecione</option>
+						<option value="1">1° Ano</option>
+						<option value="2">2° Ano</option>
+						<option value="3">3° Ano</option>
+					</select>
+				</div>
+				<div class="form-input">					
+					<label for="monitor" class="form-label">Monitor</label>
+					<input class="form-control" type="text" name="txtmonitor" id="monitor">
+				</div>
+				<div class="form-input">
+					<label for="data" class="form-label">Data Início</label>
+					<input class="form-control" type="date" name="txtdatainicio" id="dataInicio">
+				</div>
+				<div class="form-input">
+					<label for="data" class="form-label">Data Fim</label>
+					<input class="form-control" type="date" name="txtdatafim" id="dataFim">
+				</div>
+				<div class="form-input">
+					<label for="obs" class="form-label">Observações</label>
+	  				<textarea class="form-control" placeholder="Deixe aqui suas observações" id="obs" name="txtobs"></textarea>
+				</div>
+				<div class="form-input">
+					<label for="status" class="form-label">Status</label>
+					<select class="form-control form-select" name="txtstatus" id="status">
+						<option value="">Selecione</option>
+						<option value="1">Concluída</option>
+						<option value="-1">Não Concluída</option>
+					</select>
+				</div>
+				<div class="form-buttons form-input">
+					<button class="btn btn-primary" type="submit">Consultar</button>
+					<button class="btn btn-primary" type="reset">Limpar</button>
+				</div>
 			</div>
-			<div class="form-input">
-				<label for="turma" class="form-label">Turma</label>
-				<select class="form-control form-select" name="txtturma" id="turma">
-					<option value="">Selecione</option>
-					<option value="1">1° Ano</option>
-					<option value="2">2° Ano</option>
-					<option value="3">3° Ano</option>
-				</select>
-			</div>
-			<div class="form-input">					<label for="monitor" class="form-label">Monitor</label>
-				<input class="form-control" type="text" name="txtmonitor" id="monitor">
-			</div>
-			<div class="form-input">
-				<label for="data" class="form-label">Data Início</label>
-				<input class="form-control" type="date" name="txtdatainicio" id="dataInicio">
-			</div>
-			<div class="form-input">
-				<label for="data" class="form-label">Data Fim</label>
-				<input class="form-control" type="date" name="txtdatafim" id="dataFim">
-			</div>
-			<div class="form-input">
-				<label for="obs" class="form-label">Observações</label>
-  				<textarea class="form-control" placeholder="Deixe aqui suas observações" id="obs"></textarea>
-			</div>
-			<div class="form-input">
-				<label for="status" class="form-label">Turma</label>
-				<select class="form-control form-select" name="txtstatus" id="status">
-					<option value="">Selecione</option>
-					<option value="1">Concluída</option>
-					<option value="-1">Não Concluída</option>
-				</select>
-			</div>
-			<div class="form-buttons form-input">
-				<button class="btn btn-primary" type="submit">Consultar</button>
-				<button class="btn btn-primary" type="reset">Limpar</button>
-			</div>
+		</form>
+		<div class="table-responsive">
+			<table style="border: 1px solid black;" class="table">
+				<thead>
+					<tr style="border: 1px solid black;">
+						<th>*</th>
+						<th>Aluno</th>
+						<th>Turma</th>
+						<th>Monitor</th>
+						<th>Data</th>
+						<th>Status</th>
+						<th>Observações</th>
+					</tr>
+				</thead>
+				<tbody class="table-group-divider">
+					<tr style="border: 1px solid black;" id="consult-head">
+					<th scope="row">1</th>
+						<td>Fulano</td>
+						<td>1</td>
+						<td>Ciclano</td>
+						<td>21/11/2022</td>
+						<td>Concluida</td>
+						<td>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
-	</form>
-	<div class="table-responsive">
-		<table style="border: 1px solid black;" class="table">
-			<thead>
-				<tr style="border: 1px solid black;">
-					<th>*</th>
-					<th>Aluno</th>
-					<th>Turma</th>
-					<th>Monitor</th>
-					<th>Data</th>
-					<th>Status</th>
-					<th>Observações</th>
-				</tr>
-			</thead>
-			<tbody class="table-group-divider">
-				<tr style="border: 1px solid black;" id="consult-head">
-				<th scope="row">1</th>
-					<td>1</td>
-					<td>Fulano</td>
-					<td>1</td>
-					<td>Ciclano</td>
-					<td>21/11/2022</td>
-					<td>Concluida</td>
-					<td>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-	
+	</section>
 	<footer>
 	</footer>
 	<input type="hidden" name="idmonitoria">
