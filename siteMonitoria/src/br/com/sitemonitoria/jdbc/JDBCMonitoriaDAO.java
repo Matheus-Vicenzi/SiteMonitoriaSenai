@@ -56,7 +56,7 @@ public class JDBCMonitoriaDAO implements MonitoriaDAO {
 	
 	public List<JsonObject> consultar(FiltroMonitoria monitoria) throws Exception {
 		
-		String comando = "SELECT * FROM monitorias ";
+		String comando = "SELECT * FROM monitorias ;";
 		
 		
 		List<JsonObject> listaMonitorias = new ArrayList<JsonObject>();
@@ -69,10 +69,24 @@ public class JDBCMonitoriaDAO implements MonitoriaDAO {
 			
 			while(rs.next()) {
 				
-				//TODO Utilizar o ResultSet para receber os dados do banco e armazenar no objeto monitoriaJson
-				
+				int id = rs.getInt("id");
+				String aluno = rs.getString("aluno");
+				int turma = rs.getInt("turma");
+				String monitor = rs.getString("monitor");
+				String dataMonitoria = rs.getString("datamonitoria");
+				int status = rs.getInt("status");
+				String obs = rs.getString("obs");
 				
 				monitoriaJson = new JsonObject();
+				monitoriaJson.addProperty("id", id);
+				monitoriaJson.addProperty("aluno", aluno);
+				monitoriaJson.addProperty("turma", turma);
+				monitoriaJson.addProperty("monitor", monitor);
+				monitoriaJson.addProperty("datamonitoria", dataMonitoria);
+				monitoriaJson.addProperty("status", status);
+				monitoriaJson.addProperty("obs", obs);
+				
+				
 				listaMonitorias.add(monitoriaJson);
 				
 			}
@@ -82,7 +96,7 @@ public class JDBCMonitoriaDAO implements MonitoriaDAO {
 			throw new Exception("Erro ao retornar Monitorias");
 		}
 		
-		return null;
+		return listaMonitorias;
 		
 		
 	}

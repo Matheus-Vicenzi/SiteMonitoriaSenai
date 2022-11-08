@@ -17,7 +17,7 @@
 	<header>
 	</header>
 	<section>
-		<form class="consult-form" name="frmconsulta" method="POST" onsubmit="return validaConsulta()">
+		<form class="consult-form" name="frmconsulta">
 			<div class="form-consult">
 				<div class="form-input">
 					<label for="aluno" class="form-label">Aluno</label>
@@ -57,7 +57,7 @@
 					</select>
 				</div>
 				<div class="form-buttons form-input">
-					<button class="btn btn-primary" type="submit">Consultar</button>
+					<button class="btn btn-primary" type="button" onclick="buscarMonitorias()">Consultar</button>
 					<button class="btn btn-primary" type="reset">Limpar</button>
 				</div>
 			</div>

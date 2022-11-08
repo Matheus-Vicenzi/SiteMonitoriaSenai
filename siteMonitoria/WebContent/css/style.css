@@ -122,7 +122,7 @@ body{
 }
 
 .form-label {
-    margin-bottom: 0rem;
+    margin-bottom: 0;
 }
 
 #flexSwitchCheckChecked{
@@ -130,7 +130,7 @@ body{
 }
 
 .form-input{
-    width: 30%;
+    width: 60%;
     margin-top: 1%;
 }
 

@@ -57,8 +57,9 @@ public class MonitoriaRest extends UtilRest {
 	@GET
 	@Path("/buscar")
 	@Consumes("application/*")
+	@Produces(MediaType.APPLICATION_JSON)
 	public Response buscar(String dadosMonitoria) {
-			
+	
 		try {
 			
 			List<JsonObject> listaMonitorias = new ArrayList<JsonObject>();
@@ -69,15 +70,12 @@ public class MonitoriaRest extends UtilRest {
 			Connection conexao = conec.abrirConexao();
 			JDBCMonitoriaDAO jdbcMonitoria = new JDBCMonitoriaDAO(conexao);
 			
-			
-			
 			listaMonitorias = jdbcMonitoria.consultar(monitoria);
 			
-			
 			String json = new Gson().toJson(listaMonitorias);
+			System.out.println(json);
 			return this.buildResponse(json);
 			
-		
 		}catch(Exception e) {
 			e.printStackTrace();
 			return this.buildErrorResponse(e.getMessage());

@@ -3,9 +3,9 @@ package br.com.sitemonitoria.modelo;
 public class Monitoria {
 
 	private int id;
+	private String aluno;
 	private int turma;
 	private String monitor;
-	private String aluno;
 	private String dataMonitoria;
 	private int status;
 	private String obs;
