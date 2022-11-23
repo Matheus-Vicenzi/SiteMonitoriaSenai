@@ -48,7 +48,7 @@ function buscarMonitorias(){
 		listaMonitorias = JSON.parse(listaMonitorias);
 			
 			if (listaMonitorias!=""){
-				for(let i=0; i<=listaMonitorias.length; i++)){
+				for(let i=0; i<=listaMonitorias.length; i++){
 					$(itens).html("");
 					
 					var aluno = document.createElement("td");

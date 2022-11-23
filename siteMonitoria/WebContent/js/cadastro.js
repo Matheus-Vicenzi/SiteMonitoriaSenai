@@ -60,6 +60,15 @@ function cadastraMonitoria(){
 	
 }
 
-function carregaMonitorias(){
+
 	
-}
+	document.addEventListener('keyup', function(e){
+  		if (e.key === "Enter") { 
+   			cadastraMonitoria()
+		}
+	});
+
+
+
+
+
