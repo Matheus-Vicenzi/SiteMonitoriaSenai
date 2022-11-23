@@ -6,8 +6,13 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value=".form"/>
+		<item key="selection" value="print"/>
 		<list key="findhistory">
+			<item value="print"/>
+			<item value=".aviso"/>
+			<item value="aviso"/>
+			<item value="alerta"/>
+			<item value="carreg"/>
 			<item value=".form"/>
 			<item value="validaConsulta"/>
 			<item value="consult-head"/>
@@ -18,11 +23,6 @@
 			<item value="selMarcaEdicao"/>
 			<item value="console"/>
 			<item value="datamoni"/>
-			<item value="data"/>
-			<item value="idProduto"/>
-			<item value="slider"/>
-			<item value="COLDIGO.carregaPagina(&apos;marcas&apos;)"/>
-			<item value="COLDIGO.marca.exibir"/>
 		</list>
 		<list key="replacehistory">
 			<item value="marcaId"/>

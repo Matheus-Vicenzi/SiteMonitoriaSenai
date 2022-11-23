@@ -57,6 +57,8 @@ function buscarMonitorias(){
 					var datamonitoria = document.createElement("td");
 					var status = document.createElement("td");
 					var obs = document.createElement("td");
+					
+					//adicionar na tabela
 				}
 				
 			}else{
@@ -66,9 +68,16 @@ function buscarMonitorias(){
 				td.setAttribute("colspan", "7")
 				td.innerHTML = "Nenhuma monitoria cadastrada";
 				itens.append(td);
+				$(itens).addClass("aviso");
 			}
 			
 		}
 	})
 	
 }
+
+document.addEventListener('keyup', function(e){
+  	if (e.key === "Enter") { 
+   		buscarMonitorias()
+	}
+});

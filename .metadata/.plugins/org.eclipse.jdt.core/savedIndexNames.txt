@@ -56,7 +56,6 @@ INDEX VERSION 1.131+C:\Users\matheus_vicenzi\Desktop\workspace_BackEnd\.metadata
 3986482179.index
 3415080537.index
 2123274133.index
-1933125832.index
 387829504.index
 218953349.index
 3481053484.index

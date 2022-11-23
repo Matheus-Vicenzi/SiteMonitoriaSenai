@@ -73,7 +73,7 @@ public class MonitoriaRest extends UtilRest {
 			listaMonitorias = jdbcMonitoria.consultar(monitoria);
 			
 			String json = new Gson().toJson(listaMonitorias);
-			System.out.println(json);
+			
 			return this.buildResponse(json);
 			
 		}catch(Exception e) {

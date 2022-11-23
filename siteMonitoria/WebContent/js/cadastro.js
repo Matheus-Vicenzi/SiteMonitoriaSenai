@@ -62,11 +62,11 @@ function cadastraMonitoria(){
 
 
 	
-	document.addEventListener('keyup', function(e){
-  		if (e.key === "Enter") { 
-   			cadastraMonitoria()
-		}
-	});
+document.addEventListener('keyup', function(e){
+  	if (e.key === "Enter") { 
+   		cadastraMonitoria()
+	}
+});
 
 
 
