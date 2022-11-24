@@ -21,19 +21,19 @@
 			<div class="form-consult">
 				<div class="form-input">
 					<label for="turma" class="form-label">Filtrar Por:</label>
-					<select class="form-control form-select" name="txtturma" id="turma">
+					<select class="form-control form-select" name="txtturma" id="turma" onchange="habilitaCampoFiltro(this.value)">
 						<option value="">Sem Filtro</option>
-						<option value="1">Aluno</option>
-						<option value="2">Turma</option>
-						<option value="3">Data</option>
-						<option value="3">Observações</option>
-						<option value="3">Status</option>
+						<option value="aluno">Aluno</option>
+						<option value="turma">Turma</option>
+						<option value="data">Data</option>
+						<option value="obs">Observações</option>
+						<option value="status">Status</option>
 					</select>
 				</div>
-				<div class="form-input">
-					<label for="aluno" class="form-label">Aluno</label>
-					<input class="form-control" type="text" name="txtaluno" id="aluno">
+				<div class="form-input" id="boxFiltro">
+					
 				</div>
+				<!--
 				<div class="form-input">
 					<label for="turma" class="form-label">Turma</label>
 					<select class="form-control form-select" name="txtturma" id="turma">
@@ -48,11 +48,11 @@
 					<input class="form-control" type="text" name="txtmonitor" id="monitor">
 				</div>
 				<div class="form-input">
-					<label for="data" class="form-label">Data Início</label>
+					<label for="dataInicio" class="form-label">Data Início</label>
 					<input class="form-control" type="date" name="txtdatainicio" id="dataInicio">
 				</div>
 				<div class="form-input">
-					<label for="data" class="form-label">Data Fim</label>
+					<label for="dataFim" class="form-label">Data Fim</label>
 					<input class="form-control" type="date" name="txtdatafim" id="dataFim">
 				</div>
 				<div class="form-input">
@@ -67,6 +67,7 @@
 						<option value="-1">Não Concluída</option>
 					</select>
 				</div>
+				-->
 				<div class="form-buttons form-input">
 					<button class="btn btn-primary" type="button" onclick="buscarMonitorias()">Consultar</button>
 					<button class="btn btn-primary" type="reset">Limpar</button>
