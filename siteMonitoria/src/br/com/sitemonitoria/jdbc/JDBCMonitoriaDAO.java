@@ -1,13 +1,11 @@
 package br.com.sitemonitoria.jdbc;
 
 import br.com.sitemonitoria.jdbcinterface.MonitoriaDAO;
-import br.com.sitemonitoria.modelo.FiltroMonitoria;
 import br.com.sitemonitoria.modelo.Monitoria;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.Statement;
-import java.sql.SQLException;
 import java.sql.ResultSet;
 
 import java.util.ArrayList;
@@ -54,10 +52,23 @@ public class JDBCMonitoriaDAO implements MonitoriaDAO {
 	}
 
 	
-	public List<JsonObject> consultar(FiltroMonitoria monitoria) throws Exception {
+	public List<JsonObject> consultar(String tipoFiltro, String valorFiltro) throws Exception {
 		
-		String comando = "SELECT * FROM monitorias ;";
+		String comando = "SELECT * FROM monitorias ";
 		
+		
+		
+		if(tipoFiltro == "datamonitoria") {
+			String[] datas = valorFiltro.split(",");
+			
+			String dataInicio = datas[0];
+			String dataFim = datas[1];
+			
+			comando += "WHERE " + tipoFiltro + " BETWEEN '" + dataInicio + "' AND '" + dataFim + "';"; 
+			
+		}else if(valorFiltro != "") {
+			comando += "WHERE " + tipoFiltro + " = " + valorFiltro;
+		}
 		
 		List<JsonObject> listaMonitorias = new ArrayList<JsonObject>();
 		JsonObject monitoriaJson = null;

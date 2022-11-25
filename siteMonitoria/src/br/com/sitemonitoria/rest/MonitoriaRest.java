@@ -22,7 +22,6 @@ import com.google.gson.JsonObject;
 
 import br.com.sitemonitoria.bd.Conexao;
 import br.com.sitemonitoria.jdbc.JDBCMonitoriaDAO;
-import br.com.sitemonitoria.modelo.FiltroMonitoria;
 import br.com.sitemonitoria.modelo.Monitoria;
 
 
@@ -58,19 +57,17 @@ public class MonitoriaRest extends UtilRest {
 	@Path("/buscar")
 	@Consumes("application/*")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response buscar(String dadosMonitoria) {
+	public Response buscar(@QueryParam("valorBusca") String tipoFiltro, String valorFiltro) {
 	
 		try {
 			
 			List<JsonObject> listaMonitorias = new ArrayList<JsonObject>();
 			
-			FiltroMonitoria monitoria = new Gson().fromJson(dadosMonitoria, FiltroMonitoria.class);
-			
 			Conexao conec = new Conexao();
 			Connection conexao = conec.abrirConexao();
 			JDBCMonitoriaDAO jdbcMonitoria = new JDBCMonitoriaDAO(conexao);
 			
-			listaMonitorias = jdbcMonitoria.consultar(monitoria);
+			listaMonitorias = jdbcMonitoria.consultar(tipoFiltro, valorFiltro);
 			
 			String json = new Gson().toJson(listaMonitorias);
 			

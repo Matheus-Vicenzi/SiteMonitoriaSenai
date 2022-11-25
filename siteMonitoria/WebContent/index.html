@@ -20,12 +20,12 @@
 		<form class="consult-form" name="frmconsulta">
 			<div class="form-consult">
 				<div class="form-input">
-					<label for="turma" class="form-label">Filtrar Por:</label>
-					<select class="form-control form-select" name="txtturma" id="turma" onchange="habilitaCampoFiltro(this.value)">
+					<label for="tipoDeFiltro" class="form-label" for="tipoDeFiltro">Filtrar Por:</label>
+					<select class="form-control form-select" name="txtTipoDeFiltro" id="tipoDeFiltro" onchange="habilitaCampoFiltro(this.value)">
 						<option value="">Sem Filtro</option>
 						<option value="aluno">Aluno</option>
 						<option value="turma">Turma</option>
-						<option value="data">Data</option>
+						<option value="datamonitoria">Data</option>
 						<option value="obs">Observações</option>
 						<option value="status">Status</option>
 					</select>
@@ -70,7 +70,7 @@
 				-->
 				<div class="form-buttons form-input">
 					<button class="btn btn-primary" type="button" onclick="buscarMonitorias()">Consultar</button>
-					<button class="btn btn-primary" type="reset">Limpar</button>
+					<button class="btn btn-primary" type="button" onclick="limparFiltro()">Limpar</button>
 				</div>
 			</div>
 		</form>
