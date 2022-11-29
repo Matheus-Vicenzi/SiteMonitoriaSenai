@@ -57,7 +57,9 @@ public class MonitoriaRest extends UtilRest {
 	@Path("/buscar")
 	@Consumes("application/*")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response buscar(@QueryParam("valorBusca") String tipoFiltro, String valorFiltro) {
+	public Response buscar(
+			@QueryParam("tipoFiltro")  String tipoFiltro,
+			@QueryParam("valorBusca")  String valorBusca) {
 	
 		try {
 			
@@ -67,7 +69,7 @@ public class MonitoriaRest extends UtilRest {
 			Connection conexao = conec.abrirConexao();
 			JDBCMonitoriaDAO jdbcMonitoria = new JDBCMonitoriaDAO(conexao);
 			
-			listaMonitorias = jdbcMonitoria.consultar(tipoFiltro, valorFiltro);
+			listaMonitorias = jdbcMonitoria.consultar(tipoFiltro, valorBusca);
 			
 			String json = new Gson().toJson(listaMonitorias);
 			

@@ -7,10 +7,10 @@ function cadastraMonitoria(){
 	
 	var monitoria = new Object();
 	
-	if(document.frmcadastro.txtstatus.checked == false){
-		monitoria.status = 0;
+	if(document.frmcadastro.txtconcluida.checked == false){
+		monitoria.concluida = 0;
 	}else{
-		monitoria.status = 1;
+		monitoria.concluida = 1;
 	}
 	
 	monitoria.aluno = document.frmcadastro.txtaluno.value;

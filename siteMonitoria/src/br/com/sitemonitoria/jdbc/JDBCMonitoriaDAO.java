@@ -27,7 +27,7 @@ public class JDBCMonitoriaDAO implements MonitoriaDAO {
 		
 		
 		String comando = "INSERT INTO monitorias "
-				+ "(id, turma, monitor, aluno, datamonitoria, status, obs) "
+				+ "(id, turma, monitor, aluno, datamonitoria, concluida, obs) "
 				+ "VALUES (?,?,?,?,?,?,?)";
 		
 		PreparedStatement p;
@@ -40,7 +40,7 @@ public class JDBCMonitoriaDAO implements MonitoriaDAO {
 			p.setString(3, monitoria.getMonitor());
 			p.setString(4, monitoria.getAluno());
 			p.setString(5, monitoria.getDataMonitoria());
-			p.setInt(6, monitoria.getStatus());
+			p.setInt(6, monitoria.getConcluida());
 			p.setString(7, monitoria.getObs());
 			
 			p.execute();
@@ -52,23 +52,32 @@ public class JDBCMonitoriaDAO implements MonitoriaDAO {
 	}
 
 	
-	public List<JsonObject> consultar(String tipoFiltro, String valorFiltro) throws Exception {
+	public List<JsonObject> consultar(String tipoFiltro, String valorBusca) throws Exception {
 		
 		String comando = "SELECT * FROM monitorias ";
-		
-		
-		
-		if(tipoFiltro == "datamonitoria") {
-			String[] datas = valorFiltro.split(",");
+		System.out.println(tipoFiltro + " " + valorBusca);
+		//FILTRA POR DATA
+		if(tipoFiltro.equals("datamonitoria")) {
+			System.out.println("ENTROU NA DATA");
+			String[] datas = valorBusca.split("@", 2);
 			
-			String dataInicio = datas[0];
-			String dataFim = datas[1];
 			
-			comando += "WHERE " + tipoFiltro + " BETWEEN '" + dataInicio + "' AND '" + dataFim + "';"; 
+			System.out.println(datas + "<----");
 			
-		}else if(valorFiltro != "") {
-			comando += "WHERE " + tipoFiltro + " = " + valorFiltro;
+			
+			comando += "WHERE (" + tipoFiltro + " BETWEEN '" + datas[0] + "' AND '" + datas[1] + "')"; 
+			
+			
+		//FILTRA POR ALUNO
+		}else if(tipoFiltro == "aluno") {
+			comando += "WHERE " + tipoFiltro + " LIKE '%" + valorBusca + "%' ";
+		
+		}else if(tipoFiltro != "") {
+			
+			comando += "WHERE " + tipoFiltro + " = " + valorBusca;
 		}
+		
+		comando += " ORDER BY datamonitoria ASC ;";
 		
 		List<JsonObject> listaMonitorias = new ArrayList<JsonObject>();
 		JsonObject monitoriaJson = null;
@@ -85,7 +94,7 @@ public class JDBCMonitoriaDAO implements MonitoriaDAO {
 				int turma = rs.getInt("turma");
 				String monitor = rs.getString("monitor");
 				String dataMonitoria = rs.getString("datamonitoria");
-				int status = rs.getInt("status");
+				int concluida = rs.getInt("concluida");
 				String obs = rs.getString("obs");
 				
 				monitoriaJson = new JsonObject();
@@ -94,7 +103,7 @@ public class JDBCMonitoriaDAO implements MonitoriaDAO {
 				monitoriaJson.addProperty("turma", turma);
 				monitoriaJson.addProperty("monitor", monitor);
 				monitoriaJson.addProperty("datamonitoria", dataMonitoria);
-				monitoriaJson.addProperty("status", status);
+				monitoriaJson.addProperty("concluida", concluida);
 				monitoriaJson.addProperty("obs", obs);
 				
 				

@@ -7,7 +7,7 @@ public class Monitoria {
 	private int turma;
 	private String monitor;
 	private String dataMonitoria;
-	private int status;
+	private int concluida;
 	private String obs;
 	
 	
@@ -47,11 +47,11 @@ public class Monitoria {
 	public void setDataMonitoria(String dataMonitoria) {
 		this.dataMonitoria = dataMonitoria;
 	}
-	public int getStatus() {
-		return status;
+	public int getConcluida() {
+		return concluida;
 	}
-	public void setStatus(int status) {
-		this.status = status;
+	public void setStatus(int concluida) {
+		this.concluida = concluida;
 	}
 	
 }

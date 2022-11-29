@@ -7,62 +7,58 @@ function validaConsulta(){
 	let consultaValida = true;
 	let filtroId = document.getElementById("filtroId");
 	
-	if (tipoDeFiltro !== ""){
+	console.log(`AQUIIII  ${tipoDeFiltro}`);
+	
+	if (tipoDeFiltro == "datamonitoria"){
 		
-		if(tipoDeFiltro === "datamonitoria"){
-			let valorDataInicio = document.getElementById("dataInicio").value;
-			let valorDataFim = document.getElementById("dataFim").value;
+		let valorDataInicio = document.getElementById("dataInicio").value;
+		let valorDataFim = document.getElementById("dataFim").value;
 			
-			if(valorDataInicio === "" || valorDataFim === ""){
-				consultaValida = false;
-			}
+		if(valorDataInicio === "" || valorDataFim === ""){
+			consultaValida = false;
+		}
 			
-		}else{
-			if(filtroId.value === ""){
-				consultaValida = false
-			}
-		}
-		
-		if(!consultaValida){
-			alert("Preencha todos os campos para realizar a consulta")
-			return false;
-		}
-		alert("Passou");
-		return true;
+	}else if(tipoDeFiltro != "" && filtroId.value === ""){
+		consultaValida = false;
 		
 	}
-	
-	//Inválido
-	return false
-	
+		
+	if(!consultaValida){
+		alert("Preencha todos os campos para realizar a consulta")
+		return false;
+	}
+		
+	return true;
+		
 }
+	
 
-function habilitaCampoFiltro(valorFiltro){
+
+function habilitaCampoFiltro(tipoFiltro){
 	let textoLabel
 	let labelFiltro
 	boxFiltro = document.getElementById("boxFiltro");
 	boxFiltro.innerHTML = "";
 	
-	const tipoFiltroId = "filtroId"
+	const tipoFiltroId = "filtroId";
 	
 	let textoCampo;
 	let nameCampo;
 	
-	if(valorFiltro === "aluno" || valorFiltro==="obs"){ //Aluno Ou Observação
-		if(valorFiltro === "aluno"){
+	if(tipoFiltro === "aluno" || tipoFiltro==="obs"){ //Aluno Ou Observação
+		if(tipoFiltro === "aluno"){
 			
 			
 			textoCampo="Aluno"
 			nameCampo="aluno"
 			
-		}else if(valorFiltro === "obs"){
+		}else if(tipoFiltro === "obs"){
 			
 			nameCampo="obs";
 			textoCampo="Observação"
 			
 			
 		}
-		console.log(valorFiltro)
 		
 		textoLabel = document.createTextNode(textoCampo);
 		
@@ -81,7 +77,7 @@ function habilitaCampoFiltro(valorFiltro){
 		boxFiltro.appendChild(labelFiltro);
 		boxFiltro.appendChild(campoAluno);
 		
-	}else if(valorFiltro === "turma"){ // Turma
+	}else if(tipoFiltro === "turma"){ // Turma
 		
 		nameCampo = "turma";
 		
@@ -120,7 +116,7 @@ function habilitaCampoFiltro(valorFiltro){
 		boxFiltro.appendChild(labelFiltro);
 		boxFiltro.appendChild(campoTurma);
 		
-	}else if(valorFiltro === "datamonitoria"){ //Data
+	}else if(tipoFiltro === "datamonitoria"){ //Data
 		
 		let dataInicioBox = document.createElement("div");
 		$(dataInicioBox).addClass("form-input")
@@ -163,11 +159,11 @@ function habilitaCampoFiltro(valorFiltro){
 		boxFiltro.appendChild(dataInicioBox);
 		boxFiltro.appendChild(dataFimBox);
 		
-	}else if(valorFiltro === "status"){ //Status
+	}else if(tipoFiltro === "concluida"){ //Status
 	
-		nameCampo = "status"
+		nameCampo = "concluida"
 	
-		labelFiltro = document.createElement("status");
+		labelFiltro = document.createElement("concluida");
 		labelFiltro.setAttribute("for", tipoFiltroId);
 		$(labelFiltro).addClass("form-label");
 		labelFiltro.appendChild(document.createTextNode("Status"))
@@ -208,29 +204,30 @@ function buscarMonitorias(){
 	}
 	
 	let tipoFiltro = document.getElementById("tipoDeFiltro").value;
+	
 	let valorBusca;
 	
 	if(tipoFiltro == "datamonitoria"){
-		valorBusca = String(document.getElementById("dataInicio").value) + "," + String(document.getElementById("dataFim"));
+		valorBusca = String(document.getElementById("dataInicio").value) + "@" + String(document.getElementById("dataFim").value);
 	}else{
 		valorBusca = document.getElementById("filtroId").value;
 	}
 		
-		$.ajax({
-			type: "GET",
-			url: SITE.PATH + "monitoria/buscar",
-			data: "tipoFiltro="+ tipoFiltro + "&valorBusca=" + valorBusca,
-			success: function(dados){
+	$.ajax({
+		type: "GET",
+		url: SITE.PATH + "monitoria/buscar",
+		data: "tipoFiltro="+ tipoFiltro + "&valorBusca=" + valorBusca,
+		success: function(dados){
 				
-				dados = JSON.parse(dados);
-				console.log(dados)
+			dados = JSON.parse(dados);
+			console.log(dados)
 				// chamar funcao para exibir os dados
 				
-			},
-			error: function(info){
-				COLDIGO.exibirAviso("Erro ao consultar as monitorias: "+ info.status + " - " + info.statusText);
-			}
-		});
+		},
+		error: function(info){
+			alert("Erro");
+		}
+	});
 	
 	/*$.ajax({
 		type: "GET",
@@ -277,7 +274,6 @@ function limparFiltro(){
 }
 
 document.addEventListener('keyup', function(e){
-	console.log(e.key)
   	if (e.key === "Enter") { 
    		buscarMonitorias()
 	}
