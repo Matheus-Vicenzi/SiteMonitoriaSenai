@@ -55,24 +55,19 @@ public class JDBCMonitoriaDAO implements MonitoriaDAO {
 	public List<JsonObject> consultar(String tipoFiltro, String valorBusca) throws Exception {
 		
 		String comando = "SELECT * FROM monitorias ";
-		System.out.println(tipoFiltro + " " + valorBusca);
+		
 		//FILTRA POR DATA
 		if(tipoFiltro.equals("datamonitoria")) {
-			System.out.println("ENTROU NA DATA");
+			
 			String[] datas = valorBusca.split("@", 2);
 			
-			
-			System.out.println(datas + "<----");
-			
-			
-			comando += "WHERE (" + tipoFiltro + " BETWEEN '" + datas[0] + "' AND '" + datas[1] + "')"; 
-			
+			comando += "WHERE " + tipoFiltro + " BETWEEN '" + datas[0] + "' AND '" + datas[1] + "'"; 
 			
 		//FILTRA POR ALUNO
-		}else if(tipoFiltro == "aluno") {
+		}else if(tipoFiltro.equals("aluno") || tipoFiltro.equals("obs") ) {
 			comando += "WHERE " + tipoFiltro + " LIKE '%" + valorBusca + "%' ";
 		
-		}else if(tipoFiltro != "") {
+		}else if(!tipoFiltro.equals("")) {
 			
 			comando += "WHERE " + tipoFiltro + " = " + valorBusca;
 		}

@@ -52,7 +52,6 @@ function cadastraMonitoria(){
 				
 			},
 			error: function(info){
-				console.log(monitoria.datamonitoria);
 				alert("Erro ao cadastrar monitoria - " + info.status + " - " + info.responseText);
 			}
 		})	

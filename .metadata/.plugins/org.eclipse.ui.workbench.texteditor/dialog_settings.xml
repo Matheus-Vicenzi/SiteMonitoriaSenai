@@ -6,8 +6,11 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="Foot"/>
+		<item key="selection" value=""/>
 		<list key="findhistory">
+			<item value="console.log"/>
+			<item value="dados"/>
+			<item value="System.out"/>
 			<item value="foot"/>
 			<item value="valorFiltro"/>
 			<item value="tipoFiltro"/>
@@ -20,9 +23,6 @@
 			<item value="passo"/>
 			<item value="data"/>
 			<item value="ria"/>
-			<item value="filtroId"/>
-			<item value="filtroID"/>
-			<item value="print"/>
 		</list>
 		<list key="replacehistory">
 			<item value="marcaId"/>
@@ -33,6 +33,6 @@
 		<item key="DIALOG_Y_ORIGIN" value="154"/>
 		<item key="DIALOG_WIDTH" value="284"/>
 		<item key="DIALOG_HEIGHT" value="391"/>
-		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|5|0|Segoe UI"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
 	</section>
 </section>

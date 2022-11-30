@@ -7,7 +7,6 @@ function validaConsulta(){
 	let consultaValida = true;
 	let filtroId = document.getElementById("filtroId");
 	
-	console.log(`AQUIIII  ${tipoDeFiltro}`);
 	
 	if (tipoDeFiltro == "datamonitoria"){
 		
@@ -48,7 +47,6 @@ function habilitaCampoFiltro(tipoFiltro){
 	if(tipoFiltro === "aluno" || tipoFiltro==="obs"){ //Aluno Ou Observação
 		if(tipoFiltro === "aluno"){
 			
-			
 			textoCampo="Aluno"
 			nameCampo="aluno"
 			
@@ -56,7 +54,6 @@ function habilitaCampoFiltro(tipoFiltro){
 			
 			nameCampo="obs";
 			textoCampo="Observação"
-			
 			
 		}
 		
@@ -210,7 +207,11 @@ function buscarMonitorias(){
 	if(tipoFiltro == "datamonitoria"){
 		valorBusca = String(document.getElementById("dataInicio").value) + "@" + String(document.getElementById("dataFim").value);
 	}else{
-		valorBusca = document.getElementById("filtroId").value;
+		if(tipoFiltro != ""){
+			valorBusca = document.getElementById("filtroId").value;
+		}else{
+			valorFiltro = "";
+		}
 	}
 		
 	$.ajax({
@@ -218,53 +219,94 @@ function buscarMonitorias(){
 		url: SITE.PATH + "monitoria/buscar",
 		data: "tipoFiltro="+ tipoFiltro + "&valorBusca=" + valorBusca,
 		success: function(dados){
-				
+			
 			dados = JSON.parse(dados);
-			console.log(dados)
-				// chamar funcao para exibir os dados
+			
+			let tbodyConsult = document.getElementById("tbodyConsult");
+			tbodyConsult.innerHTML = "";
+			
+			if(dados.length != 0){
+			
+				dados.forEach(function(monitoria, i){
+					let row = document.createElement("tr");
+					row.setAttribute("id", "consult-head");
+					
+					let th = document.createElement("th");
+					th.setAttribute("scope", "row");
+					let txtTh = document.createTextNode(i+1);
+					th.appendChild(txtTh);
+					
+					//Aluno
+					let tdAluno = document.createElement("td");
+					let txtAluno = document.createTextNode(monitoria.aluno);
+					tdAluno.appendChild(txtAluno)
+					
+					//Turma
+					let tdTurma = document.createElement("td");
+					let txtTurma = document.createTextNode(monitoria.turma);
+					tdTurma.appendChild(txtTurma)
+					
+					//Monitor
+					let tdMonitor = document.createElement("td");
+					let txtMonitor = document.createTextNode(monitoria.monitor);
+					tdMonitor.appendChild(txtMonitor);
+					
+					//Data
+					let tdData = document.createElement("td");
+					let txtData = document.createTextNode(monitoria.datamonitoria);
+					tdData.appendChild(txtData);
+					
+					//Status
+					let tdStatus = document.createElement("td");
+					let txtStatus
+					
+					if(monitoria.concluida == 1){
+						txtStatus = document.createTextNode("Concluída");
+						//let bg = "monitoriaConcluida";
+					}else{
+						txtStatus = document.createTextNode("Não Concluída");
+						//let bg = "monitoriaNaoConcluida";
+					}
+					tdStatus.appendChild(txtStatus);
+					
+					//Observação
+					let tdObs = document.createElement("td");
+					let txtObs = document.createTextNode(monitoria.obs);
+					tdObs.appendChild(txtObs);
+					
+					//Icones
+					
+					
+					
+					//Inserir na tabela
+					//$(row).addClass(bg);
+					
+					row.appendChild(th);
+					row.appendChild(tdAluno);
+					row.appendChild(tdTurma);
+					row.appendChild(tdMonitor);
+					row.appendChild(tdData);
+					row.appendChild(tdStatus);
+					row.appendChild(tdObs);
+					
+					tbodyConsult.appendChild(row);
+					
+				});
+				
+			}else{
+				let row = document.createElement("td");
+				$(row).addClass("aviso");
+				let rowTxt = document.createTextNode("Não foi encontrada nenhuma monitoria");
+				row.appendChild(rowTxt);
+				
+				tbodyConsult.appendChild(row);
+			}
 				
 		},
 		error: function(info){
-			alert("Erro");
+			alert("Erro ao buscar monitorias: " + info.status + " - " + info.statusText);
 		}
 	});
-	
-	/*$.ajax({
-		type: "GET",
-		url: SITE.PATH + "monitoria/buscar",
-		data: JSON.stringify(monitoria),
-		success: function(listaMonitorias){
-			
-		listaMonitorias = JSON.parse(listaMonitorias);
-			
-			if (listaMonitorias!=""){
-				for(let i=0; i<=listaMonitorias.length; i++){
-					$(itens).html("");
-					
-					var aluno = document.createElement("td");
-					var turma = document.createElement("td");
-					var monitor = document.createElement("td");
-					var datamonitoria = document.createElement("td");
-					var status = document.createElement("td");
-					var obs = document.createElement("td");
-					
-					//adicionar na tabela
-				}
-				
-			}else{
-				$(itens).html("");
-				
-				var td = document.createElement("td");
-				td.setAttribute("colspan", "7")
-				td.innerHTML = "Nenhuma monitoria cadastrada";
-				itens.append(td);
-				$(itens).addClass("aviso");
-			}
-			
-		}
-	})
-	
-	*/
 	
 }
 
@@ -277,4 +319,8 @@ document.addEventListener('keyup', function(e){
   	if (e.key === "Enter") { 
    		buscarMonitorias()
 	}
+});
+
+$(document).ready(function(){
+	buscarMonitorias();
 });
