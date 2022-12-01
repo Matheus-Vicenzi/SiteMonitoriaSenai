@@ -27,10 +27,10 @@ $(document).ready(function() {
 						var option = document.createElement("option");
 						option.setAttribute("value", marcas[i].id);
 						
-						if ((id!=undefined)&&(id==marcas[i].id))
+						if ((id!=undefined)&&(id==marcas[i].id)){
 							option.setAttribute("selected", "selected");
-						
-						
+						}
+							
 						option.innerHTML = (marcas[i].nome);
 						$(select).append(option);
 						

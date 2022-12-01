@@ -117,6 +117,63 @@ public class JDBCMonitoriaDAO implements MonitoriaDAO {
 	}
 
 
-	
+	public void excluir(int id) throws Exception{
+		String comando = "DELETE FROM monitorias WHERE id = ?";
+		PreparedStatement p;
+		
+		try {
+			p = this.conexao.prepareStatement(comando);
+			p.setInt(1, id);
+			p.execute();
+		}catch(Exception e) {
+			e.printStackTrace();
+			throw new Exception("Erro ao executar a query SQL");
+		}
+		
+	}
+
+
+	public JsonObject buscarPorId(int idParam) throws Exception{
+		String comando = "SELECT * FROM monitorias WHERE id = "+ idParam;
+		Statement stmt;
+		ResultSet rs;
+		JsonObject monitoriaJson = new JsonObject();
+		try {
+			stmt = conexao.createStatement();
+			rs = stmt.executeQuery(comando);
+		}catch(Exception e) {
+			e.printStackTrace();
+			throw new Exception("Erro ao executar a Query");
+		}
+		
+		try {
+			
+			while(rs.next()) {
+				int id = rs.getInt("id");
+				String aluno = rs.getString("aluno");
+				int turma = rs.getInt("turma");
+				String monitor = rs.getString("monitor");
+				String dataMonitoria = rs.getString("datamonitoria");
+				int concluida = rs.getInt("concluida");
+				String obs = rs.getString("obs");
+				
+				monitoriaJson.addProperty("id", id);
+				monitoriaJson.addProperty("aluno", aluno);
+				monitoriaJson.addProperty("turma", turma);
+				monitoriaJson.addProperty("monitor", monitor);
+				monitoriaJson.addProperty("datamonitoria", dataMonitoria);
+				monitoriaJson.addProperty("concluida", concluida);
+				monitoriaJson.addProperty("obs", obs);
+				
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+			throw new Exception("Ero ao criar o objeto monitoria");
+		}
+		
+		return monitoriaJson;
+		
+	}
 	
 }

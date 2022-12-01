@@ -221,7 +221,7 @@ function buscarMonitorias(){
 		success: function(dados){
 			
 			dados = JSON.parse(dados);
-			
+			console.log(dados);
 			let tbodyConsult = document.getElementById("tbodyConsult");
 			tbodyConsult.innerHTML = "";
 			
@@ -229,7 +229,7 @@ function buscarMonitorias(){
 			
 				dados.forEach(function(monitoria, i){
 					let row = document.createElement("tr");
-					row.setAttribute("id", "consult-head");
+					row.setAttribute("class", "consult-head");
 					
 					let th = document.createElement("th");
 					th.setAttribute("scope", "row");
@@ -253,19 +253,20 @@ function buscarMonitorias(){
 					
 					//Data
 					let tdData = document.createElement("td");
-					let txtData = document.createTextNode(monitoria.datamonitoria);
+					let listData = monitoria.datamonitoria.split("-");
+					let txtData = document.createTextNode(`${listData[2]}-${listData[1]}-${listData[0]}`);
 					tdData.appendChild(txtData);
 					
 					//Status
 					let tdStatus = document.createElement("td");
 					let txtStatus
-					
-					if(monitoria.concluida == 1){
+					let bg;
+					if(monitoria.concluida === 1){
 						txtStatus = document.createTextNode("Concluída");
-						//let bg = "monitoriaConcluida";
+						bg = "bgConcluida";
 					}else{
 						txtStatus = document.createTextNode("Não Concluída");
-						//let bg = "monitoriaNaoConcluida";
+						bg = "bgNaoConcluida";
 					}
 					tdStatus.appendChild(txtStatus);
 					
@@ -275,11 +276,33 @@ function buscarMonitorias(){
 					tdObs.appendChild(txtObs);
 					
 					//Icones
+					let tdIcons = document.createElement("td");
 					
+					let aDelete = document.createElement("a");
+					aDelete.setAttribute("onclick", "excluirRegistro("+monitoria.id+")");
+					$(aDelete).addClass("formIcons");
+					let imgDelete = document.createElement("img");
+					imgDelete.setAttribute("src", "css/imgs/delete.svg");
+					imgDelete.setAttribute("alt", "Excluir Registro");
+					
+					aDelete.appendChild(imgDelete);
+					tdIcons.appendChild(aDelete);
+					
+					let aEdit = document.createElement("a");
+					aEdit.setAttribute("onclick", "editarRegistro("+monitoria.id+")");
+					aEdit.setAttribute("data-bs-toggle", "modal")
+					aEdit.setAttribute("data-bs-target", "#exampleModal")
+					$(aEdit).addClass("formIcons");
+					let imgEdit = document.createElement("img");
+					imgEdit.setAttribute("src", "css/imgs/pencil.svg");
+					imgEdit.setAttribute("alt", "Editar Registro");
+					
+					aEdit.appendChild(imgEdit);
+					tdIcons.appendChild(aEdit);
 					
 					
 					//Inserir na tabela
-					//$(row).addClass(bg);
+					row.setAttribute("class", bg);
 					
 					row.appendChild(th);
 					row.appendChild(tdAluno);
@@ -288,6 +311,7 @@ function buscarMonitorias(){
 					row.appendChild(tdData);
 					row.appendChild(tdStatus);
 					row.appendChild(tdObs);
+					row.appendChild(tdIcons);
 					
 					tbodyConsult.appendChild(row);
 					
@@ -313,6 +337,44 @@ function buscarMonitorias(){
 function limparFiltro(){
 	document.getElementById("boxFiltro").innerHTML = "";
 	document.getElementById("tipoDeFiltro").options.selectedIndex = 0;
+}
+
+function excluirRegistro(id){
+	confirmacao = confirm("Deseja realmente excluir esse registro?");
+	if(!confirmacao){
+		return false;
+	}
+	
+	$.ajax({
+		type: "DELETE",
+		url: SITE.PATH + `monitoria/excluir/${id}`,
+		success: function(msg){
+			alert(msg);
+			location.reload();
+		},
+		error: function(info){
+			alert("Erro ao excluir monitoria - "+ info.status + " - "+ info.statusText);
+		}
+			
+	})
+	
+}
+
+function buscarMonitoriaPorId(id){
+	$.ajax({
+		type: "GET",
+		url: SITE.PATH + `monitoria/buscarPorId/${id}`,
+		success: function(monitoria){
+			
+			monitoria = JSON.parse(monitoria);
+			console.log(monitoria);
+			
+		},
+		error: function(info){
+			alert("Erro ao buscar monitoria - "+ info.status + " - "+ info.statusText);
+		}
+			
+	})
 }
 
 document.addEventListener('keyup', function(e){

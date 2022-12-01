@@ -149,6 +149,10 @@ body{
 
 /**** Tabela de Consulta ****/
 
+table{
+	border: 1px solid black;
+}
+
 .consulta-table{
     margin-top: 50px;
     margin-left: auto;
@@ -166,6 +170,10 @@ body{
 
 th, td{
     padding: 3px;
+}
+
+td{
+	background-color: green;
 }
 
 tr{
@@ -220,6 +228,32 @@ footer{
 .monitoriaNaoConcluida{
 	background-color: F0808;
 }
+
+.formIcons img{
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+	margin: 0 5px;
+}
+
+.bgConcluida{
+	color: #ffff;
+	background-color: rgb(132, 177, 67);
+}
+
+.bgNaoConcluida{
+	color: #ffff;
+	background-color: rgb(255, 99, 71);
+}
+
+/********MODAL********/
+
+.modal-title{
+	color: black;
+}
+
+
+/********BREAKPOINTS********/
 
 @media (max-width: 768px){
     .form-input {

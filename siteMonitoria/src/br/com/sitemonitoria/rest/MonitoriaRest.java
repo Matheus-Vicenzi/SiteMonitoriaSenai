@@ -82,4 +82,47 @@ public class MonitoriaRest extends UtilRest {
 		
 	}
 	
+	@DELETE
+	@Path("/excluir/{id}")
+	@Consumes("application/*")
+	public Response excluir(@PathParam("id") int id) {
+		
+		try {
+			Conexao conec = new Conexao();
+			Connection conexao = conec.abrirConexao();
+			JDBCMonitoriaDAO jdbcMonitoria = new JDBCMonitoriaDAO(conexao);
+			
+			jdbcMonitoria.excluir(id);
+			
+			return buildResponse("Monitoria excluída com sucesso");
+		}catch(Exception e) {
+			e.printStackTrace();
+			return this.buildErrorResponse(e.getMessage());
+		}
+		
+	}
+	
+	@GET
+	@Path("/buscarPorId/{id}")
+	@Consumes("application/*")
+	public Response buscarPorId(@PathParam("id") int idParam) {
+		
+		try {
+			Conexao conec = new Conexao();
+			Connection conexao = conec.abrirConexao();
+			JDBCMonitoriaDAO jdbcMonitoria = new JDBCMonitoriaDAO(conexao);
+			
+			JsonObject monitoria = jdbcMonitoria.buscarPorId(idParam);
+			
+			String json = new Gson().toJson(monitoria);
+			
+			return this.buildResponse(json);
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+			return this.buildErrorResponse(e.getMessage());
+		}
+		
+	}
+	
 }
