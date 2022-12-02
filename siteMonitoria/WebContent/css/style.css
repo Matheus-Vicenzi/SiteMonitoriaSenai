@@ -234,6 +234,7 @@ footer{
 	height: 20px;
 	cursor: pointer;
 	margin: 0 5px;
+	
 }
 
 .bgConcluida{
@@ -250,6 +251,10 @@ footer{
 
 .modal-title{
 	color: black;
+}
+
+.modal-div-input{
+	width: 100%;
 }
 
 

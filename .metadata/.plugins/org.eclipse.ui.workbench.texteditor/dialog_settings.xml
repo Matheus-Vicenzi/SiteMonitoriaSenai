@@ -6,23 +6,23 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="consult-"/>
+		<item key="selection" value="console.log"/>
 		<list key="findhistory">
+			<item value="console.log"/>
+			<item value="consult-form"/>
+			<item value="form-consult"/>
+			<item value="editarRegistro"/>
+			<item value="buscarMonitoriaPorId"/>
 			<item value="consult-head"/>
 			<item value="consult-"/>
 			<item value="tr"/>
 			<item value="table"/>
 			<item value="img"/>
 			<item value="svg"/>
-			<item value="console.log"/>
 			<item value="dados"/>
 			<item value="System.out"/>
 			<item value="foot"/>
 			<item value="valorFiltro"/>
-			<item value="tipoFiltro"/>
-			<item value="tipoFiltroId"/>
-			<item value="tipoDeFiltro"/>
-			<item value="console"/>
 		</list>
 		<list key="replacehistory">
 			<item value="marcaId"/>

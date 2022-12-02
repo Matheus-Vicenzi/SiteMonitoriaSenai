@@ -221,7 +221,7 @@ function buscarMonitorias(){
 		success: function(dados){
 			
 			dados = JSON.parse(dados);
-			console.log(dados);
+			
 			let tbodyConsult = document.getElementById("tbodyConsult");
 			tbodyConsult.innerHTML = "";
 			
@@ -289,7 +289,7 @@ function buscarMonitorias(){
 					tdIcons.appendChild(aDelete);
 					
 					let aEdit = document.createElement("a");
-					aEdit.setAttribute("onclick", "editarRegistro("+monitoria.id+")");
+					aEdit.setAttribute("onclick", "buscarMonitoriaPorId("+monitoria.id+")");
 					aEdit.setAttribute("data-bs-toggle", "modal")
 					aEdit.setAttribute("data-bs-target", "#exampleModal")
 					$(aEdit).addClass("formIcons");
@@ -367,14 +367,164 @@ function buscarMonitoriaPorId(id){
 		success: function(monitoria){
 			
 			monitoria = JSON.parse(monitoria);
-			console.log(monitoria);
+			console.log(monitoria.aluno);
+			
+			//Div Principal
+			const divEditContent = document.getElementById("modal-div-editcontent");
+			
+			
+			//Aluno
+			const divEditContentAluno = document.createElement("div");
+			divEditContentAluno.setAttribute("class", "form-input");
+			divEditContentAluno.setAttribute("class", "modal-div-input");
+			
+			const labelAluno = document.createElement("label");
+			labelAluno.setAttribute("for", "aluno-modal-label")
+			labelAluno.setAttribute("class", "form-label");
+			labelAluno.appendChild(document.createTextNode("Aluno "));
+			
+			const inputAluno = document.createElement("input");
+			inputAluno.setAttribute("id", "aluno-modal-field");
+			inputAluno.setAttribute("type", "text");
+			inputAluno.setAttribute("class", "form-control");
+			inputAluno.setAttribute("value", monitoria.aluno);
+			
+			divEditContentAluno.appendChild(labelAluno);
+			divEditContentAluno.appendChild(inputAluno);
+			
+			//Turma
+			const divEditContentTurma = document.createElement("div");
+			divEditContentTurma.setAttribute("class", "form-input");
+			divEditContentTurma.setAttribute("class", "modal-div-input");
+			
+			const labelTurma = document.createElement("label");
+			labelTurma.setAttribute("for", "turma-modal-label")
+			labelTurma.setAttribute("class", "form-label");
+			labelTurma.appendChild(document.createTextNode("Turma "));
+			
+			const inputTurma = document.createElement("select");
+			inputTurma.setAttribute("id", "turma-modal-field");
+			inputTurma.setAttribute("class", "form-select");
+			inputTurma.setAttribute("class", "form-control");
+			inputTurma.setAttribute("value", monitoria.turma);
+			
+			const turmaOptionsText = ["Selecione", "1° Ano", "2° Ano", "3° Ano"];
+			
+			const turmaOption0 = document.createElement("option")
+			turmaOption0.setAttribute("value", "");
+			turmaOption0.appendChild(document.createTextNode(turmaOptionsText[0]));
+			
+			const turmaOption1 = document.createElement("option")
+			turmaOption1.setAttribute("value", "1");
+			turmaOption1.appendChild(document.createTextNode(turmaOptionsText[1]));
+			
+			const turmaOption2 = document.createElement("option")
+			turmaOption2.setAttribute("value", "2");
+			turmaOption2.appendChild(document.createTextNode(turmaOptionsText[2]));
+			
+			const turmaOption3 = document.createElement("option")
+			turmaOption3.setAttribute("value", "3");
+			turmaOption3.appendChild(document.createTextNode(turmaOptionsText[3]));
+			
+			inputTurma.appendChild(turmaOption0);
+			inputTurma.appendChild(turmaOption1);
+			inputTurma.appendChild(turmaOption2);
+			inputTurma.appendChild(turmaOption3);
+			
+			for(let i, j = 0; i = inputTurma.options[j]; j++) {
+    			if(i.value == monitoria.turma) {
+		       		inputTurma.selectedIndex = j;
+		        	break;
+    			}
+			}
+			
+			divEditContentTurma.appendChild(labelTurma);
+			divEditContentTurma.appendChild(inputTurma);
+			
+			//Monitor
+			const divEditContentMonitor = document.createElement("div");
+			divEditContentMonitor.setAttribute("class", "form-input");
+			divEditContentMonitor.setAttribute("class", "modal-div-input");
+			
+			let labelMonitor = document.createElement("label");
+			labelMonitor.setAttribute("for", "monitor-modal-label")
+			labelMonitor.setAttribute("class", "form-label");
+			labelMonitor.appendChild(document.createTextNode("Monitor "));
+			
+			let inputMonitor = document.createElement("input");
+			inputMonitor.setAttribute("id", "monitor-modal-field");
+			inputMonitor.setAttribute("type", "text");
+			inputMonitor.setAttribute("class", "form-control");
+			inputMonitor.setAttribute("value", monitoria.monitor);
+			
+			divEditContentMonitor.appendChild(labelMonitor);
+			divEditContentMonitor.appendChild(inputMonitor);
+			
+			//Data
+			const divEditContentData = document.createElement("div");
+			divEditContentData.setAttribute("class", "form-input");
+			divEditContentData.setAttribute("class", "modal-div-input");
+			
+			let labelData = document.createElement("label");
+			labelData.setAttribute("for", "data-modal-label")
+			labelData.setAttribute("class", "form-label");
+			labelData.appendChild(document.createTextNode("Data "));
+			
+			let inputData = document.createElement("input");
+			inputData.setAttribute("id", "data-modal-field");
+			inputData.setAttribute("type", "date");
+			inputData.setAttribute("class", "form-control");
+			
+			
+			
+			inputData.setAttribute("value", monitoria.datamonitoria);
+			
+			divEditContentData.appendChild(labelData);
+			divEditContentData.appendChild(inputData);
+			
+			
+			/*//Status
+			let labelAluno = document.createElement("label");
+			labelAluno.setAttribute("for", "aluno-modal-field")
+			labelAluno.setAttribute("class", "form-label");
+			labelAluno.appendChild(document.createTextNode("Aluno: "));
+			
+			let inputAluno = document.createElement("input");
+			inputAluno.setAttribute("id", "aluno-modal-field");
+			inputAluno.setAttribute("type", "text");
+			inputAluno.setAttribute("class", "form-control");
+			inputAluno.setAttribute("value", dadosMonitoria.aluno);
+			
+			//Observacao
+			let labelAluno = document.createElement("label");
+			labelAluno.setAttribute("for", "aluno-modal-field")
+			labelAluno.setAttribute("class", "form-label");
+			labelAluno.appendChild(document.createTextNode("Aluno: "));
+			
+			let inputAluno = document.createElement("input");
+			inputAluno.setAttribute("id", "aluno-modal-field");
+			inputAluno.setAttribute("type", "text");
+			inputAluno.setAttribute("class", "form-control");
+			inputAluno.setAttribute("value", dadosMonitoria.aluno);*/
+			
+			
+			divEditContent.appendChild(divEditContentAluno);
+			divEditContent.appendChild(divEditContentTurma);
+			divEditContent.appendChild(divEditContentMonitor);
+			divEditContent.appendChild(divEditContentData);
 			
 		},
 		error: function(info){
+			console.log(info)
 			alert("Erro ao buscar monitoria - "+ info.status + " - "+ info.statusText);
 		}
 			
 	})
+}
+
+function limparModal(){
+	const modalDiv = document.getElementById("modal-div-editcontent");
+	modalDiv.innerHTML = "";
 }
 
 document.addEventListener('keyup', function(e){

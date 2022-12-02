@@ -114,9 +114,7 @@ public class MonitoriaRest extends UtilRest {
 			
 			JsonObject monitoria = jdbcMonitoria.buscarPorId(idParam);
 			
-			String json = new Gson().toJson(monitoria);
-			
-			return this.buildResponse(json);
+			return this.buildResponse(monitoria);
 			
 		}catch(Exception e) {
 			e.printStackTrace();
