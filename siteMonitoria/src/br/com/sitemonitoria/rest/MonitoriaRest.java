@@ -123,4 +123,28 @@ public class MonitoriaRest extends UtilRest {
 		
 	}
 	
+	@PUT
+	@Path("/alterar")
+	@Consumes("application/*")
+	public Response alterarRegistro(String monitoriaParam) {
+		
+		try {
+			System.out.println(monitoriaParam);
+			Monitoria monitoria = new Gson().fromJson(monitoriaParam, Monitoria.class);
+			System.out.println("--------------"+monitoria.getDataMonitoria());
+			Conexao conec = new Conexao();
+			Connection conexao = conec.abrirConexao();
+			JDBCMonitoriaDAO jdbcMonitoria = new JDBCMonitoriaDAO(conexao);
+			
+			jdbcMonitoria.alterar(monitoria);
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+			return this.buildErrorResponse(e.getMessage());
+		}
+		
+		
+		return buildResponse("Monitoria Alterada com Sucesso!");
+	}
+	
 }

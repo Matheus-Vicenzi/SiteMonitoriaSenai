@@ -7,7 +7,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.Statement;
 import java.sql.ResultSet;
-
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -169,10 +169,43 @@ public class JDBCMonitoriaDAO implements MonitoriaDAO {
 			
 		}catch(Exception e) {
 			e.printStackTrace();
-			throw new Exception("Ero ao criar o objeto monitoria");
+			throw new Exception("Erro ao criar o objeto monitoria");
 		}
 		
 		return monitoriaJson;
+		
+	}
+
+
+	public void alterar(Monitoria monitoria){
+		
+	
+		String comando = "UPDATE monitorias"
+				+ " SET aluno=?"
+				+ ", turma=?"
+				+ ", monitor=?"
+				+ ", datamonitoria=?"
+				+ ", concluida=?"
+				+ ", obs=?"
+				+ " WHERE id=?";
+		
+		PreparedStatement p;
+		
+		try {
+			p = this.conexao.prepareStatement(comando);
+			p.setString(1, monitoria.getAluno());
+			p.setInt(2, monitoria.getTurma());
+			p.setString(3, monitoria.getMonitor());
+			p.setString(4, monitoria.getDataMonitoria());
+			p.setInt(5, monitoria.getConcluida());
+			p.setString(6, monitoria.getObs());
+			p.setInt(7, monitoria.getId());
+			
+			p.executeUpdate();
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+				
 		
 	}
 	

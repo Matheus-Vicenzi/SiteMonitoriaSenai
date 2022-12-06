@@ -367,11 +367,10 @@ function buscarMonitoriaPorId(id){
 		success: function(monitoria){
 			
 			monitoria = JSON.parse(monitoria);
-			console.log(monitoria.aluno);
 			
 			//Div Principal
 			const divEditContent = document.getElementById("modal-div-editcontent");
-			
+			divEditContent.innerHTML = "";
 			
 			//Aluno
 			const divEditContentAluno = document.createElement("div");
@@ -483,39 +482,87 @@ function buscarMonitoriaPorId(id){
 			divEditContentData.appendChild(inputData);
 			
 			
-			/*//Status
-			let labelAluno = document.createElement("label");
-			labelAluno.setAttribute("for", "aluno-modal-field")
-			labelAluno.setAttribute("class", "form-label");
-			labelAluno.appendChild(document.createTextNode("Aluno: "));
+			//Status
+			const divEditContentStatus = document.createElement("div");
+			divEditContentStatus.setAttribute("class", "form-input");
+			divEditContentStatus.setAttribute("class", "modal-div-input");
 			
-			let inputAluno = document.createElement("input");
-			inputAluno.setAttribute("id", "aluno-modal-field");
-			inputAluno.setAttribute("type", "text");
-			inputAluno.setAttribute("class", "form-control");
-			inputAluno.setAttribute("value", dadosMonitoria.aluno);
+			const labelStatus = document.createElement("label");
+			labelStatus.setAttribute("for", "status-modal-label")
+			labelStatus.setAttribute("class", "form-label");
+			labelStatus.appendChild(document.createTextNode("Status"));
+			
+			const inputStatus = document.createElement("select");
+			inputStatus.setAttribute("id", "status-modal-field");
+			inputStatus.setAttribute("class", "form-select");
+			inputStatus.setAttribute("class", "form-control");
+			
+			const statusOptionsText = ["Selecione", "Concluída", "Não Concluída"];
+			
+			const statusOption0 = document.createElement("option")
+			statusOption0.setAttribute("value", "-1");
+			statusOption0.appendChild(document.createTextNode(statusOptionsText[0]));
+			
+			const statusOption1 = document.createElement("option")
+			statusOption1.setAttribute("value", "1");
+			statusOption1.appendChild(document.createTextNode(statusOptionsText[1]));
+			
+			const statusOption2 = document.createElement("option")
+			statusOption2.setAttribute("value", "0");
+			statusOption2.appendChild(document.createTextNode(statusOptionsText[2]));
+			
+			
+			inputStatus.appendChild(statusOption0);
+			inputStatus.appendChild(statusOption1);
+			inputStatus.appendChild(statusOption2);
+			
+			for(let i, j = 0; i = inputStatus.options[j]; j++) {
+    			if(Number(i.value) == Number(monitoria.concluida)) {
+		       		inputStatus.selectedIndex = j;
+		        	break;
+    			}
+			}
+			
+			divEditContentStatus.appendChild(labelStatus);
+			divEditContentStatus.appendChild(inputStatus);
 			
 			//Observacao
-			let labelAluno = document.createElement("label");
-			labelAluno.setAttribute("for", "aluno-modal-field")
-			labelAluno.setAttribute("class", "form-label");
-			labelAluno.appendChild(document.createTextNode("Aluno: "));
+			const divEditContentObs = document.createElement("div");
+			divEditContentObs.setAttribute("class", "form-input");
+			divEditContentObs.setAttribute("class", "modal-div-input");
 			
-			let inputAluno = document.createElement("input");
-			inputAluno.setAttribute("id", "aluno-modal-field");
-			inputAluno.setAttribute("type", "text");
-			inputAluno.setAttribute("class", "form-control");
-			inputAluno.setAttribute("value", dadosMonitoria.aluno);*/
+			let labelObs = document.createElement("label");
+			labelObs.setAttribute("for", "obs-modal-field")
+			labelObs.setAttribute("class", "form-label");
+			labelObs.appendChild(document.createTextNode("Observações: "));
+			
+			let inputObs = document.createElement("textarea");
+			inputObs.setAttribute("id", "obs-modal-field");
+			inputObs.setAttribute("class", "form-control");
+			inputObs.value = monitoria.obs;
+			
+			divEditContentObs.appendChild(labelObs);
+			divEditContentObs.appendChild(inputObs);
+			
+			//Hidden ID
+			let inputId = document.createElement("input");
+			inputId.setAttribute("value", monitoria.id);
+			inputId.setAttribute("id", "id-modal-field");
+			inputId.setAttribute("type", "hidden");
 			
 			
+			//Montar div principal
 			divEditContent.appendChild(divEditContentAluno);
 			divEditContent.appendChild(divEditContentTurma);
 			divEditContent.appendChild(divEditContentMonitor);
 			divEditContent.appendChild(divEditContentData);
+			divEditContent.appendChild(divEditContentStatus);
+			divEditContent.appendChild(divEditContentObs);
+			divEditContent.appendChild(inputId);
+
 			
 		},
 		error: function(info){
-			console.log(info)
 			alert("Erro ao buscar monitoria - "+ info.status + " - "+ info.statusText);
 		}
 			
@@ -526,6 +573,43 @@ function limparModal(){
 	const modalDiv = document.getElementById("modal-div-editcontent");
 	modalDiv.innerHTML = "";
 }
+
+function alteraRegistro(){
+	
+	const Dadosmonitoria = new Object();
+	
+	Dadosmonitoria.id = document.getElementById("id-modal-field").value;
+	Dadosmonitoria.aluno = document.getElementById("aluno-modal-field").value;
+	Dadosmonitoria.turma = document.getElementById("turma-modal-field").value;
+	Dadosmonitoria.monitor = document.getElementById("monitor-modal-field").value;
+	Dadosmonitoria.datamonitoria = document.getElementById("data-modal-field").value;
+	Dadosmonitoria.concluida = document.getElementById("status-modal-field").value;
+	Dadosmonitoria.obs = document.getElementById("obs-modal-field").value;
+	
+	console.log(Dadosmonitoria.id);
+	console.log(Dadosmonitoria.aluno);
+	console.log(Dadosmonitoria.turma);
+	console.log(Dadosmonitoria.monitor);
+	console.log(Dadosmonitoria.datamonitoria);
+	console.log(Dadosmonitoria.concluida);
+	console.log(Dadosmonitoria.obs);
+	
+	$.ajax({
+		type: "PUT",
+		url: SITE.PATH + "monitoria/alterar",
+		data: JSON.stringify(Dadosmonitoria),
+		success: function(msg){
+			
+			alert(msg);
+			location.reload();
+			
+		},
+		error: function(info){
+			console.log(info);
+			alert("Erro ao alterar registro - "+ info.status + " - "+ info.statusText);
+		}
+	})
+};
 
 document.addEventListener('keyup', function(e){
   	if (e.key === "Enter") { 
