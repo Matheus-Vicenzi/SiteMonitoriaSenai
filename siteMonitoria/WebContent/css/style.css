@@ -216,7 +216,7 @@ footer{
 
 /*UTIL*/
 .aviso{
-	background-color: #ff0000;
+	background-color: rgb(255, 99, 71);
 	color: #fff;
 	font-weight: bold;
 }
@@ -238,7 +238,7 @@ footer{
 }
 
 .bgConcluida{
-	color: #ffff;
+	color: #ffffff;
 	background-color: rgb(132, 177, 67);
 }
 

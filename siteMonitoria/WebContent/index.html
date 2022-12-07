@@ -65,7 +65,7 @@
     		<div class="modal-content">
      			<div class="modal-header">
         			<h1 class="modal-title fs-5" id="exampleModalLabel">Edição de Registros</h1>
-        			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="limparModal()"></button>
+        			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       			</div>
       			<div class="modal-body" id="modal-body">
         			<form action="POST" id="modal-form" class="consult-form">
@@ -76,7 +76,7 @@
       			</div>
       			<div class="modal-footer">
         			<button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="limparModal()">Cancelar</button>
-        			<button type="button" class="btn btn-primary" onclick="alteraRegistro()">Salvar alterações</button>
+        			<button type="button" class="btn btn-primary" id="edit-modal-button" onclick="alteraRegistro()">Salvar alterações</button>
       			</div>
     		</div>
   		</div>

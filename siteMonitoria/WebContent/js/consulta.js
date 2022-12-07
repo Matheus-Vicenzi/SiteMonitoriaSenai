@@ -160,7 +160,7 @@ function habilitaCampoFiltro(tipoFiltro){
 	
 		nameCampo = "concluida"
 	
-		labelFiltro = document.createElement("concluida");
+		labelFiltro = document.createElement("label");
 		labelFiltro.setAttribute("for", tipoFiltroId);
 		$(labelFiltro).addClass("form-label");
 		labelFiltro.appendChild(document.createTextNode("Status"))
@@ -319,6 +319,7 @@ function buscarMonitorias(){
 				
 			}else{
 				let row = document.createElement("td");
+				row.setAttribute("colspan", "8");
 				$(row).addClass("aviso");
 				let rowTxt = document.createTextNode("Não foi encontrada nenhuma monitoria");
 				row.appendChild(rowTxt);
@@ -569,11 +570,6 @@ function buscarMonitoriaPorId(id){
 	})
 }
 
-function limparModal(){
-	const modalDiv = document.getElementById("modal-div-editcontent");
-	modalDiv.innerHTML = "";
-}
-
 function alteraRegistro(){
 	
 	const Dadosmonitoria = new Object();
@@ -586,13 +582,15 @@ function alteraRegistro(){
 	Dadosmonitoria.concluida = document.getElementById("status-modal-field").value;
 	Dadosmonitoria.obs = document.getElementById("obs-modal-field").value;
 	
-	console.log(Dadosmonitoria.id);
-	console.log(Dadosmonitoria.aluno);
-	console.log(Dadosmonitoria.turma);
-	console.log(Dadosmonitoria.monitor);
-	console.log(Dadosmonitoria.datamonitoria);
-	console.log(Dadosmonitoria.concluida);
-	console.log(Dadosmonitoria.obs);
+	campos = [Dadosmonitoria.id, Dadosmonitoria.aluno, Dadosmonitoria.turma, Dadosmonitoria.monitor,
+		Dadosmonitoria.datamonitoria, Dadosmonitoria.concluida, Dadosmonitoria.obs]
+	
+	const camposValidos = validaCampos(campos);
+	
+	if(!camposValidos){
+	alert("Preencha todos os campos!");
+		return false;
+	}
 	
 	$.ajax({
 		type: "PUT",
@@ -601,17 +599,32 @@ function alteraRegistro(){
 		success: function(msg){
 			
 			alert(msg);
-			location.reload();
+			
+			buscarMonitorias();
 			
 		},
 		error: function(info){
+			
 			console.log(info);
 			alert("Erro ao alterar registro - "+ info.status + " - "+ info.statusText);
+			//data-bs-dismiss="modal"
 		}
 	})
 };
 
-document.addEventListener('keyup', function(e){
+function validaCampos(valoresDosCampos){
+	let camposValidos = true;
+	
+	valoresDosCampos.forEach( campo =>{
+		console.log(campo);
+		if(campo === ""){
+			camposValidos = false
+		}
+	})
+	return camposValidos;
+}
+
+document.addEventListener('keyup', (e) => {
   	if (e.key === "Enter") { 
    		buscarMonitorias()
 	}

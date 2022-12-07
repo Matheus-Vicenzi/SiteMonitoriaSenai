@@ -137,14 +137,13 @@ public class MonitoriaRest extends UtilRest {
 			JDBCMonitoriaDAO jdbcMonitoria = new JDBCMonitoriaDAO(conexao);
 			
 			jdbcMonitoria.alterar(monitoria);
+			return buildResponse("Monitoria Alterada com Sucesso!");
 			
-		}catch(Exception e) {
+		}catch(Exception e){
 			e.printStackTrace();
 			return this.buildErrorResponse(e.getMessage());
 		}
 		
-		
-		return buildResponse("Monitoria Alterada com Sucesso!");
 	}
 	
 }
