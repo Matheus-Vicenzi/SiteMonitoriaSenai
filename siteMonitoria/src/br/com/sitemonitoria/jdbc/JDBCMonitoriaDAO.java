@@ -57,7 +57,7 @@ public class JDBCMonitoriaDAO implements MonitoriaDAO {
 		String comando = "SELECT * FROM monitorias ";
 		
 		//FILTRA POR DATA
-		if(tipoFiltro.equals("datamonitoria")) {
+		if(tipoFiltro.equals("dataMonitoria")) {
 			
 			String[] datas = valorBusca.split("@", 2);
 			
@@ -97,7 +97,7 @@ public class JDBCMonitoriaDAO implements MonitoriaDAO {
 				monitoriaJson.addProperty("aluno", aluno);
 				monitoriaJson.addProperty("turma", turma);
 				monitoriaJson.addProperty("monitor", monitor);
-				monitoriaJson.addProperty("datamonitoria", dataMonitoria);
+				monitoriaJson.addProperty("dataMonitoria", dataMonitoria);
 				monitoriaJson.addProperty("concluida", concluida);
 				monitoriaJson.addProperty("obs", obs);
 				
@@ -161,7 +161,7 @@ public class JDBCMonitoriaDAO implements MonitoriaDAO {
 				monitoriaJson.addProperty("aluno", aluno);
 				monitoriaJson.addProperty("turma", turma);
 				monitoriaJson.addProperty("monitor", monitor);
-				monitoriaJson.addProperty("datamonitoria", dataMonitoria);
+				monitoriaJson.addProperty("dataMonitoria", dataMonitoria);
 				monitoriaJson.addProperty("concluida", concluida);
 				monitoriaJson.addProperty("obs", obs);
 				

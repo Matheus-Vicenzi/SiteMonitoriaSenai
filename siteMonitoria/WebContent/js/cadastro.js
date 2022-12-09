@@ -16,7 +16,7 @@ function cadastraMonitoria(){
 	monitoria.aluno = document.frmcadastro.txtaluno.value;
 	monitoria.turma = document.frmcadastro.txtturma.value;
 	monitoria.monitor = document.frmcadastro.txtmonitor.value;
-	monitoria.datamonitoria = document.frmcadastro.txtdata.value;
+	monitoria.dataMonitoria = document.frmcadastro.txtdata.value;
 	monitoria.obs = document.frmcadastro.txtobs.value;
 	
 	if(monitoria.turma == ""){

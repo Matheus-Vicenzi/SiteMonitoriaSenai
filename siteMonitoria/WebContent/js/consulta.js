@@ -3,21 +3,21 @@ function carregaNome(){
 }
 
 function validaConsulta(){
-	let tipoDeFiltro = document.getElementById("tipoDeFiltro").value;
+	let tipoDeFiltro = $("#tipoDeFiltro").val();
 	let consultaValida = true;
-	let filtroId = document.getElementById("filtroId");
+	let valorCampoFiltro = $("#campoFiltro").val();
 	
 	
-	if (tipoDeFiltro == "datamonitoria"){
+	if (tipoDeFiltro == "dataMonitoria"){
 		
-		let valorDataInicio = document.getElementById("dataInicio").value;
-		let valorDataFim = document.getElementById("dataFim").value;
+		let valorDataInicio = $("#dataInicio").val();
+		let valorDataFim = $("#dataFim").val();
 			
 		if(valorDataInicio === "" || valorDataFim === ""){
 			consultaValida = false;
 		}
 			
-	}else if(tipoDeFiltro != "" && filtroId.value === ""){
+	}else if(tipoDeFiltro != "" && valorCampoFiltro === ""){
 		consultaValida = false;
 		
 	}
@@ -34,86 +34,68 @@ function validaConsulta(){
 
 
 function habilitaCampoFiltro(tipoFiltro){
-	let textoLabel
-	let labelFiltro
-	boxFiltro = document.getElementById("boxFiltro");
-	boxFiltro.innerHTML = "";
 	
-	const tipoFiltroId = "filtroId";
+	let labelFiltro = document.createElement("label");
+	
+	let boxFiltro = document.getElementById("boxFiltro");
+	
+	$(boxFiltro).html("");
+	
+	let campoFiltro;
+	
+	const idCampoFiltro = "campoFiltro";
 	
 	let textoCampo;
-	let nameCampo;
 	
+	//Aluno ou Observação
 	if(tipoFiltro === "aluno" || tipoFiltro==="obs"){ //Aluno Ou Observação
 		if(tipoFiltro === "aluno"){
-			
 			textoCampo="Aluno"
-			nameCampo="aluno"
 			
 		}else if(tipoFiltro === "obs"){
-			
-			nameCampo="obs";
 			textoCampo="Observação"
 			
 		}
 		
-		textoLabel = document.createTextNode(textoCampo);
+		$(labelFiltro).text(textoCampo);
 		
-		labelFiltro = document.createElement("label");
-		labelFiltro.setAttribute("for", tipoFiltroId);
-		$(labelFiltro).addClass("form-label");
+		campoFiltro = document.createElement("input");
 		
-		labelFiltro.appendChild(textoLabel);
+		$(campoFiltro).attr("type", "text");
+							
+	//Turma
+	}else if(tipoFiltro === "turma"){
 		
-		var campoAluno = document.createElement("input");
-		$(campoAluno).addClass("form-control");
-		campoAluno.setAttribute("id", tipoFiltroId);
-		campoAluno.setAttribute("name", nameCampo);
-		campoAluno.setAttribute("type", "text");
+		//$(labelFiltro).attr("for", idCampoFiltro);
+		//$(labelFiltro).addClass("form-label");
+		$(labelFiltro).text("Turma")
 		
-		boxFiltro.appendChild(labelFiltro);
-		boxFiltro.appendChild(campoAluno);
+		campoFiltro = document.createElement("select");
+		$(campoFiltro).addClass("form-select");
 		
-	}else if(tipoFiltro === "turma"){ // Turma
-		
-		nameCampo = "turma";
-		
-		labelFiltro = document.createElement("label");
-		labelFiltro.setAttribute("for", tipoFiltroId);
-		$(labelFiltro).addClass("form-label");
-		labelFiltro.appendChild(document.createTextNode("Turma"))
-		
-		let campoTurma = document.createElement("select");
-		$(campoTurma).addClass("form-control");
-		$(campoTurma).addClass("form-select");
-		campoTurma.setAttribute("id", tipoFiltroId)
-		campoTurma.setAttribute("name", nameCampo)
-		
-		let valorPadrao = document.createElement("option")
-		valorPadrao.setAttribute("value", "")
-		valorPadrao.appendChild(document.createTextNode("Selecione"))
+		let valorPadrao = document.createElement("option");
+		$(valorPadrao).attr("value", "");
+		$(valorPadrao).text("selecione");
 		
 		let valorTurma1 = document.createElement("option");
-		valorTurma1.setAttribute("value", "1")
-		valorTurma1.appendChild(document.createTextNode("1º Ano"))
+		$(valorTurma1).attr("value", "1");
+		$(valorTurma1).text("1º Ano");
 		
 		let valorTurma2 = document.createElement("option");
-		valorTurma2.setAttribute("value", "2")
-		valorTurma2.appendChild(document.createTextNode("2º Ano"))
+		$(valorTurma2).attr("value", "2");
+		$(valorTurma2).text("2º Ano");
 		
 		let valorTurma3 = document.createElement("option");
-		valorTurma3.setAttribute("value", "3");
-		valorTurma3.appendChild(document.createTextNode("3º Ano"));
+		$(valorTurma3).attr("value", "3");
+		$(valorTurma3).text("3º Ano");
 		
-		campoTurma.appendChild(valorPadrao);
-		campoTurma.appendChild(valorTurma1);
-		campoTurma.appendChild(valorTurma2);
-		campoTurma.appendChild(valorTurma3);
-		
-		boxFiltro.appendChild(labelFiltro);
-		boxFiltro.appendChild(campoTurma);
-		
-	}else if(tipoFiltro === "datamonitoria"){ //Data
+		$(campoFiltro).append(valorPadrao);
+		$(campoFiltro).append(valorTurma1);
+		$(campoFiltro).append(valorTurma2);
+		$(campoFiltro).append(valorTurma3);
+	
+	//Data
+	}else if(tipoFiltro === "dataMonitoria"){ 
 		
 		let dataInicioBox = document.createElement("div");
 		$(dataInicioBox).addClass("form-input")
@@ -122,74 +104,71 @@ function habilitaCampoFiltro(tipoFiltro){
 		$(dataFimBox).addClass("form-input")
 		
 		//Label data Inicio
-		labelFiltroDataInicio = document.createElement("label");
-		labelFiltroDataInicio.setAttribute("for", "dataInicio");
-		$(labelFiltroDataInicio).addClass("form-label");
-		labelFiltroDataInicio.appendChild(document.createTextNode("Data Inicio"))
+		$(labelFiltro).attr("for", "dataInicio");
+		$(labelFiltro).text("Data Inicio");
 		
 		//Label data Fim
 		labelFiltroDataFim = document.createElement("label");
-		labelFiltroDataFim.setAttribute("for", "dataInicio");
+		$(labelFiltroDataFim).attr("for", "dataInicio");
 		$(labelFiltroDataFim).addClass("form-label");
-		labelFiltroDataFim.appendChild(document.createTextNode("Data Fim"));
+		$(labelFiltroDataFim).text("Data Fim");
 		
 		//Campo data inicio
-		let campoDataInicio = document.createElement("input");
-		$(campoDataInicio).addClass("form-control");
-		campoDataInicio.setAttribute("type", "date");
-		campoDataInicio.setAttribute("id", "dataInicio");
-		campoDataInicio.setAttribute("name", "txtdatainicio");
-		
+		campoFiltro = document.createElement("input");
+		$(campoFiltro).attr("type", "date");
+
 		//Campo data fim
 		let campoDataFim = document.createElement("input");
 		$(campoDataFim).addClass("form-control");
-		campoDataFim.setAttribute("type", "date");
-		campoDataFim.setAttribute("id", "dataFim");
-		campoDataFim.setAttribute("name", "txtdatafim");
 		
-		dataInicioBox.appendChild(labelFiltroDataInicio);
-		dataInicioBox.appendChild(campoDataInicio);
+		$(campoDataFim).attr({type: "date",
+						   id: "dataFim"});
 		
-		dataFimBox.appendChild(labelFiltroDataFim);
-		dataFimBox.appendChild(campoDataFim);
+		$(dataInicioBox).append(labelFiltro);
+		$(dataInicioBox).append(campoFiltro);
 		
-		boxFiltro.appendChild(dataInicioBox);
-		boxFiltro.appendChild(dataFimBox);
+		$(dataFimBox).append(labelFiltroDataFim);
+		$(dataFimBox).append(campoDataFim);
 		
-	}else if(tipoFiltro === "concluida"){ //Status
-	
-		nameCampo = "concluida"
-	
-		labelFiltro = document.createElement("label");
-		labelFiltro.setAttribute("for", tipoFiltroId);
-		$(labelFiltro).addClass("form-label");
-		labelFiltro.appendChild(document.createTextNode("Status"))
+		$(boxFiltro).append(dataInicioBox);
+		$(boxFiltro).append(dataFimBox);
 		
-		let campoStatus = document.createElement("select");
-		$(campoStatus).addClass("form-control");
-		$(campoStatus).addClass("form-select");
-		campoStatus.setAttribute("id", tipoFiltroId);
-		campoStatus.setAttribute("name", nameCampo);
+	//Status
+	}else if(tipoFiltro === "concluida"){
 		
-		let valorPadrao = document.createElement("option")
-		valorPadrao.setAttribute("value", "")
-		valorPadrao.appendChild(document.createTextNode("Selecione"))
+		$(labelFiltro).text("Status");
+		
+		campoFiltro = document.createElement("select");
+		$(campoFiltro).addClass("form-select");
+		
+		let valorPadrao = document.createElement("option");
+		$(valorPadrao).attr("value", "");
+		$(valorPadrao).text("Selecione");
 		
 		let valorConcluida = document.createElement("option")
-		valorConcluida.setAttribute("value", "1")
-		valorConcluida.appendChild(document.createTextNode("Concluída"))
+		$(valorConcluida).attr("value", "1");
+		$(valorConcluida).text("Concluída");
 		
-		let valorNaoConcluida = document.createElement("option")
-		valorNaoConcluida.setAttribute("value", "0")
-		valorNaoConcluida.appendChild(document.createTextNode("Não Concluida"))
+		let valorNaoConcluida = document.createElement("option");
+		$(valorNaoConcluida).attr("value", "0");
+		$(valorNaoConcluida).text("Não Concluida");
 		
-		campoStatus.appendChild(valorPadrao)
-		campoStatus.appendChild(valorConcluida)
-		campoStatus.appendChild(valorNaoConcluida)
+		$(campoStatus).append(valorPadrao);
+		$(campoStatus).append(valorConcluida);
+		$(campoStatus).append(valorNaoConcluida);
 		
-		boxFiltro.appendChild(labelFiltro)
-		boxFiltro.appendChild(campoStatus)
-		
+	}
+	
+	$(campoFiltro).addClass("form-control");
+	$(campoFiltro).attr("id", idCampoFiltro);
+	
+	$(labelFiltro).addClass("form-label");
+	$(labelFiltro).attr("for", idCampoFiltro);
+	$(labelFiltro).addClass("form-label");
+	
+	if(tipoFiltro != "dataMonitoria"){
+		$(boxFiltro).append(labelFiltro);
+		$(boxFiltro).append(campoFiltro);
 	}
 	
 }
@@ -204,15 +183,14 @@ function buscarMonitorias(){
 	
 	let valorBusca;
 	
-	if(tipoFiltro == "datamonitoria"){
-		valorBusca = String(document.getElementById("dataInicio").value) + "@" + String(document.getElementById("dataFim").value);
+	if(tipoFiltro == "dataMonitoria"){
+		valorBusca = String($("#campoFiltro").val()) + "@" + String($("#dataFim").val());
+	}else if(tipoFiltro != ""){
+		valorBusca = $("#campoFiltro").val();
 	}else{
-		if(tipoFiltro != ""){
-			valorBusca = document.getElementById("filtroId").value;
-		}else{
 			valorFiltro = "";
-		}
 	}
+	
 		
 	$.ajax({
 		type: "GET",
@@ -229,102 +207,100 @@ function buscarMonitorias(){
 			
 				dados.forEach(function(monitoria, i){
 					let row = document.createElement("tr");
-					row.setAttribute("class", "consult-head");
+					$(row).attr("class", "consult-head");
 					
 					let th = document.createElement("th");
-					th.setAttribute("scope", "row");
-					let txtTh = document.createTextNode(i+1);
-					th.appendChild(txtTh);
+					$(th).attr("scope", "row");
+					$(th).text(i+1);
+					
+					$(row).append(th);
 					
 					//Aluno
 					let tdAluno = document.createElement("td");
-					let txtAluno = document.createTextNode(monitoria.aluno);
-					tdAluno.appendChild(txtAluno)
+					$(tdAluno).text(monitoria.aluno);
+					
+					$(row).append(tdAluno);
 					
 					//Turma
 					let tdTurma = document.createElement("td");
-					let txtTurma = document.createTextNode(monitoria.turma);
-					tdTurma.appendChild(txtTurma)
+					$(tdTurma).text(monitoria.turma);
+					
+					$(row).append(tdTurma);
 					
 					//Monitor
 					let tdMonitor = document.createElement("td");
-					let txtMonitor = document.createTextNode(monitoria.monitor);
-					tdMonitor.appendChild(txtMonitor);
+					$(tdMonitor).text(monitoria.monitor);
+					
+					$(row).append(tdMonitor);
 					
 					//Data
 					let tdData = document.createElement("td");
-					let listData = monitoria.datamonitoria.split("-");
-					let txtData = document.createTextNode(`${listData[2]}-${listData[1]}-${listData[0]}`);
-					tdData.appendChild(txtData);
+					let listData = monitoria.dataMonitoria.split("-");
+					$(tdData).text(`${listData[2]}-${listData[1]}-${listData[0]}`);
+					
+					$(row).append(tdData);
 					
 					//Status
 					let tdStatus = document.createElement("td");
-					let txtStatus
 					let bg;
 					if(monitoria.concluida === 1){
-						txtStatus = document.createTextNode("Concluída");
+						$(tdStatus).text("Concluída");
 						bg = "bgConcluida";
 					}else{
-						txtStatus = document.createTextNode("Não Concluída");
+						$(tdStatus).text("Não Concluída");
 						bg = "bgNaoConcluida";
 					}
-					tdStatus.appendChild(txtStatus);
+					
+					$(row).append(tdStatus);
+					$(row).addClass(bg);
 					
 					//Observação
 					let tdObs = document.createElement("td");
-					let txtObs = document.createTextNode(monitoria.obs);
-					tdObs.appendChild(txtObs);
+					$(tdObs).text(monitoria.obs);
+					
+					$(row).append(tdObs);
 					
 					//Icones
 					let tdIcons = document.createElement("td");
 					
 					let aDelete = document.createElement("a");
-					aDelete.setAttribute("onclick", "excluirRegistro("+monitoria.id+")");
+					$(aDelete).attr("onclick", "excluirRegistro("+monitoria.id+")");
 					$(aDelete).addClass("formIcons");
-					let imgDelete = document.createElement("img");
-					imgDelete.setAttribute("src", "css/imgs/delete.svg");
-					imgDelete.setAttribute("alt", "Excluir Registro");
 					
-					aDelete.appendChild(imgDelete);
-					tdIcons.appendChild(aDelete);
+					let imgDelete = document.createElement("img");
+					$(imgDelete).attr("src", "css/imgs/delete.svg");
+					$(imgDelete).attr("alt", "Excluir Registro");
+					
+					$(aDelete).append(imgDelete);
+					$(tdIcons).append(aDelete);
 					
 					let aEdit = document.createElement("a");
-					aEdit.setAttribute("onclick", "buscarMonitoriaPorId("+monitoria.id+")");
-					aEdit.setAttribute("data-bs-toggle", "modal")
-					aEdit.setAttribute("data-bs-target", "#exampleModal")
+					$(aEdit).attr("onclick", "buscarMonitoriaPorId("+monitoria.id+")");
+					$(aEdit).attr("data-bs-toggle", "modal");
+					$(aEdit).attr("data-bs-target", "#modal-edicao");
 					$(aEdit).addClass("formIcons");
+					
 					let imgEdit = document.createElement("img");
-					imgEdit.setAttribute("src", "css/imgs/pencil.svg");
-					imgEdit.setAttribute("alt", "Editar Registro");
+					$(imgEdit).attr({src: "css/imgs/pencil.svg",
+									 alt: "Editar Registro"});
 					
-					aEdit.appendChild(imgEdit);
-					tdIcons.appendChild(aEdit);
+					$(aEdit).append(imgEdit);
+					$(tdIcons).append(aEdit);
 					
+					$(row).append(tdIcons);
 					
 					//Inserir na tabela
-					row.setAttribute("class", bg);
-					
-					row.appendChild(th);
-					row.appendChild(tdAluno);
-					row.appendChild(tdTurma);
-					row.appendChild(tdMonitor);
-					row.appendChild(tdData);
-					row.appendChild(tdStatus);
-					row.appendChild(tdObs);
-					row.appendChild(tdIcons);
-					
-					tbodyConsult.appendChild(row);
+					$(tbodyConsult).append(row);
 					
 				});
 				
 			}else{
 				let row = document.createElement("td");
-				row.setAttribute("colspan", "8");
+				$(row).attr("colspan", "8");
 				$(row).addClass("aviso");
-				let rowTxt = document.createTextNode("Não foi encontrada nenhuma monitoria");
-				row.appendChild(rowTxt);
+				row.text("Não foi encontrada nenhuma monitoria");
 				
-				tbodyConsult.appendChild(row);
+				$(tbodyConsult).append(row);
 			}
 				
 		},
@@ -333,11 +309,6 @@ function buscarMonitorias(){
 		}
 	});
 	
-}
-
-function limparFiltro(){
-	document.getElementById("boxFiltro").innerHTML = "";
-	document.getElementById("tipoDeFiltro").options.selectedIndex = 0;
 }
 
 function excluirRegistro(id){
@@ -351,7 +322,7 @@ function excluirRegistro(id){
 		url: SITE.PATH + `monitoria/excluir/${id}`,
 		success: function(msg){
 			alert(msg);
-			location.reload();
+			buscarMonitorias();
 		},
 		error: function(info){
 			alert("Erro ao excluir monitoria - "+ info.status + " - "+ info.statusText);
@@ -370,48 +341,50 @@ function buscarMonitoriaPorId(id){
 			monitoria = JSON.parse(monitoria);
 			
 			//Div Principal
-			const divEditContent = document.getElementById("modal-div-editcontent");
-			divEditContent.innerHTML = "";
+			const divEditContent = $("#modal-div-editcontent");
+			$(divEditContent).html("");
 			
 			//Aluno
 			const divEditContentAluno = document.createElement("div");
-			divEditContentAluno.setAttribute("class", "form-input");
-			divEditContentAluno.setAttribute("class", "modal-div-input");
-			
+			$(divEditContentAluno).addClass("form-input modal-div-input");
+
 			const labelAluno = document.createElement("label");
-			labelAluno.setAttribute("for", "aluno-modal-label")
-			labelAluno.setAttribute("class", "form-label");
-			labelAluno.appendChild(document.createTextNode("Aluno "));
+			$(labelAluno).attr("for", "aluno-modal-label")
+			$(labelAluno).addClass("form-label");
+			$(labelAluno).text("Aluno");
 			
 			const inputAluno = document.createElement("input");
-			inputAluno.setAttribute("id", "aluno-modal-field");
-			inputAluno.setAttribute("type", "text");
-			inputAluno.setAttribute("class", "form-control");
-			inputAluno.setAttribute("value", monitoria.aluno);
+			$(inputAluno).attr({id: "aluno-modal-field",
+								type: "text",
+								value: monitoria.aluno});
 			
-			divEditContentAluno.appendChild(labelAluno);
-			divEditContentAluno.appendChild(inputAluno);
+			$(inputAluno).addClass("form-control");
+			
+			$(divEditContentAluno).append(labelAluno);
+			$(divEditContentAluno).append(inputAluno);
+			
+			$(divEditContent).append(divEditContentAluno);
 			
 			//Turma
 			const divEditContentTurma = document.createElement("div");
-			divEditContentTurma.setAttribute("class", "form-input");
-			divEditContentTurma.setAttribute("class", "modal-div-input");
+			$(divEditContentTurma).addClass("form-input modal-div-input");
 			
 			const labelTurma = document.createElement("label");
-			labelTurma.setAttribute("for", "turma-modal-label")
-			labelTurma.setAttribute("class", "form-label");
-			labelTurma.appendChild(document.createTextNode("Turma "));
+			$(labelTurma).attr("for", "turma-modal-label")
+			$(labelTurma).addClass("form-label");
+			$(labelTurma).text("Turma");
 			
 			const inputTurma = document.createElement("select");
-			inputTurma.setAttribute("id", "turma-modal-field");
-			inputTurma.setAttribute("class", "form-select");
-			inputTurma.setAttribute("class", "form-control");
-			inputTurma.setAttribute("value", monitoria.turma);
+			$(inputTurma).addClass("form-select form-control");
+			$(inputTurma).attr({id: "turma-modal-field",
+								value: monitoria.turma});
+								
+			
 			
 			const turmaOptionsText = ["Selecione", "1° Ano", "2° Ano", "3° Ano"];
 			
 			const turmaOption0 = document.createElement("option")
-			turmaOption0.setAttribute("value", "");
+			$(turmaOption0).setAttribute("value", "");
 			turmaOption0.appendChild(document.createTextNode(turmaOptionsText[0]));
 			
 			const turmaOption1 = document.createElement("option")
@@ -553,7 +526,7 @@ function buscarMonitoriaPorId(id){
 			
 			
 			//Montar div principal
-			divEditContent.appendChild(divEditContentAluno);
+			
 			divEditContent.appendChild(divEditContentTurma);
 			divEditContent.appendChild(divEditContentMonitor);
 			divEditContent.appendChild(divEditContentData);
@@ -602,12 +575,15 @@ function alteraRegistro(){
 			
 			buscarMonitorias();
 			
+			$("#modal-edicao").modal("toggle");
+			
+			
 		},
 		error: function(info){
 			
 			console.log(info);
 			alert("Erro ao alterar registro - "+ info.status + " - "+ info.statusText);
-			//data-bs-dismiss="modal"
+			
 		}
 	})
 };

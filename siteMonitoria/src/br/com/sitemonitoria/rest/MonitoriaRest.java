@@ -129,9 +129,8 @@ public class MonitoriaRest extends UtilRest {
 	public Response alterarRegistro(String monitoriaParam) {
 		
 		try {
-			System.out.println(monitoriaParam);
 			Monitoria monitoria = new Gson().fromJson(monitoriaParam, Monitoria.class);
-			System.out.println("--------------"+monitoria.getDataMonitoria());
+			
 			Conexao conec = new Conexao();
 			Connection conexao = conec.abrirConexao();
 			JDBCMonitoriaDAO jdbcMonitoria = new JDBCMonitoriaDAO(conexao);

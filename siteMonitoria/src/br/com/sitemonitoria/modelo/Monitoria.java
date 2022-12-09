@@ -6,7 +6,7 @@ public class Monitoria {
 	private String aluno;
 	private int turma;
 	private String monitor;
-	private String datamonitoria;
+	private String dataMonitoria;
 	private int concluida;
 	private String obs;
 	
@@ -42,10 +42,10 @@ public class Monitoria {
 		this.obs = obs;
 	}
 	public String getDataMonitoria() {
-		return datamonitoria;
+		return dataMonitoria;
 	}
-	public void setDataMonitoria(String datamonitoria) {
-		this.datamonitoria = datamonitoria;
+	public void setDataMonitoria(String dataMonitoria) {
+		this.dataMonitoria = dataMonitoria;
 	}
 	public int getConcluida() {
 		return concluida;
