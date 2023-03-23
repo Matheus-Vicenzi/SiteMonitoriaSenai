@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4578a6db-a727-446d-8a9c-b61fe12ceb0a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../ProjetoFaClube/.classpath" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoFaClube/.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoFaClube/.settings/.jsdtscope" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoFaClube/.settings/org.eclipse.core.resources.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoFaClube/.settings/org.eclipse.jdt.core.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoFaClube/.settings/org.eclipse.wst.common.component" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoFaClube/.settings/org.eclipse.wst.common.project.facet.core.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoFaClube/.settings/org.eclipse.wst.jsdt.ui.superType.container" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoFaClube/.settings/org.eclipse.wst.jsdt.ui.superType.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoFaClube/WebContent/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoFaClube/WebContent/css/site.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoFaClube/WebContent/imgs/cabecalhoSite.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoFaClube/WebContent/imgs/ghostLogoAmarelo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoFaClube/WebContent/imgs/ghostLogoPreto.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoFaClube/WebContent/imgs/imperaAlbum.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoFaClube/WebContent/imgs/infestissumanAlbum.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoFaClube/WebContent/imgs/melioraAlbum.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoFaClube/WebContent/imgs/namelessGhoulLeft.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoFaClube/WebContent/imgs/namelessGhoulRight.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoFaClube/WebContent/imgs/opusAlbum.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoFaClube/WebContent/imgs/popestarAlbum.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoFaClube/WebContent/imgs/prequelleAlbum.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoFaClube/WebContent/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoFaClube/WebContent/js/site.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoFaClube/WebContent/pages/site/general/cabecalho.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoFaClube/WebContent/pages/site/general/menu.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoFaClube/WebContent/pages/site/general/rodape.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoFaClube/WebContent/pages/site/musicas.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoFaClube/WebContent/pages/site/sobreabanda.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/.classpath" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/.settings/.jsdtscope" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/.settings/org.eclipse.core.resources.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/.settings/org.eclipse.jdt.core.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/.settings/org.eclipse.jst.j2ee.ejb.annotations.xdoclet.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/.settings/org.eclipse.ltk.core.refactoring.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/.settings/org.eclipse.wst.common.component" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/.settings/org.eclipse.wst.common.project.facet.core.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/.settings/org.eclipse.wst.jsdt.ui.superType.container" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/.settings/org.eclipse.wst.jsdt.ui.superType.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/.settings/org.eclipse.wst.ws.service.policy.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/Servers/.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/Servers/.settings/org.eclipse.core.resources.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/Servers/.settings/org.eclipse.wst.server.core.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/Servers/Tomcat v9.0 Server at localhost-config/catalina.policy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/Servers/Tomcat v9.0 Server at localhost-config/catalina.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/Servers/Tomcat v9.0 Server at localhost-config/context.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/Servers/Tomcat v9.0 Server at localhost-config/server.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/Servers/Tomcat v9.0 Server at localhost-config/tomcat-users.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/Servers/Tomcat v9.0 Server at localhost-config/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/WEB-INF/lib/aopalliance-repackaged-2.6.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/WEB-INF/lib/gson-2.8.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/WEB-INF/lib/hk2-api-2.6.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/WEB-INF/lib/hk2-locator-2.6.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/WEB-INF/lib/hk2-utils-2.6.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/WEB-INF/lib/jakarta.activation-api-1.2.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/WEB-INF/lib/jakarta.annotation-api-1.3.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/WEB-INF/lib/jakarta.inject-2.6.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/WEB-INF/lib/jakarta.json-1.1.6-module.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/WEB-INF/lib/jakarta.json-1.1.6.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/WEB-INF/lib/jakarta.json-api-1.1.6.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/WEB-INF/lib/jakarta.json.bind-api-1.0.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/WEB-INF/lib/jakarta.persistence-api-2.2.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/WEB-INF/lib/jakarta.servlet-api-4.0.4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/WEB-INF/lib/jakarta.validation-api-2.0.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/WEB-INF/lib/jakarta.ws.rs-api-2.1.6-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/WEB-INF/lib/jakarta.ws.rs-api-2.1.6.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/WEB-INF/lib/jakarta.xml.bind-api-2.3.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/WEB-INF/lib/javassist-3.25.0-GA.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/WEB-INF/lib/jersey-client.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/WEB-INF/lib/jersey-common.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/WEB-INF/lib/jersey-container-servlet-core.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/WEB-INF/lib/jersey-container-servlet.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/WEB-INF/lib/jersey-hk2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/WEB-INF/lib/jersey-media-jaxb.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/WEB-INF/lib/jersey-media-json-binding.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/WEB-INF/lib/jersey-media-sse.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/WEB-INF/lib/jersey-server.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/WEB-INF/lib/mysql-connector-java-8.0.30.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/WEB-INF/lib/org.osgi.core-6.0.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/WEB-INF/lib/osgi-resource-locator-1.0.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/WEB-INF/lib/yasson-1.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/css/admin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/css/images/ui-bg_diagonals-thick_18_b81900_40x40.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/css/images/ui-bg_diagonals-thick_20_666666_40x40.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/css/images/ui-bg_glass_100_f6f6f6_1x400.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/css/images/ui-bg_glass_100_fdf5ce_1x400.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/css/images/ui-bg_glass_65_ffffff_1x400.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/css/images/ui-bg_gloss-wave_35_f6a828_500x100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/css/images/ui-bg_highlight-soft_75_ffe45c_1x100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/css/images/ui-icons_222222_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/css/images/ui-icons_228ef1_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/css/images/ui-icons_ef8c08_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/css/images/ui-icons_ffd27a_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/css/images/ui-icons_ffffff_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/css/jquery-ui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/css/site.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/imgs/delete.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/imgs/edit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/imgs/geladeira1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/imgs/geladeira2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/imgs/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/js/admin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/js/jquery-ui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/js/marcas.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/js/product.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/js/site.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/pages/admin/general/footer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/pages/admin/general/header.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/pages/admin/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/pages/admin/marcas/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/pages/admin/product/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/pages/site/faleconosco.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/pages/site/general/cabecalho.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/pages/site/general/menu.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/pages/site/general/rodape.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/WebContent/pages/site/produtos.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/build/classes/br/com/coldigogeladeiras/bd/Conexao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/build/classes/br/com/coldigogeladeiras/jdbc/JDBCMarcaDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/build/classes/br/com/coldigogeladeiras/jdbc/JDBCProdutoDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/build/classes/br/com/coldigogeladeiras/jdbcinterface/MarcaDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/build/classes/br/com/coldigogeladeiras/jdbcinterface/ProdutoDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/build/classes/br/com/coldigogeladeiras/modelo/Marca.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/build/classes/br/com/coldigogeladeiras/modelo/Produto.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/build/classes/br/com/coldigogeladeiras/rest/MarcaRest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/build/classes/br/com/coldigogeladeiras/rest/ProdutoRest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/build/classes/br/com/coldigogeladeiras/rest/UtilRest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/src/br/com/coldigogeladeiras/bd/Conexao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/src/br/com/coldigogeladeiras/jdbc/JDBCMarcaDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/src/br/com/coldigogeladeiras/jdbc/JDBCProdutoDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/src/br/com/coldigogeladeiras/jdbcinterface/MarcaDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/src/br/com/coldigogeladeiras/jdbcinterface/ProdutoDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/src/br/com/coldigogeladeiras/modelo/Marca.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/src/br/com/coldigogeladeiras/modelo/Produto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/src/br/com/coldigogeladeiras/rest/MarcaRest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/src/br/com/coldigogeladeiras/rest/ProdutoRest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoTrilhaWeb/src/br/com/coldigogeladeiras/rest/UtilRest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exemploServlet/.classpath" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exemploServlet/.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exemploServlet/.settings/.jsdtscope" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exemploServlet/.settings/org.eclipse.jdt.core.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exemploServlet/.settings/org.eclipse.wst.common.component" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exemploServlet/.settings/org.eclipse.wst.common.project.facet.core.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exemploServlet/.settings/org.eclipse.wst.jsdt.ui.superType.container" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exemploServlet/.settings/org.eclipse.wst.jsdt.ui.superType.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exemploServlet/WebContent/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exemploServlet/WebContent/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exemploServlet/WebContent/contato.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exemploServlet/WebContent/contato.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exemploServlet/build/classes/br/com/gcontato/servlet/AdicionaContatoServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exemploServlet/src/br/com/gcontato/servlet/AdicionaContatoServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/lib/aopalliance-repackaged-2.6.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/lib/gson-2.8.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/lib/hk2-api-2.6.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/lib/hk2-locator-2.6.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/lib/hk2-utils-2.6.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/lib/jakarta.activation-api-1.2.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/lib/jakarta.annotation-api-1.3.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/lib/jakarta.inject-2.6.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/lib/jakarta.json-1.1.6-module.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/lib/jakarta.json-1.1.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/lib/jakarta.json-api-1.1.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/lib/jakarta.json.bind-api-1.0.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/lib/jakarta.persistence-api-2.2.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/lib/jakarta.servlet-api-4.0.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/lib/jakarta.validation-api-2.0.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/lib/jakarta.ws.rs-api-2.1.6-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/lib/jakarta.ws.rs-api-2.1.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/lib/jakarta.xml.bind-api-2.3.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/lib/javassist-3.25.0-GA.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/lib/jersey-client.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/lib/jersey-common.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/lib/jersey-container-servlet-core.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/lib/jersey-container-servlet.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/lib/jersey-hk2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/lib/jersey-media-jaxb.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/lib/jersey-media-json-binding.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/lib/jersey-media-sse.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/lib/jersey-server.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/lib/mysql-connector-java-8.0.30.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/lib/org.osgi.core-6.0.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/lib/osgi-resource-locator-1.0.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/lib/yasson-1.0.11.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/css/imgs/delete.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/css/imgs/facebook.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/css/imgs/instagram.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/css/imgs/linkedin.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/css/imgs/logo-footer.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/css/imgs/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/css/imgs/logoSenai-header.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/css/imgs/logoSenai-removebg-preview.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/css/imgs/menu.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/css/imgs/pencil.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/css/imgs/search.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/css/imgs/twitter.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/css/imgs/youtube.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/css/jquery-ui.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/js/cadastro.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/js/consulta.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/js/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/js/jquery-ui.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/pages/site/cadastro.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/pages/site/general/footer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/pages/site/general/header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/sitemonitoria/bd/Conexao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/sitemonitoria/jdbc/JDBCMonitoriaDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/sitemonitoria/jdbcinterface/MonitoriaDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/sitemonitoria/modelo/Monitoria.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/sitemonitoria/rest/MonitoriaRest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/sitemonitoria/rest/UtilRest.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="2NR1Z9RkrkTslW60UxpRBBaTzj9" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/mathe/OneDrive/Área de Trabalho/Projetos Estudos/Teste/ProjetoTrilhaWeb/siteMonitoria",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4578a6db-a727-446d-8a9c-b61fe12ceb0a" name="Changes" comment="" />
+      <created>1679612133777</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1679612133777</updated>
+      <workItem from="1679612134740" duration="12000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
