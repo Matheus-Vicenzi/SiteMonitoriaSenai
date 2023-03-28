@@ -205,7 +205,8 @@ footer{
 
 .logo-senai-footer{
     width: 15%;
-    padding: 0.5%;   
+    padding: 0.5%; 
+    filter: brightness(0) invert(1);  
 }
 
 

@@ -170,6 +170,10 @@ function habilitaCampoFiltro(tipoFiltro) {
 		$(boxFiltro).append(labelFiltro);
 		$(boxFiltro).append(campoFiltro);
 	}
+	
+	if (tipoFiltro === ""){
+		$(labelFiltro).remove();
+	}
 
 }
 
@@ -457,13 +461,8 @@ function buscarMonitoriaPorId(id) {
 			$(inputMonitor).append(monitorOption1);
 			$(inputMonitor).append(monitorOption2);
 			$(inputMonitor).append(monitorOption3);
-
-			for (let i, j = 0; i = inputMonitor.options[j]; j++) {
-				if (i.value == monitoria.turma) {
-					inputMonitor.selectedIndex = j;
-					break;
-				}
-			}
+			
+			$(inputMonitor).val(monitoria.monitor)
 
 			$(divEditContentMonitor).append(labelMonitor);
 			$(divEditContentMonitor).append(inputMonitor);
