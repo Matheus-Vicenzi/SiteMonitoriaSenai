@@ -73,6 +73,8 @@ public class MonitoriaRest extends UtilRest {
 			
 			String json = new Gson().toJson(listaMonitorias);
 			
+			conec.fecharConexao();
+			
 			return this.buildResponse(json);
 			
 		}catch(Exception e) {
@@ -94,6 +96,8 @@ public class MonitoriaRest extends UtilRest {
 			
 			jdbcMonitoria.excluir(id);
 			
+			conec.fecharConexao();
+			
 			return buildResponse("Monitoria excluída com sucesso");
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -113,6 +117,8 @@ public class MonitoriaRest extends UtilRest {
 			JDBCMonitoriaDAO jdbcMonitoria = new JDBCMonitoriaDAO(conexao);
 			
 			JsonObject monitoria = jdbcMonitoria.buscarPorId(idParam);
+			
+			conec.fecharConexao();
 			
 			return this.buildResponse(monitoria);
 			
@@ -136,6 +142,8 @@ public class MonitoriaRest extends UtilRest {
 			JDBCMonitoriaDAO jdbcMonitoria = new JDBCMonitoriaDAO(conexao);
 			
 			jdbcMonitoria.alterar(monitoria);
+			
+			conec.fecharConexao();
 			return buildResponse("Monitoria Alterada com Sucesso!");
 			
 		}catch(Exception e){
